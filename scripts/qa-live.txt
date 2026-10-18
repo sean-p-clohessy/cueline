@@ -1,0 +1,82 @@
+async(page)=>{
+  const guide=page.getByRole('button',{name:/make some music/});
+  if(await guide.count())await guide.click();
+  await page.setViewportSize({width:768,height:1024});
+  await page.getByRole('button',{name:'Stage Amber on the Avenue',exact:true}).click();
+  await page.locator('.live-line.is-active').waitFor();
+  const active=()=>page.locator('.live-line.is-active').getAttribute('aria-label');
+  if(!await active().then(v=>v.startsWith('Line 1:')))throw Error('Live must open at the first line');
+  if(await page.getByRole('button',{name:'Play timeline',exact:true}).count())throw Error('Live should not require a clock');
+  await page.getByRole('button',{name:'Next line',exact:true}).click();
+  await page.waitForTimeout(900);
+  if(!await active().then(v=>v.startsWith('Line 2:')))throw Error('Next line failed');
+  await page.locator('.live-line').nth(3).click();
+  await page.waitForTimeout(900);
+  if(!await active().then(v=>v.startsWith('Line 4:')))throw Error('Tap-to-jump failed');
+  const chosen=await active();
+  await page.reload();
+  await page.locator('.live-line.is-active').waitFor();
+  if(await active()!==chosen)throw Error('Reload lost the selected line');
+  await page.waitForTimeout(900);
+  // Native wheel scrolling updates the active line in both directions.
+  await page.locator('.live-scroll').hover();
+  await page.mouse.wheel(0,250);
+  await page.waitForTimeout(450);
+  const forward=Number((await active()).match(/Line (\d+):/)[1]);
+  if(forward<=4)throw Error('Forward scroll did not advance');
+  await page.mouse.wheel(0,-180);
+  await page.waitForTimeout(450);
+  const backward=Number((await active()).match(/Line (\d+):/)[1]);
+  if(backward>=forward)throw Error('Backward scroll did not go back');
+  const position=await active();
+  const metrics=[];
+  for(const [width,height] of [[1024,768],[768,1024],[390,844],[320,740],[844,390]]){
+    await page.setViewportSize({width,height});
+    await page.waitForTimeout(180);
+    if(await active()!==position)throw Error('Rotation changed the lyric');
+    const metric=await page.evaluate(()=>{
+      const viewport=document.querySelector('.live-scroll').getBoundingClientRect();
+      const current=document.querySelector('.live-line.is-active').getBoundingClientRect();
+      return {width:innerWidth,height:innerHeight,overflow:document.documentElement.scrollWidth>innerWidth,stageOverflow:document.querySelector('.stage').scrollWidth>innerWidth,
+        centered:Math.abs(current.top+current.height/2-(viewport.top+viewport.height/2))<3,
+        small:[...document.querySelectorAll('button')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&(r.width<47.9||r.height<47.9)}).map(el=>el.getAttribute('aria-label')||el.textContent)};
+    });
+    if(metric.overflow||metric.stageOverflow||!metric.centered||metric.small.length)throw Error(JSON.stringify(metric));
+    metrics.push(metric);
+    await page.screenshot({path:`output/playwright/live-${width}x${height}.png`});
+  }
+  await page.setViewportSize({width:768,height:1024});
+  await page.waitForTimeout(900);
+  await page.keyboard.press('ArrowRight');
+  await page.waitForTimeout(300);
+  const keyboard=Number((await active()).match(/Line (\d+):/)[1]);
+  if(keyboard!==backward+1)throw Error('Keyboard next line failed');
+  await page.keyboard.press('ArrowLeft');
+  await page.waitForTimeout(900);
+  if(await active()!==position)throw Error('Keyboard previous line failed');
+  // Test real touch gestures rather than synthetic scroll events.
+  const cdp=await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
+  const box=await page.locator('.live-scroll').boundingBox();
+  const swipe=async(delta)=>{
+    const x=box.x+box.width/2,y=box.y+box.height/2+(delta<0?100:-100);
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});
+    for(let n=1;n<=12;n++){
+      await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x,y:y+delta*n/12}]});
+      await page.waitForTimeout(25);
+    }
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+    await page.waitForTimeout(600);
+  };
+  await swipe(-230);
+  const touchForward=Number((await active()).match(/Line (\d+):/)[1]);
+  if(touchForward<=backward)throw Error('Swipe up failed');
+  await swipe(180);
+  const touchBack=Number((await active()).match(/Line (\d+):/)[1]);
+  if(touchBack>=touchForward)throw Error('Swipe down failed');
+  const stable=await active();
+  await page.waitForTimeout(2000);
+  if(await active()!==stable)throw Error('Live advanced without input');
+  await page.screenshot({path:'output/playwright/live-portrait-touch.png'});
+  return {metrics,forward,backward,touchForward,touchBack,stable,reload:true};
+}

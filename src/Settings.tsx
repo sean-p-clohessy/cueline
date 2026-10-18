@@ -70,8 +70,8 @@ export function DisplaySettings({
               change({ density: e.target.value as Preferences["density"] })
             }
           >
-            <option value="context">Previous + current + next</option>
-            <option value="focus">Current passage only</option>
+            <option value="context">Surrounding lyrics</option>
+            <option value="focus">Focus on the active lyric</option>
           </select>
         </label>
       </div>
@@ -102,7 +102,7 @@ export function DisplaySettings({
           checked={s.showZones}
           onChange={(e) => change({ showZones: e.target.checked })}
         />{" "}
-        Show manual tap zones
+        Show swipe instructions on stage
       </label>
       <div
         className={`lyric-sample theme-${s.theme}`}

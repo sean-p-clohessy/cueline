@@ -1,0 +1,66 @@
+async(page)=>{
+  const fixture=await page.evaluate(async()=>{
+    const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('CueLine');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+    const base={id:'qa-live-song',title:'QA live arrangement',artist:'CueLine QA',duration:1,bpm:null,intro:0,countdown:1,notes:'Original test fixture',lyricSource:{type:'user'},updatedAt:1};
+    const song={...base,passages:[{id:'qa-live-verse',kind:'verse',text:'First lantern\nSecond lantern\nSame refrain\nSame refrain',start:null,estimated:true},{id:'qa-live-solo',kind:'instrumental',text:'Open guitar solo',start:null,estimated:true},{id:'qa-live-outro',kind:'outro',text:'Come back home\nLet it ring',start:null,estimated:true}]};
+    const empty={...base,id:'qa-live-empty',title:'QA empty song',passages:[]};
+    await new Promise((resolve,reject)=>{const tx=db.transaction('songs','readwrite');tx.objectStore('songs').put(song);tx.objectStore('songs').put(empty);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();
+    sessionStorage.setItem('cueline-session',JSON.stringify({songs:[song.id,song.id,empty.id],name:'QA repeated entries',index:0,mode:'manual'}));
+    sessionStorage.removeItem('cueline-position');sessionStorage.removeItem('cueline-live-position');
+    return JSON.stringify(song);
+  });
+  await page.reload();
+  await page.locator('.live-line.is-active').waitFor();
+  const active=()=>page.locator('.live-line.is-active').getAttribute('aria-label');
+  await page.getByRole('button',{name:'Next line',exact:true}).dblclick();
+  if(!await active().then(v=>v.startsWith('Line 2:')))throw Error('Double tap skipped more than one line');
+  await page.waitForTimeout(2200);
+  if(!await active().then(v=>v.startsWith('Line 2:')))throw Error('Song duration moved the lyric');
+  if(await page.getByText('Song complete',{exact:true}).count())throw Error('Live ended at recording duration');
+  // Rejecting navigation must keep this exact song appearance and line.
+  await page.evaluate(()=>{window.confirm=message=>{window.qaConfirm=message;return false;}});
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  if(!await active().then(v=>v.startsWith('Line 2:')))throw Error('Dismissed navigation lost the line');
+  if(!(await page.evaluate(()=>window.qaConfirm)).includes('QA live arrangement'))throw Error('Song navigation was not guarded');
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  if(!await page.locator('.stage').count())throw Error('Dismissed leave exited stage');
+  await page.evaluate(()=>{window.confirm=()=>true;});
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.waitForTimeout(150);
+  if(!await active().then(v=>v.startsWith('Line 1:')))throw Error('Repeated song reused the previous appearance position');
+  if((await page.locator('.stage-top-right .tag').innerText()).trim()!=='2 / 3')throw Error('Repeated song entry did not change');
+  await page.getByRole('button',{name:'Stage display settings',exact:true}).click();
+  await page.getByRole('combobox',{name:'Stage theme',exact:true}).selectOption('black');
+  await page.getByRole('combobox',{name:'Text alignment',exact:true}).selectOption('left');
+  await page.getByRole('slider',{name:'Lyric font size',exact:true}).fill('72');
+  await page.getByRole('button',{name:'Close dialog',exact:true}).click();
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.getByRole('button',{name:'Next line',exact:true}).click();
+  const styles=await page.locator('.live-line.is-active').evaluate(el=>({transition:getComputedStyle(el).transitionDuration,align:getComputedStyle(el).textAlign,bg:getComputedStyle(el.closest('.stage')).backgroundColor}));
+  if(styles.transition!=='0s'||styles.align!=='left'||styles.bg!=='rgb(0, 0, 0)')throw Error(JSON.stringify(styles));
+  await page.getByRole('button',{name:'Line 5: Open guitar solo',exact:true}).click();
+  await page.waitForTimeout(1800);
+  if(!await active().then(v=>v.startsWith('Line 5:')))throw Error('Solo could not stay open');
+  await page.screenshot({path:'output/playwright/live-black-solo.png'});
+  // Reach both boundaries with native scrolling and no automatic song change.
+  await page.locator('.live-scroll').hover();
+  await page.mouse.wheel(0,5000);
+  await page.waitForTimeout(400);
+  if(!await active().then(v=>v.startsWith('Line 7:')))throw Error('Last line not reachable');
+  if(!await page.getByRole('button',{name:'Next line',exact:true}).isDisabled())throw Error('Last line should stop navigation');
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.getByRole('heading',{name:'No lyrics in this song',exact:true}).waitFor();
+  if(!await page.getByRole('button',{name:'Next line',exact:true}).isDisabled())throw Error('Empty song has active line navigation');
+  await page.getByRole('button',{name:'Previous song',exact:true}).click();
+  await page.locator('.live-line.is-active').waitFor();
+  await page.getByRole('button',{name:'Stage display settings',exact:true}).click();
+  await page.getByRole('button',{name:/^Automatic Follow saved/}).click();
+  if(!await page.getByRole('button',{name:'Play timeline',exact:true}).isDisabled())throw Error('Invalid timings were accepted');
+  await page.getByText('This song needs valid, ordered timestamps.',{exact:false}).waitFor();
+  const unchanged=await page.evaluate(async()=>{
+    const db=await new Promise(resolve=>{const r=indexedDB.open('CueLine');r.onsuccess=()=>resolve(r.result)});
+    const song=await new Promise(resolve=>{const r=db.transaction('songs').objectStore('songs').get('qa-live-song');r.onsuccess=()=>resolve(r.result)});db.close();return JSON.stringify(song);
+  });
+  if(unchanged!==fixture)throw Error('Stage navigation rewrote saved lyrics or timings');
+  return {doubleTap:true,noTimedEnd:true,repeatedSongReset:true,navigationGuards:true,emptySong:true,soloHold:true,reducedMotion:true,blackTheme:true,unchangedSong:true};
+}

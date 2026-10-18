@@ -6,10 +6,10 @@ Validation date: 18 October 2026. Windows, Node 24, Edge via Playwright CLI.
 
 - Strict TypeScript: passed.
 - ESLint with React hooks: passed without warnings.
-- Vitest: **46 tests passed**, covering the monotonic engine, cue handling, setlist reorder, backup validation, IndexedDB persistence/restore, LRC parsing, automatic passage preparation, source attribution and lyrics-provider reliability.
+- Vitest: **52 tests passed**, covering live line derivation, repeat identity, nearest-line selection, recovery, navigation boundaries, the monotonic engine, cue handling, setlist reorder, backup validation, IndexedDB persistence/restore, LRC parsing, automatic passage preparation, source attribution and lyrics-provider reliability.
 - Vite production build and generated PWA service worker: passed.
 
-## Real-browser workflows
+## Earlier release browser workflows (v1.0/v1.1)
 
 - Added an original test song; edited metadata, duration, count-in and intro.
 - Pasted lyrics; automatically split blank-line sections; repeated, merged and split passages; estimated cues.
@@ -36,6 +36,20 @@ Screenshots and test backups are in ignored `output/playwright/`. They are local
 - Exported/restored a backup containing imported community lyrics, provenance and cues; the collision-safe merge succeeded.
 - Added an original by pasting five lines into one form while offline; passages were created automatically and opened ready for Manual mode.
 - No commercial lyrics or test backups are committed or shipped in the app shell. Unit fixtures contain original test text only.
+
+## Live performance update (v1.2)
+
+- All new song and setlist launches default to Live, regardless of recording cues. Existing saved passages, source attribution and timings remain unchanged.
+- Real Edge browser: tap-to-jump, previous/next line buttons, native wheel scrolling in both directions, CDP touch swipes up/down, and keyboard line navigation passed.
+- Selected lyric survived same-tab reload and rotation across 1024×768, 768×1024, 390×844, 320×740 and 844×390. No horizontal overflow; all visible controls measured at least 48×48 CSS pixels. Current lyric remained centered after resize.
+- Original one-second test song: held the same lyric beyond its duration; an instrumental solo also stayed open. Last-line navigation stopped without advancing the song.
+- Repeated consecutive appearances of the same song reset independently. Rejected leave/song-navigation confirmations preserved position. Empty lyrics displayed a clear explanation with disabled line controls.
+- Rapid double-click advanced one line. Testing caught a first-tap debounce initialization issue; corrected it and reran the passing check.
+- Pure-black theme, left alignment, larger text and reduced-motion settings passed in the browser. Screenshots inspected at tablet portrait, phone portrait and phone landscape sizes.
+- Optional Automatic and Rehearsal remain available through stage display settings: count-in pause/resume, intro, cue progression, manual timestamp recalibration, simulated visibility interruption, paused reload, rehearsal capture/review/save, and return to Live all passed.
+- Repeated the real cover search/import for Robert Palmer and Dire Straits; both opened directly in Live with their saved words. No editor or splitting required.
+- Production PWA: generated service worker installed, browser networking disabled, offline reload recovered the selected lyric, scrolling and next-song navigation worked, and the library remained available. No runtime errors reported.
+- Scripts: `qa-live.txt`, `qa-live-reliability.txt`, `qa-live-timed.txt`, `qa-live-offline.txt`. Fixtures use original text; test data stays in ignored browser profiles/output.
 
 ## Device checks still needed
 

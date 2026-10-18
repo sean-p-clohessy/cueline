@@ -1627,34 +1627,6 @@ small {
 .density-focus {
   gap: 24px;
 }
-.touch-zones {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  z-index: 3;
-  touch-action: manipulation;
-}
-.touch-zones button {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.touch-zones.visible button {
-  background: #efb66b03;
-  border: 1px dashed #efb66b40;
-}
-.touch-zones.visible button > span {
-  background: #191c24dc;
-  border: 1px solid #efb66b66;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #efc48b;
-  font-size: 14px;
-  align-self: flex-end;
-  margin-bottom: 12px;
-}
 .stage-footer {
   padding: 0 30px;
   flex-shrink: 0;

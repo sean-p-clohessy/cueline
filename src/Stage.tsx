@@ -29,6 +29,7 @@ import {
 import { Modal } from "./ui";
 import { TimeField } from "./Editor";
 import { DisplaySettings } from "./Settings";
+import { LiveLyrics } from "./LiveLyrics";
 
 interface Session {
   songs: string[];
@@ -99,8 +100,12 @@ export function Stage({
   const clock = useMemo(() => new CueClock(song, mode), [song, mode]);
   const [view, setView] = useState<ClockView>(() => clock.read());
   const latest = useRef(view);
-  const lastTap = useRef(0);
+  const lastTap = useRef(-Infinity);
   const lastPersist = useRef(0);
+  const livePosition = useRef({ index: 0, count: 0 });
+  const rememberLivePosition = useCallback((index: number, count: number) => {
+    livePosition.current = { index, count };
+  }, []);
   const action = useCallback(
     (operation: () => void) => {
       operation();
@@ -118,6 +123,8 @@ export function Stage({
   );
   useEffect(() => {
     store("cueline-session", { ...session, index, mode });
+    // Live view has no running timeline. Its selected line is persisted separately.
+    if (mode === "manual") return;
     let recovered = clock.read();
     try {
       const snapshot = JSON.parse(
@@ -249,8 +256,11 @@ export function Stage({
       const target = index + delta;
       if (target < 0 || target >= songs.length) return;
       if (
-        clock.read().state === "playing" &&
-        !confirm(`Pause this song and open “${songs[target].title}”?`)
+        (clock.read().state === "playing" ||
+          (mode === "manual" &&
+            livePosition.current.index > 0 &&
+            livePosition.current.index < livePosition.current.count - 1)) &&
+        !confirm(`Open “${songs[target].title}”?`)
       )
         return;
       if (
@@ -268,11 +278,12 @@ export function Stage({
         /* unavailable */
       }
       setIndex(target);
+      livePosition.current = { index: 0, count: 0 };
       setMessage("");
       capturesRef.current = {};
       setCaptures({});
     },
-    [index, songs, clock],
+    [index, songs, clock, mode],
   );
   const toggle = useCallback(
     () =>
@@ -323,8 +334,9 @@ export function Stage({
   );
   const leave = useCallback(() => {
     if (
-      clock.read().state === "playing" &&
-      !confirm("Pause the performance and leave Stage Mode?")
+      (clock.read().state === "playing" ||
+        (mode === "manual" && livePosition.current.index > 0)) &&
+      !confirm("Leave Stage Mode?")
     )
       return;
     if (
@@ -340,7 +352,7 @@ export function Stage({
       /* unavailable */
     }
     exit();
-  }, [clock, exit]);
+  }, [clock, exit, mode]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
@@ -353,6 +365,12 @@ export function Stage({
           'input,textarea,select,[contenteditable="true"],dialog',
         ) ||
         (target.closest("button") && e.code === "Space")
+      )
+        return;
+      // LiveLyrics owns line shortcuts; song navigation remains guarded here.
+      if (
+        mode === "manual" &&
+        ["Space", "ArrowLeft", "ArrowRight", "KeyR"].includes(e.code)
       )
         return;
       if (
@@ -383,7 +401,17 @@ export function Stage({
       window.removeEventListener("keydown", key);
       window.removeEventListener("popstate", back);
     };
-  }, [toggle, nextPassage, navigate, restart, options, help, review, leave]);
+  }, [
+    toggle,
+    nextPassage,
+    navigate,
+    restart,
+    options,
+    help,
+    review,
+    leave,
+    mode,
+  ]);
   const current = song.passages[view.index];
   const upcoming = song.passages[view.index + 1];
   const previous = song.passages[view.index - 1];
@@ -399,9 +427,7 @@ export function Stage({
         ? "Instrumental Intro"
         : mode === "rehearsal"
           ? "Tap when the first passage begins"
-          : mode === "manual"
-            ? "Tap right for your first passage"
-            : "Your first line is coming");
+          : "Your first line is coming");
   async function saveRecording() {
     const next = {
       ...song,
@@ -436,8 +462,34 @@ export function Stage({
       setSaving(false);
     }
   }
+  function changeMode(next: PlaybackMode) {
+    if (next === mode) return;
+    if (
+      clock.read().state === "playing" &&
+      !confirm("Pause and restart in the new mode?")
+    )
+      return;
+    if (
+      Object.keys(capturesRef.current).length &&
+      !confirm("Discard these unsaved rehearsal timings?")
+    )
+      return;
+    clock.pause();
+    try {
+      sessionStorage.removeItem("cueline-position");
+    } catch {
+      /* unavailable */
+    }
+    capturesRef.current = {};
+    setCaptures({});
+    setMode(next);
+    setOptions(false);
+    setMessage("");
+  }
   return (
-    <div className={`stage theme-${settings.theme}`}>
+    <div
+      className={`stage ${mode === "manual" ? "stage-live" : "stage-timed"} theme-${settings.theme}`}
+    >
       <header className="stage-header">
         <button className="text-btn" aria-label="Leave stage" onClick={leave}>
           <X size={22} /> <span>Leave stage</span>
@@ -459,295 +511,271 @@ export function Stage({
           </button>
         </div>
       </header>
-      <div className="stage-status">
-        <span
-          className={`live-state ${view.state === "playing" ? "active" : ""}`}
-        >
-          <span className="status-dot" />
-          {view.state === "ready"
-            ? "Ready when you are"
-            : view.state === "ended"
-              ? "Song complete"
-              : view.state === "paused"
-                ? "Paused"
-                : countdown
-                  ? "Counting in"
-                  : view.intro
-                    ? "Instrumental intro"
-                    : "Playing timeline"}
-        </span>
-        <div className="mode-switch" aria-label="Playback mode">
-          {(["automatic", "manual", "rehearsal"] as const).map((m) => (
-            <button
-              key={m}
-              className={mode === m ? "selected" : ""}
-              onClick={() => {
-                if (m === mode) return;
-                if (
-                  clock.read().state === "playing" &&
-                  !confirm("Pause and restart in the new mode?")
-                )
-                  return;
-                if (
-                  Object.keys(captures).length &&
-                  !confirm("Discard these unsaved rehearsal timings?")
-                )
-                  return;
-                clock.pause();
-                try {
-                  sessionStorage.removeItem("cueline-position");
-                } catch {
-                  /* unavailable */
-                }
-                setCaptures({});
-                setMode(m);
-              }}
+      {mode === "manual" ? (
+        <LiveLyrics
+          key={`${song.id}:${index}`}
+          song={song}
+          entryIndex={index}
+          songCount={songs.length}
+          settings={settings}
+          suspended={options || help || review}
+          navigate={navigate}
+          onPosition={rememberLivePosition}
+        />
+      ) : (
+        <>
+          <div className="stage-status">
+            <span
+              className={`live-state ${view.state === "playing" ? "active" : ""}`}
             >
-              {m === "automatic"
-                ? "Automatic"
-                : m === "manual"
-                  ? "Manual"
-                  : "Rehearsal"}
-            </button>
-          ))}
-        </div>
-        <span className="stage-clock">
-          {time(view.elapsed)} <span>/ {time(song.duration)}</span>
-        </span>
-      </div>
-      {view.interrupted && (
-        <div className="stage-notice" role="status">
-          Playback paused after an interruption. Resume when you’re ready.
-        </div>
-      )}
-      {mode === "automatic" && !safeAutomatic && (
-        <div className="stage-notice">
-          {song.passages.length
-            ? "This song needs valid, ordered timestamps. Choose Manual or Rehearsal."
-            : "This song has no passages yet. Add lyrics in the editor."}
-        </div>
-      )}
-      {mode === "rehearsal" && (
-        <div className="rehearsal-bar">
-          <span>
-            <Mic2 size={18} /> {Object.keys(captures).length} /{" "}
-            {song.passages.length} cues captured
-          </span>
-          <button
-            className="btn"
-            disabled={!Object.keys(captures).length}
-            onClick={() => {
-              action(() => clock.pause());
-              setReview(true);
-            }}
-          >
-            Review & save timings
-          </button>
-        </div>
-      )}
-      <main
-        className={`stage-lyrics density-${settings.density}`}
-        style={
-          {
-            textAlign: settings.alignment,
-            "--lyric-size": `${settings.fontSize}px`,
-            "--lyric-spacing": settings.spacing,
-          } as React.CSSProperties
-        }
-      >
-        {settings.density === "context" && (
-          <div className="context-passage previous">
-            <span className="cue-label">
-              {previous
-                ? "PREVIOUS"
-                : view.state === "ready"
-                  ? "TAKE A BREATH. YOU KNOW THIS."
-                  : " "}
+              <span className="status-dot" />
+              {view.state === "ready"
+                ? "Ready when you are"
+                : view.state === "ended"
+                  ? "Song complete"
+                  : view.state === "paused"
+                    ? "Paused"
+                    : countdown
+                      ? "Counting in"
+                      : view.intro
+                        ? "Instrumental intro"
+                        : "Playing timeline"}
             </span>
-            <p>{previous?.text}</p>
+            <button className="btn" onClick={() => setOptions(true)}>
+              {mode === "automatic" ? "Automatic" : "Rehearsal"} · Change mode
+            </button>
+            <span className="stage-clock">
+              {time(view.elapsed)} <span>/ {time(song.duration)}</span>
+            </span>
           </div>
-        )}
-        <div
-          className={`current-passage ${countdown && view.state !== "ready" ? "counting" : ""}`}
-          key={`${song.id}-${view.index}-${countdown ? Math.ceil(view.countdown) : "lyric"}`}
-        >
-          <span className="cue-label">
-            {countdown
-              ? view.state === "ready"
-                ? `${song.countdown} SECOND COUNT-IN · ${song.intro} SECOND INTRO`
-                : "GET READY"
-              : current
-                ? `${current.kind.toUpperCase()} · PASSAGE ${view.index + 1}`
-                : view.intro
-                  ? "LET IT BREATHE"
-                  : "UP NEXT"}
-          </span>
-          <p>{displayText}</p>
-          {view.state === "ready" && song.notes && (
-            <div className="stage-notes">{song.notes}</div>
+          {view.interrupted && (
+            <div className="stage-notice" role="status">
+              Playback paused after an interruption. Resume when you’re ready.
+            </div>
           )}
-        </div>
-        {(settings.density === "context" ||
-          view.intro ||
-          countdown ||
-          mode === "rehearsal") && (
-          <div className="context-passage upcoming">
-            <span className="cue-label">
-              {upcoming ? "UP NEXT" : "END OF SONG"}
-            </span>
-            <p>
-              {upcoming?.text ??
-                (song.passages.length
-                  ? "Let it ring."
-                  : "Add lyrics in the song editor.")}
-            </p>
-          </div>
-        )}
-        {mode === "manual" && (
-          <div className={`touch-zones ${settings.showZones ? "visible" : ""}`}>
-            <button
-              aria-label="Tap zone: previous passage"
-              onClick={() => nextPassage(-1)}
-            >
-              {settings.showZones && <span>← Previous</span>}
-            </button>
-            <button
-              aria-label="Tap zone: next passage"
-              onClick={() => nextPassage(1)}
-            >
-              {settings.showZones && <span>Next →</span>}
-            </button>
-          </div>
-        )}
-      </main>
-      <footer className="stage-footer">
-        <div className="timeline-track">
-          <div style={{ width: `${(view.elapsed / song.duration) * 100}%` }} />
-          {song.passages
-            .filter((p) => p.start !== null)
-            .map((p) => (
-              <span
-                key={p.id}
-                style={{ left: `${(p.start! / song.duration) * 100}%` }}
-              />
-            ))}
-        </div>
-        {view.state === "ended" && (
-          <div className="song-ended">
-            <span>Song complete. Take your time.</span>
-            {index < songs.length - 1 && (
-              <button className="btn primary" onClick={() => navigate(1)}>
-                Open next song <ChevronRight size={18} />
+          {mode === "automatic" && !safeAutomatic && (
+            <div className="stage-notice">
+              {song.passages.length
+                ? "This song needs valid, ordered timestamps. Choose Live or Rehearsal in stage settings."
+                : "This song has no passages yet. Add lyrics in the editor."}
+            </div>
+          )}
+          {mode === "rehearsal" && (
+            <div className="rehearsal-bar">
+              <span>
+                <Mic2 size={18} /> {Object.keys(captures).length} /{" "}
+                {song.passages.length} cues captured
+              </span>
+              <button
+                className="btn"
+                disabled={!Object.keys(captures).length}
+                onClick={() => {
+                  action(() => clock.pause());
+                  setReview(true);
+                }}
+              >
+                Review & save timings
               </button>
+            </div>
+          )}
+          <main
+            className={`stage-lyrics density-${settings.density}`}
+            style={
+              {
+                textAlign: settings.alignment,
+                "--lyric-size": `${settings.fontSize}px`,
+                "--lyric-spacing": settings.spacing,
+              } as React.CSSProperties
+            }
+          >
+            {settings.density === "context" && (
+              <div className="context-passage previous">
+                <span className="cue-label">
+                  {previous
+                    ? "PREVIOUS"
+                    : view.state === "ready"
+                      ? "TAKE A BREATH. YOU KNOW THIS."
+                      : " "}
+                </span>
+                <p>{previous?.text}</p>
+              </div>
             )}
-          </div>
-        )}
-        <div className="transport">
-          <div className="song-navigation">
-            <button
-              className="btn"
-              aria-label="Previous song"
-              disabled={index === 0}
-              onClick={() => navigate(-1)}
+            <div
+              className={`current-passage ${countdown && view.state !== "ready" ? "counting" : ""}`}
+              key={`${song.id}-${view.index}-${countdown ? Math.ceil(view.countdown) : "lyric"}`}
             >
-              <SkipBack size={18} />
-              <span>Previous song</span>
-            </button>
-            <button
-              className="btn"
-              aria-label="Next song"
-              disabled={index >= songs.length - 1}
-              onClick={() => navigate(1)}
-            >
-              <span>Next song</span>
-              <SkipForward size={18} />
-            </button>
-          </div>
-          <div className="passage-transport">
-            <button
-              className="icon-btn"
-              aria-label="Restart song"
-              onClick={restart}
-            >
-              <RotateCcw size={22} />
-            </button>
-            <button
-              className="icon-btn passage-nav"
-              aria-label="Previous passage"
-              disabled={mode === "rehearsal" || view.index < 0}
-              onClick={() => nextPassage(-1)}
-            >
-              <ChevronLeft size={32} />
-            </button>
-            <button
-              className="play-control"
-              aria-label={
-                view.state === "playing" ? "Pause timeline" : "Play timeline"
-              }
-              disabled={
-                view.state === "ended" ||
-                (mode === "automatic" && !safeAutomatic)
-              }
-              onClick={toggle}
-            >
-              {view.state === "playing" ? (
-                <Pause size={28} fill="currentColor" />
-              ) : (
-                <Play size={28} fill="currentColor" />
+              <span className="cue-label">
+                {countdown
+                  ? view.state === "ready"
+                    ? `${song.countdown} SECOND COUNT-IN · ${song.intro} SECOND INTRO`
+                    : "GET READY"
+                  : current
+                    ? `${current.kind.toUpperCase()} · PASSAGE ${view.index + 1}`
+                    : view.intro
+                      ? "LET IT BREATHE"
+                      : "UP NEXT"}
+              </span>
+              <p>{displayText}</p>
+              {view.state === "ready" && song.notes && (
+                <div className="stage-notes">{song.notes}</div>
               )}
-            </button>
-            <button
-              className={`icon-btn passage-nav ${mode === "rehearsal" ? "capture-control" : ""}`}
-              aria-label={
-                mode === "rehearsal" ? "Capture next cue" : "Next passage"
-              }
-              disabled={
-                !song.passages.length ||
-                (mode === "rehearsal" &&
-                  (view.state !== "playing" ||
-                    countdown ||
-                    Object.keys(captures).length === song.passages.length))
-              }
-              onClick={() => nextPassage(1)}
-            >
-              {mode === "rehearsal" ? (
-                <>
-                  <Mic2 size={25} />
-                  <span>Tap cue</span>
-                </>
-              ) : (
-                <ChevronRight size={32} />
-              )}
-            </button>
-          </div>
-          <div className="timing-nudges">
-            <button
-              className="btn"
-              aria-label="Move timeline back 3 seconds"
-              disabled={mode !== "automatic" || countdown}
-              onClick={() => action(() => clock.nudge(-3))}
-            >
-              <Minus size={16} />
-              3s
-            </button>
-            <button
-              className="btn"
-              aria-label="Move timeline forward 3 seconds"
-              disabled={mode !== "automatic" || countdown}
-              onClick={() => action(() => clock.nudge(3))}
-            >
-              <Plus size={16} />
-              3s
-            </button>
-          </div>
-        </div>
+            </div>
+            {(settings.density === "context" ||
+              view.intro ||
+              countdown ||
+              mode === "rehearsal") && (
+              <div className="context-passage upcoming">
+                <span className="cue-label">
+                  {upcoming ? "UP NEXT" : "END OF SONG"}
+                </span>
+                <p>
+                  {upcoming?.text ??
+                    (song.passages.length
+                      ? "Let it ring."
+                      : "Add lyrics in the song editor.")}
+                </p>
+              </div>
+            )}
+          </main>
+          <footer className="stage-footer">
+            <div className="timeline-track">
+              <div
+                style={{ width: `${(view.elapsed / song.duration) * 100}%` }}
+              />
+              {song.passages
+                .filter((p) => p.start !== null)
+                .map((p) => (
+                  <span
+                    key={p.id}
+                    style={{ left: `${(p.start! / song.duration) * 100}%` }}
+                  />
+                ))}
+            </div>
+            {view.state === "ended" && (
+              <div className="song-ended">
+                <span>Song complete. Take your time.</span>
+                {index < songs.length - 1 && (
+                  <button className="btn primary" onClick={() => navigate(1)}>
+                    Open next song <ChevronRight size={18} />
+                  </button>
+                )}
+              </div>
+            )}
+            <div className="transport">
+              <div className="song-navigation">
+                <button
+                  className="btn"
+                  aria-label="Previous song"
+                  disabled={index === 0}
+                  onClick={() => navigate(-1)}
+                >
+                  <SkipBack size={18} />
+                  <span>Previous song</span>
+                </button>
+                <button
+                  className="btn"
+                  aria-label="Next song"
+                  disabled={index >= songs.length - 1}
+                  onClick={() => navigate(1)}
+                >
+                  <span>Next song</span>
+                  <SkipForward size={18} />
+                </button>
+              </div>
+              <div className="passage-transport">
+                <button
+                  className="icon-btn"
+                  aria-label="Restart song"
+                  onClick={restart}
+                >
+                  <RotateCcw size={22} />
+                </button>
+                <button
+                  className="icon-btn passage-nav"
+                  aria-label="Previous passage"
+                  disabled={mode === "rehearsal" || view.index < 0}
+                  onClick={() => nextPassage(-1)}
+                >
+                  <ChevronLeft size={32} />
+                </button>
+                <button
+                  className="play-control"
+                  aria-label={
+                    view.state === "playing"
+                      ? "Pause timeline"
+                      : "Play timeline"
+                  }
+                  disabled={
+                    view.state === "ended" ||
+                    (mode === "automatic" && !safeAutomatic)
+                  }
+                  onClick={toggle}
+                >
+                  {view.state === "playing" ? (
+                    <Pause size={28} fill="currentColor" />
+                  ) : (
+                    <Play size={28} fill="currentColor" />
+                  )}
+                </button>
+                <button
+                  className={`icon-btn passage-nav ${mode === "rehearsal" ? "capture-control" : ""}`}
+                  aria-label={
+                    mode === "rehearsal" ? "Capture next cue" : "Next passage"
+                  }
+                  disabled={
+                    !song.passages.length ||
+                    (mode === "rehearsal" &&
+                      (view.state !== "playing" ||
+                        countdown ||
+                        Object.keys(captures).length === song.passages.length))
+                  }
+                  onClick={() => nextPassage(1)}
+                >
+                  {mode === "rehearsal" ? (
+                    <>
+                      <Mic2 size={25} />
+                      <span>Tap cue</span>
+                    </>
+                  ) : (
+                    <ChevronRight size={32} />
+                  )}
+                </button>
+              </div>
+              <div className="timing-nudges">
+                <button
+                  className="btn"
+                  aria-label="Move timeline back 3 seconds"
+                  disabled={mode !== "automatic" || countdown}
+                  onClick={() => action(() => clock.nudge(-3))}
+                >
+                  <Minus size={16} />
+                  3s
+                </button>
+                <button
+                  className="btn"
+                  aria-label="Move timeline forward 3 seconds"
+                  disabled={mode !== "automatic" || countdown}
+                  onClick={() => action(() => clock.nudge(3))}
+                >
+                  <Plus size={16} />
+                  3s
+                </button>
+              </div>
+            </div>
+          </footer>
+        </>
+      )}
+      <footer
+        className={`stage-footer ${mode === "manual" ? "live-footer" : ""}`}
+      >
         <div className="stage-bottom">
           <span>
             <ShieldCheck size={15} />
             {wake}
           </span>
           <span className="stage-set-name">
-            {session.name} · Visual timeline only
+            {session.name} ·{" "}
+            {mode === "manual" ? "Follow your band" : "Visual timeline only"}
           </span>
           <div>
             <button className="text-btn" onClick={() => setHelp(true)}>
@@ -780,6 +808,41 @@ export function Stage({
       </footer>
       {options && (
         <Modal title="Make the stage yours" onClose={() => setOptions(false)}>
+          <fieldset className="stage-mode-options">
+            <legend>How to follow your lyrics</legend>
+            {(
+              [
+                [
+                  "manual",
+                  "Live",
+                  "Scroll or tap individual lines. You set the pace.",
+                ],
+                [
+                  "automatic",
+                  "Automatic",
+                  "Follow saved passage timings with a countdown.",
+                ],
+                [
+                  "rehearsal",
+                  "Rehearsal",
+                  "Record and refine passage timings.",
+                ],
+              ] as const
+            ).map(([value, title, description]) => (
+              <button
+                key={value}
+                className={mode === value ? "selected" : ""}
+                aria-pressed={mode === value}
+                onClick={() => changeMode(value)}
+              >
+                <span>
+                  {title}
+                  {mode === value && <Check size={18} />}
+                </span>
+                <small>{description}</small>
+              </button>
+            ))}
+          </fieldset>
           <DisplaySettings settings={settings} update={updateSettings} />
           <p className="helper">
             <Eye size={16} /> Changes are saved on this device.
@@ -794,13 +857,13 @@ export function Stage({
           </p>
           <div className="shortcut-list">
             {[
-              ["Space", "Play / pause"],
-              ["← / →", "Previous / next passage (capture in Rehearsal)"],
+              ["Space", "Next line in Live; play / pause in timed modes"],
+              ["← / →", "Previous / next line in Live; passage in timed modes"],
               [
                 "↑ / ↓",
-                "Previous / next song, with confirmation while playing",
+                "Previous / next song, with confirmation during a song",
               ],
-              ["R", "Restart song"],
+              ["R", "First line in Live; restart in timed modes"],
             ].map(([key, value]) => (
               <div key={key}>
                 <kbd>{key}</kbd>
@@ -809,8 +872,10 @@ export function Stage({
             ))}
           </div>
           <p className="notice">
-            Manual mode: tap the right side for the next passage, or the left
-            side to go back. Rapid double-taps are ignored.
+            Live view: swipe up to move forward, swipe down to go back. The line
+            nearest the middle becomes active. Tap any line to jump straight to
+            it, or use the Previous line and Next line buttons. Nothing advances
+            by time, including solos and instrumental sections.
           </p>
           <p className="helper">
             Automatic mode: passage buttons move the timeline to that cue. −3s

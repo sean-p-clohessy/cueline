@@ -41,13 +41,13 @@ The application shell, icons, songs, settings and setlists work without a networ
 
 **Add song → Find a cover → search the title → Add song beside your artist.** Lyrics, duration, readable passages and available cue timings are prepared and saved immediately. You return to the library with **Open Stage** and **Add to setlist** actions. There is no required editor, copy/paste, lyric splitting or timing form.
 
-Search results group recordings by artist. **Choose a recording** optionally lets you pick an album/version. Automatic preparation prefers a timed studio version when available. Community cue timings follow that recording; a live band's arrangement may differ, so try the song before performing. Synced covers open in Automatic mode. Lyrics-only imports are immediately usable in Manual mode, with clearly marked estimated timings available for later rehearsal.
+Search results group recordings by artist. **Choose a recording** optionally lets you pick an album/version. Automatic preparation prefers a timed studio version when available. Community cue timings follow that recording; a live band's arrangement may differ, so try the song before performing. Every song opens in Live view: scroll or tap individual lines at your band's pace. Saved recording cues remain available in the optional Automatic mode; lyrics-only imports need no timing setup.
 
 For originals or unavailable covers, choose **My own lyrics**: enter a title, paste the whole song, and add it. You can also import TXT or LRC. Plain text is divided into short passages automatically; LRC preserves timestamps. The existing editor remains available for optional changes to duration, intro, BPM, count-in (default 5 seconds), notes and individual passages.
 
 Choose Verse, Chorus, Bridge, Outro or Instrumental per passage. Instrumentals can use a label such as “Guitar solo · 8 bars”. Repeat a chorus with its repeat button; it becomes an independent, editable passage. Place the text cursor to split a passage, merge with the preceding passage, or use a handle to reorder. Keyboard dragging uses Space, arrow keys, Space.
 
-**Estimate timings** distributes cues evenly from the intro to the end. These are clearly marked estimates, not synchronisation. Edit a cue as `mm:ss`, `mm:ss.s` or a number of seconds; clear it to remove it. Cues use song-relative time, excluding the initial count-in. Automatic mode requires every cue to be in increasing passage order, at or after the intro and before the end of the song. Fix invalid cues or use Manual mode.
+**Estimate timings** distributes cues evenly from the intro to the end. These are clearly marked estimates, not synchronisation. Edit a cue as `mm:ss`, `mm:ss.s` or a number of seconds; clear it to remove it. Cues use song-relative time, excluding the initial count-in. Automatic mode requires every cue to be in increasing passage order, at or after the intro and before the end of the song. Fix invalid cues or use Live view, which needs no timestamps.
 
 All three included demo songs and all their lyrics were written for this application. They include different intros, repeated choruses and instrumentals. Their timings are illustrative estimates. Cover lyrics are fetched from the public LRCLIB API when you explicitly search/add a cover; CueLine does not scrape lyric websites or bundle commercial lyrics. LRCLIB is a community source, not a blanket licence to lyrics or performances. Only add material you are entitled to use. Source and recording attribution stay with the saved song and its backups.
 
@@ -57,26 +57,33 @@ Create, rename, duplicate and delete named setlists. Add songs from the library,
 
 ## Stage controls
 
-The top switch selects **Automatic**, **Manual** or **Rehearsal**. Play starts the count-in; song time begins at zero after it completes. The intro shows an instrumental prompt before the first lyric cue.
+**Live is the default.** Open a song or start a setlist and the first lyric line is ready. There is no Play step, countdown or elapsed-time limit in Live. Keep a solo open, repeat a chorus or slow down with the drummer; the lyrics only move when you choose.
 
-| Control | Action |
+- **Swipe up / scroll forward** to advance; swipe down / scroll back to return. The line nearest the middle becomes active in amber, with surrounding lines visible.
+- **Tap a line** to select it and bring it to the middle.
+- **Previous line / Next line** provide large button alternatives. Accidental double taps within 300 ms advance only once.
+- **Left / Right** move one line. **Space** also advances when a control does not have keyboard focus. **R** returns to the first line after confirmation.
+- Separate **Previous song / Next song** controls follow setlist order. **Up / Down** also change songs, with confirmation partway through a song. The last line never starts another song automatically.
+
+The selected line survives rotation and reload in the same tab. Repeated appearances of a song start independently. Display settings adjust lyric size, spacing, alignment, surrounding-lyric emphasis, artist visibility, swipe hints and the pure-black theme. Native touch scrolling remains within the lyric area; the page itself stays locked on stage. All existing phone/tablet orientations remain supported.
+
+**Stage display settings → How to follow your lyrics** also offers **Automatic** and **Rehearsal**. These retain the passage-based timeline and saved cues. Play starts the count-in; song time begins at zero after it completes. The intro displays its instrumental prompt before the first cue.
+
+| Timed control | Action |
 | --- | --- |
-| Play / Pause, or Space | Start, freeze or resume the timeline, including during the count-in and intro |
-| Passage arrows, or Left / Right | Previous / next passage; Automatic mode also moves the timeline to that cue |
+| Play / Pause, or Space | Start, freeze or resume, including the count-in and intro |
+| Passage arrows, or Left / Right | Previous / next passage; Automatic also seeks the timeline to that cue |
 | −3s / +3s | Move the Automatic timeline backward / forward by three seconds |
 | Restart, or R | Return to the count-in; confirm if playing or discarding a rehearsal |
 | Song buttons, or Up / Down | Open the preceding / following song; confirm while playing |
-| Display settings | Lyric size, spacing, alignment, context/focus density, artist visibility, manual tap zones and pure-black theme |
 
-In **Manual**, the left half of the lyric area goes back and the right half advances. Rapid taps within 300 ms are ignored. Passages never advance by time in this mode. A keyboard generating these keys can be used as an external controller; no Bluetooth pairing API is required. Shortcuts ignore text fields, native key repeats and open dialogs.
+CueLine never plays a recording. In timed modes, reaching the saved duration stops the timeline and offers the next song; it never starts it automatically. Losing visibility or focus pauses timed playback, and a frame suspension over 10 seconds freezes at the last known position. Reloading recovers a paused timeline. Live has no clock to skip forward during an interruption.
 
-CueLine never plays a recording. Perform or play your music separately. At the song's duration the timeline stops and offers the next song. **It never starts the next song automatically.** Long passages remain scrollable within the lyric area; the page itself is locked on stage. Split long passages to keep a complete cue visible at your chosen text size.
-
-Leaving while playing requires confirmation. Losing page visibility or window focus pauses playback. A long frame suspension over 10 seconds freezes at the last known position. Return and resume explicitly. Reloading the same tab recovers a paused performance, never a running one. Wake Lock is requested while Stage Mode is open; when the browser cannot keep the screen awake, set your device's auto-lock manually for the performance.
+Leaving during a song requires confirmation. A keyboard generating these keys can act as an external controller; no Bluetooth pairing API is required. Shortcuts ignore editing fields, native key repeats and open dialogs. Wake Lock is requested while Stage Mode is open; when unavailable, set device auto-lock manually before performing.
 
 ## Rehearsal
 
-1. Open a song in Stage Mode and choose **Rehearsal**.
+1. Open a song in Stage Mode, open **Stage display settings**, and choose **Rehearsal**.
 2. Play, let the count-in finish, and perform or listen externally.
 3. Press **Tap cue** or Right when each next passage begins.
 4. Choose **Review & save timings**, adjust individual timestamps, then **Save timings to song**.
@@ -86,7 +93,7 @@ Recorded cues are separate from the saved song until you explicitly save. Partia
 
 ## Storage, privacy and backups
 
-Dexie manages a versioned IndexedDB database named `CueLine`. Version 1 contains songs (with ordered passages), setlists (with ordered entry IDs) and preferences. Playback uses a separate monotonic engine and transient session storage. Meaningful edits write immediately; editor writes are serialized. First launch seeds demos only once, even if you subsequently empty the library.
+Dexie manages a versioned IndexedDB database named `CueLine`. Version 1 contains songs (with ordered passages), setlists (with ordered entry IDs) and preferences. Timed playback uses a separate monotonic engine. Live derives individual display lines from saved passages without rewriting them or their timings. Stable line IDs and the setlist appearance index provide transient session recovery. Meaningful edits write immediately; editor writes are serialized. First launch seeds demos only once, even if you subsequently empty the library.
 
 **Settings → Export full backup** downloads a readable CueLine JSON file with all songs, timings, setlists and settings. The editor also exports single-song JSON files. Keep a copy off the performing device.
 
@@ -106,6 +113,7 @@ MusicBrainz provides additional artist discovery when the primary source has no 
 | `src/Editor.tsx` | Lyric and timing editing, serialized immediate saves |
 | `src/Setlists.tsx` | Setlist management and accessible reordering |
 | `src/Stage.tsx` | Performance UI, rehearsal review, interruption and wake-lock handling |
+| `src/LiveLyrics.tsx`, `src/live.ts`, `src/live.css` | Live line view, native scroll selection and position recovery |
 | `src/engine.ts` | Framework-independent monotonic timeline engine |
 | `src/model.ts` | Typed schema, lyric splitting, estimation and timing validation |
 | `src/db.ts` | Dexie versioned schema and atomic library operations |
@@ -115,11 +123,11 @@ MusicBrainz provides additional artist discovery when the primary source has no 
 | `src/lyrics.ts` | LRCLIB provider, LRC parsing, automatic passage preparation and recording selection |
 | `src/metadata.ts` | Additional artist discovery, independent of lyric sources |
 | `src/demo.ts` | Original demonstration content |
-| `scripts/qa-*.txt` | Repeatable browser verification functions for Playwright CLI |
+| `scripts/qa-live*.txt` | Current live-view and retained timed-mode browser checks; other QA scripts record earlier release workflows |
 
 ## Testing and support limits
 
-See [VALIDATION.md](VALIDATION.md) for automated and browser evidence. The core suite covers countdown, exact cue boundaries, delayed reads, pause/resume, intros, recalibration, nudges, manual navigation, rehearsal capture, interruption recovery, repeated entries, timing validation, backup rejection/collision handling and real IndexedDB semantics via fake-indexeddb. Browser checks exercise real UI workflows, touch input, persistence and the production service worker.
+See [VALIDATION.md](VALIDATION.md) for automated and browser evidence. The 52-test suite covers live line derivation, repeat identity, scroll selection, recovery and boundaries, plus countdown, exact cue boundaries, delayed reads, pause/resume, intros, recalibration, nudges, manual navigation, rehearsal capture, interruption recovery, repeated entries, timing validation, backup rejection/collision handling and real IndexedDB semantics via fake-indexeddb. Browser checks exercise real UI workflows, touch input, persistence and the production service worker.
 
 The interface uses Apple's design principles adapted for a web app: explicit navigation, strong contrast, at least 48px controls, adjustable large stage lyrics, visible focus, native modal focus containment, reduced-motion support and button alternatives to setlist dragging. Actual iPad Safari installation, physical foot pedals, VoiceOver and use by older musicians still require hands-on device/user validation. Browser emulation is useful evidence, not a substitute for those checks.
 

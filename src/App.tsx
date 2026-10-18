@@ -26,7 +26,6 @@ import {
   defaults,
   uid,
   time,
-  timingIssues,
   type Song,
   type Setlist,
   type Settings as Preferences,
@@ -142,20 +141,15 @@ export default function App() {
   };
   const openStage = (songs: string[], name: string) => {
     if (!songs.length) return;
-    const first = data.songs.find((s) => s.id === songs[0]);
-    const automatic =
-      !!first?.passages.length &&
-      !timingIssues(first).length &&
-      (first.lyricSource.type === "original-demo" ||
-        first.passages.some((p) => !p.estimated));
     const s: Session = {
       songs,
       name,
       index: 0,
-      mode: automatic ? "automatic" : "manual",
+      mode: "manual",
     };
     try {
       sessionStorage.removeItem("cueline-position");
+      sessionStorage.removeItem("cueline-live-position");
       sessionStorage.setItem("cueline-session", JSON.stringify(s));
     } catch {
       /* Session recovery unavailable. */
@@ -263,7 +257,7 @@ export default function App() {
             <BookOpen size={18} /> Quick guide <ArrowUpRight size={15} />
           </button>
           <div className="version">
-            CUELINE <span>v1.1</span>
+            CUELINE <span>v1.2</span>
           </div>
         </div>
       </aside>
@@ -673,8 +667,8 @@ export default function App() {
               <div>
                 <h3>Take the stage</h3>
                 <p>
-                  Press Play for a count-in. Use Automatic for timed cues,
-                  Manual to tap through, or Rehearsal to record timings.
+                  Scroll through individual lines at your own pace, or tap a
+                  line to jump to it. Timed modes are in stage settings.
                 </p>
               </div>
             </div>

@@ -1,0 +1,36 @@
+async(page)=>{
+  const errors=[];page.on('pageerror',error=>errors.push(error.message));
+  const welcome=page.getByRole('button',{name:/make some music/});if(await welcome.count())await welcome.click();
+  await page.evaluate(()=>navigator.serviceWorker.ready);
+  if(!await page.evaluate(()=>!!navigator.serviceWorker.controller))await page.reload();
+  await page.waitForFunction(()=>navigator.serviceWorker.controller!==null);
+  await page.setViewportSize({width:768,height:1024});
+  await page.getByRole('button',{name:'Start Performance',exact:true}).click();
+  await page.locator('.live-line.is-active').waitFor();
+  await page.getByRole('button',{name:'Next line',exact:true}).click();
+  await page.waitForTimeout(350);
+  await page.getByRole('button',{name:'Next line',exact:true}).click();
+  const selected=await page.locator('.live-line.is-active').getAttribute('aria-label');
+  await page.context().setOffline(true);
+  try {
+    await page.reload();
+    await page.locator('.live-line.is-active').waitFor();
+    if(await page.locator('.live-line.is-active').getAttribute('aria-label')!==selected)throw Error('Offline reload lost lyric position');
+    await page.waitForTimeout(900);
+    await page.locator('.live-scroll').hover();
+    await page.mouse.wheel(0,260);
+    await page.waitForTimeout(350);
+    const next=await page.locator('.live-line.is-active').getAttribute('aria-label');
+    if(next===selected)throw Error('Offline scrolling failed');
+    await page.screenshot({path:'output/playwright/live-offline-setlist.png'});
+    await page.evaluate(()=>{window.confirm=()=>true;});
+    await page.getByRole('button',{name:'Next song',exact:true}).click();
+    await page.waitForTimeout(150);
+    if(!(await page.locator('.stage-top-right .tag').innerText()).includes('2 / 3'))throw Error('Offline setlist navigation failed');
+    await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+    await page.getByRole('button',{name:/^Song Library /}).click();
+    await page.getByRole('button',{name:'Stage Amber on the Avenue',exact:true}).waitFor();
+    if(errors.length)throw Error(JSON.stringify(errors));
+    return {offlineReload:true,lineRecovery:true,offlineScroll:true,offlineSongNavigation:true,library:true,errors};
+  } finally { await page.context().setOffline(false); }
+}

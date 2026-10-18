@@ -1,0 +1,47 @@
+async(page)=>{
+  await page.evaluate(async()=>{
+    const db=await new Promise(resolve=>{const r=indexedDB.open('CueLine');r.onsuccess=()=>resolve(r.result)});
+    const song={id:'qa-live-timed',title:'QA timed options',artist:'CueLine QA',duration:20,bpm:null,intro:1,countdown:1,notes:'Original QA fixture',lyricSource:{type:'user'},updatedAt:1,
+      passages:[1,7,14].map((start,index)=>({id:`qa-timed-${index}`,kind:'verse',text:`Original cue ${index+1}\nA second line`,start,estimated:false}))};
+    await new Promise((resolve,reject)=>{const tx=db.transaction('songs','readwrite');tx.objectStore('songs').put(song);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();
+    sessionStorage.setItem('cueline-session',JSON.stringify({songs:[song.id],name:'QA timed options',index:0,mode:'manual'}));
+    sessionStorage.removeItem('cueline-position');sessionStorage.removeItem('cueline-live-position');
+  });
+  await page.reload();
+  const choose=async(name)=>{await page.getByRole('button',{name:'Stage display settings',exact:true}).click();await page.getByRole('button',{name:new RegExp(`^${name} `)}).click();};
+  await page.locator('.live-line').first().waitFor();
+  await choose('Automatic');
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.waitForTimeout(150);
+  if(!(await page.locator('.current-passage').innerText()).includes('GET READY'))throw Error('Countdown missing');
+  await page.getByRole('button',{name:'Pause timeline',exact:true}).click();
+  const frozen=await page.locator('.current-passage').innerText();
+  await page.waitForTimeout(400);
+  if(await page.locator('.current-passage').innerText()!==frozen)throw Error('Paused countdown moved');
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.getByText('Instrumental Intro',{exact:true}).waitFor({timeout:2500});
+  await page.waitForFunction(()=>document.querySelector('.current-passage p').textContent.includes('Original cue 1'));
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  await page.waitForTimeout(400);
+  if(!(await page.locator('.current-passage').innerText()).includes('PASSAGE 2'))throw Error('Automatic recalibration failed');
+  await page.evaluate(()=>{Object.defineProperty(document,'hidden',{value:true,configurable:true});document.dispatchEvent(new Event('visibilitychange'));});
+  await page.getByText('Playback paused after an interruption.',{exact:false}).waitFor();
+  await page.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});
+  await page.reload();
+  await page.locator('.live-state').waitFor();
+  if(!(await page.locator('.live-state').innerText()).includes('Paused'))throw Error('Timed recovery resumed playback');
+  await choose('Rehearsal');
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.waitForTimeout(2100);
+  for(let i=0;i<3;i++){await page.getByRole('button',{name:'Capture next cue',exact:true}).click();await page.waitForTimeout(350);}
+  await page.getByRole('button',{name:'Review & save timings',exact:true}).click();
+  const captured=await page.getByRole('textbox',{name:'Recorded passage 1 time',exact:true}).inputValue();
+  if(!captured.startsWith('00:01'))throw Error('Rehearsal used count-in time');
+  await page.getByRole('button',{name:'Save timings to song',exact:true}).click();
+  await page.getByRole('heading',{name:'Review rehearsal timings',exact:true}).waitFor({state:'hidden'});
+  if(!(await page.locator('.rehearsal-bar').innerText()).includes('0 / 3'))throw Error('Saved recording not cleared');
+  await choose('Live');
+  await page.locator('.live-line.is-active').waitFor();
+  if(await page.locator('.live-line').count()!==6)throw Error('Switching back lost individual lines');
+  return {automatic:true,countdown:true,intro:true,pause:true,recalibration:true,interruption:true,rehearsal:true,liveReturn:true};
+}

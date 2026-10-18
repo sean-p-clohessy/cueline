@@ -23,9 +23,10 @@ async(page)=>{
   });
   if(summary.length!==2||summary.some(s=>!s.passages||s.source!=='lrclib'||!s.timed))throw Error(JSON.stringify(summary));
   await page.getByRole('button',{name:/^Stage money for nothing$/i}).click();
-  if((await page.locator('.mode-switch .selected').innerText())!=='Automatic')throw Error('Synced cover not immediately ready for Automatic mode');
-  await page.getByRole('button',{name:'Next passage',exact:true}).click();
-  if((await page.locator('.current-passage p').innerText()).length<5)throw Error('No imported lyrics in Stage Mode');
+  await page.locator('.live-line.is-active').waitFor();
+  await page.getByRole('button',{name:'Next line',exact:true}).click();
+  if((await page.locator('.live-line.is-active').innerText()).length<5)throw Error('No imported lyrics in Stage Mode');
+  await page.evaluate(()=>{window.confirm=()=>true;});
   await page.getByRole('button',{name:'Leave stage',exact:true}).click();
   await page.reload();
   await page.getByRole('button',{name:/^Stage money for nothing$/i}).waitFor();
