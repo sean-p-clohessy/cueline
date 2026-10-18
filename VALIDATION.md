@@ -22,6 +22,8 @@ Validation date: 18 October 2026. Windows, Node 24, Edge via Playwright CLI.
 - Exported JSON, rejected malformed JSON, imported copies without collisions, confirmed full replacement and verified persisted restored data.
 - Measured library and stage layouts at 1366×1024, 1024×768, 768×1024, 390×844 and 320×740, including horizontal overflow and effective button targets.
 - Production preview: registered the actual generated service worker, disabled browser networking, reloaded the app, opened stage lyrics, played/paused the timeline, reloaded the paused performance and navigated the setlist offline. Passed.
+- Public GitHub Pages HTTPS release: correct `/cueline/` service-worker scope; offline reload, setlist, stage timeline, paused recovery and next-song navigation all passed. Live MusicBrainz search returned recording metadata. The hosted browser console reported no errors or warnings.
+- GitHub Actions independently passed dependency installation, lint, all 28 tests, production build and Pages deployment: [release run](https://github.com/sean-p-clohessy/cueline/actions/runs/39128252541).
 
 Screenshots and test backups are in ignored `output/playwright/`. They are local QA data and are not published with the app.
 

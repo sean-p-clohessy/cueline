@@ -1,0 +1,29 @@
+async(page)=>{
+  await page.getByRole('button',{name:/make some music/}).click();
+  await page.getByText('Offline ready',{exact:true}).waitFor({timeout:20000});
+  const scope=await page.evaluate(async()=>{const reg=await navigator.serviceWorker.ready;return reg.scope});
+  if(!scope.endsWith('/cueline/'))throw Error('Incorrect hosted service-worker scope');
+  await page.setViewportSize({width:1024,height:768});
+  await page.reload();
+  await page.getByRole('heading',{name:'Your songs. Your stage.',exact:true}).waitFor();
+  await page.screenshot({path:'output/playwright/hosted-library.png'});
+  await page.context().setOffline(true);
+  await page.reload();
+  await page.getByRole('heading',{name:'Your songs. Your stage.',exact:true}).waitFor();
+  await page.getByRole('button',{name:/^Setlists/}).click();
+  await page.getByRole('button',{name:'Start Performance',exact:true}).click();
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.waitForTimeout(400);
+  await page.getByRole('button',{name:'Pause timeline',exact:true}).click();
+  await page.reload();
+  await page.getByRole('heading',{name:'Amber on the Avenue',exact:true}).waitFor();
+  if(!(await page.locator('.live-state').innerText()).includes('Paused'))throw Error('Hosted offline stage did not recover paused');
+  await page.screenshot({path:'output/playwright/hosted-offline-stage.png'});
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.getByRole('heading',{name:'Slow Tide',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.context().setOffline(false);
+  await page.getByRole('button',{name:/^Song Library/}).click();
+  console.log('PASS: hosted GitHub Pages shell, correct project scope, offline setlist, timeline, song navigation and paused offline recovery.');
+}

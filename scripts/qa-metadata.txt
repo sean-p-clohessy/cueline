@@ -1,0 +1,12 @@
+async(page)=>{
+  await page.getByRole('button',{name:'Find song details online',exact:true}).click();
+  await page.getByRole('textbox',{name:'MusicBrainz search',exact:true}).fill('Moonlight Sonata');
+  await page.getByRole('button',{name:'Search',exact:true}).click();
+  await page.waitForFunction(()=>!Array.from(document.querySelectorAll('button')).some(b=>b.textContent==='Searching…'),null,{timeout:16000});
+  const count=await page.locator('.picker-row').count();
+  const error=await page.locator('dialog [role=alert]').allTextContents();
+  if(count===0 && error.length===0)throw Error('Metadata search neither returned results nor an error');
+  await page.screenshot({path:'output/playwright/hosted-metadata.png'});
+  console.log(JSON.stringify({metadataResults:count,error}));
+  await page.getByRole('button',{name:'Close dialog',exact:true}).click();
+}
