@@ -1,0 +1,24 @@
+async(page)=>{
+  await page.getByRole('button',{name:'Settings',exact:true}).click();
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Export full backup',exact:true}).click();
+  const download=await downloadPromise;
+  await download.saveAs('output/playwright/qa-backup.json');
+  await page.locator('input[type=file]').setInputFiles({name:'bad.json',mimeType:'application/json',buffer:Buffer.from('{broken')});
+  await page.getByText('The file is not valid JSON.',{exact:false}).waitFor();
+  await page.locator('input[type=file]').setInputFiles('output/playwright/qa-backup.json');
+  await page.getByRole('heading',{name:'Restore your music',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Add to my library',exact:true}).click();
+  await page.getByText('Import complete.',{exact:false}).waitFor();
+  if((await page.getByRole('button',{name:/^Song Library /}).innerText()).trim()!=='Song Library\n8')throw Error('Non-destructive import did not add 4 copies');
+  await page.locator('input[type=file]').setInputFiles('output/playwright/qa-backup.json');
+  await page.getByRole('checkbox',{name:'Replace my entire library and settings',exact:true}).check();
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Replace library',exact:true}).click();
+  await page.getByRole('heading',{name:'Restore your music',exact:true}).waitFor({state:'hidden'});
+  if((await page.getByRole('button',{name:/^Song Library /}).innerText()).trim()!=='Song Library\n4')throw Error('Replacement did not restore original song count');
+  await page.screenshot({path:'output/playwright/settings-portrait.png',fullPage:true});
+  await page.reload();
+  await page.getByRole('button',{name:'Edit QA Lantern Song',exact:true}).waitFor();
+  console.log('PASS: backup export, malformed JSON, collision-safe merge, confirmed replacement and persistence.');
+}

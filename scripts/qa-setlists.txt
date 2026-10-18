@@ -1,0 +1,41 @@
+async(page)=>{
+  await page.getByRole('button',{name:/^Setlists /}).click();
+  await page.getByRole('button',{name:'New setlist',exact:true}).click();
+  await page.getByRole('textbox',{name:'Setlist name',exact:true}).fill('QA Live Set');
+  await page.getByRole('button',{name:'Save setlist',exact:true}).click();
+  await page.getByRole('button',{name:'Add songs from library',exact:true}).click();
+  await page.getByRole('button',{name:'Add QA Lantern Song',exact:true}).click();
+  await page.getByRole('button',{name:'Add Amber on the Avenue',exact:true}).click();
+  await page.getByRole('button',{name:'Add QA Lantern Song',exact:true}).click();
+  await page.getByRole('button',{name:'Done',exact:true}).click();
+  let order=await page.locator('.set-song .song-name strong').allTextContents();
+  if(order.join('|')!=='QA Lantern Song|Amber on the Avenue|QA Lantern Song')throw Error('Repeated setlist entry missing');
+  await page.getByRole('button',{name:'Move Amber on the Avenue up',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('.set-song .song-name strong')?.textContent==='Amber on the Avenue');
+  const first=await page.getByRole('button',{name:'Reorder item 1',exact:true}).boundingBox();
+  const third=await page.getByRole('button',{name:'Reorder item 3',exact:true}).boundingBox();
+  await page.mouse.move(first.x+24,first.y+24); await page.mouse.down();
+  await page.mouse.move(first.x+24,first.y+40,{steps:4});
+  await page.mouse.move(third.x+24,third.y+30,{steps:16}); await page.mouse.up();
+  await page.waitForTimeout(500);
+  order=await page.locator('.set-song .song-name strong').allTextContents();
+  if(order[2]!=='Amber on the Avenue')throw Error('Pointer drag did not reorder');
+  // A touch drag uses real Chromium touch input, rather than a synthetic DOM drag.
+  const cdp=await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
+  const a=await page.getByRole('button',{name:'Reorder item 3',exact:true}).boundingBox();
+  const b=await page.getByRole('button',{name:'Reorder item 1',exact:true}).boundingBox();
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:a.x+24,y:a.y+24}]});
+  await page.waitForTimeout(280);
+  for(let n=1;n<=12;n++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:a.x+24,y:a.y+24+(b.y-a.y)*n/12}]});
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await page.waitForTimeout(600); await cdp.detach();
+  if((await page.locator('.set-song .song-name strong').allTextContents())[0]!=='Amber on the Avenue')throw Error('Touch drag did not reorder');
+  await page.setViewportSize({width:768,height:1024});
+  await page.screenshot({path:'output/playwright/setlist-portrait.png',fullPage:true});
+  await page.reload();
+  await page.getByRole('button',{name:/^Setlists /}).click();
+  await page.getByRole('button',{name:/QA Live Set/}).click();
+  if((await page.locator('.set-song .song-name strong').allTextContents())[0]!=='Amber on the Avenue')throw Error('Reordered setlist did not persist');
+  console.log('PASS: setlist creation, repeated songs, arrows, pointer drag, touch drag, reload persistence.');
+}

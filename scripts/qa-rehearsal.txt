@@ -1,0 +1,23 @@
+async (page) => {
+  await page.getByRole('button',{name:'Rehearsal',exact:true}).click();
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.waitForTimeout(4200);
+  for(let i=0;i<4;i++) {
+    await page.getByRole('button',{name:'Capture next cue',exact:true}).click();
+    await page.waitForTimeout(450);
+  }
+  await page.getByRole('button',{name:'Review & save timings',exact:true}).click();
+  await page.getByRole('heading',{name:'Review rehearsal timings',exact:true}).waitFor();
+  await page.screenshot({path:'output/playwright/rehearsal-review.png'});
+  const cue1 = await page.getByRole('textbox',{name:'Recorded passage 1 time',exact:true}).inputValue();
+  if (!cue1.startsWith('00:02')) throw Error('Captured cue did not use song-relative time');
+  await page.getByRole('button',{name:'Save timings to song',exact:true}).click();
+  await page.getByRole('heading',{name:'Review rehearsal timings',exact:true}).waitFor({state:'hidden'});
+  if (!(await page.locator('.rehearsal-bar').innerText()).includes('0 / 4')) throw Error('Saved recording not cleared');
+  await page.getByRole('button',{name:'Automatic',exact:true}).click();
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.getByRole('button',{name:'Edit QA Lantern Song',exact:true}).click();
+  if ((await page.getByRole('textbox',{name:'Passage 1 start time',exact:true}).inputValue())!==cue1) throw Error('Rehearsal cue did not persist');
+  await page.getByRole('button',{name:'Library',exact:true}).click();
+  console.log('PASS: rehearsal captures, review, explicit save and reuse in editor.');
+}

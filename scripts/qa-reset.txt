@@ -1,0 +1,4 @@
+async(page)=>{
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Restart song',exact:true}).click();
+}

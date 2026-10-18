@@ -1,0 +1,9 @@
+async (page) => {
+  await page.getByRole('textbox', {name:'Song title',exact:true}).fill('QA Lantern Song');
+  await page.getByRole('textbox', {name:'Artist',exact:true}).fill('CueLine QA');
+  await page.getByRole('textbox', {name:'Song duration',exact:true}).fill('00:24');
+  await page.getByRole('textbox', {name:'Song duration',exact:true}).press('Tab');
+  await page.getByRole('spinbutton', {name:'Intro (seconds)'}).fill('2');
+  await page.getByRole('spinbutton', {name:'Count-in (seconds)'}).fill('2');
+  await page.getByRole('button', {name:'Paste lyrics',exact:true}).click();
+}

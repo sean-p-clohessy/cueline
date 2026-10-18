@@ -1,0 +1,30 @@
+async(page)=>{
+  if(await page.locator('.stage').count())await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.getByRole('button',{name:/^Song Library /}).click();
+  const results=[];
+  for(const [width,height] of [[1366,1024],[1024,768],[768,1024],[390,844],[320,740]]){
+    await page.setViewportSize({width,height});
+    const metric=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,small:[...document.querySelectorAll('button')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&(r.width<47.9||r.height<47.9)}).map(b=>b.getAttribute('aria-label')||b.textContent)}));
+    if(metric.scroll>width||metric.small.length)throw Error(JSON.stringify(metric));
+    results.push(metric);
+    await page.screenshot({path:`output/playwright/library-${width}x${height}.png`,fullPage:true});
+  }
+  await page.setViewportSize({width:768,height:1024});
+  await page.getByRole('button',{name:'Stage Amber on the Avenue',exact:true}).click();
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  await page.waitForTimeout(300);
+  for(const [width,height] of [[1366,1024],[1024,768],[768,1024],[390,844],[320,740]]){
+    await page.setViewportSize({width,height});
+    const metric=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,stage:document.querySelector('.stage').scrollWidth,small:[...document.querySelectorAll('button')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&(r.width<47.9||r.height<47.9)}).map(b=>b.getAttribute('aria-label')||b.textContent)}));
+    if(metric.scroll>width||metric.stage>width||metric.small.length)throw Error(JSON.stringify(metric));
+    results.push(metric);
+    await page.screenshot({path:`output/playwright/stage-${width}x${height}.png`});
+  }
+  await page.setViewportSize({width:768,height:1024});
+  await page.getByRole('button',{name:'Stage display settings',exact:true}).click();
+  await page.getByRole('combobox',{name:'Stage theme',exact:true}).selectOption('black');
+  await page.getByRole('button',{name:'Close dialog',exact:true}).click();
+  await page.screenshot({path:'output/playwright/stage-black-portrait.png'});
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  console.log(JSON.stringify(results));
+}

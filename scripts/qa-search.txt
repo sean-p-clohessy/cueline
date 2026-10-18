@@ -1,0 +1,12 @@
+async(page)=>{
+  if(await page.locator('.stage').count())await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.getByRole('button',{name:/^Song Library/}).click();
+  await page.getByRole('textbox',{name:'Search song library',exact:true}).fill('CueLine QA');
+  if((await page.locator('.library-song').count())!==1)throw Error('Artist search failed');
+  await page.getByRole('button',{name:'Duplicate QA Lantern Song',exact:true}).click();
+  await page.getByRole('button',{name:'Edit QA Lantern Song (copy)',exact:true}).waitFor();
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Delete QA Lantern Song (copy)',exact:true}).click();
+  await page.getByRole('button',{name:'Edit QA Lantern Song (copy)',exact:true}).waitFor({state:'hidden'});
+  await page.getByRole('button',{name:'Clear search',exact:true}).click();
+}

@@ -1,0 +1,43 @@
+async(page)=>{
+  await page.getByRole('button',{name:/^Setlists/}).click();
+  await page.getByRole('button',{name:/QA Live Set/}).click();
+  await page.getByRole('button',{name:'Duplicate setlist',exact:true}).click();
+  await page.getByRole('heading',{name:'QA Live Set (copy)',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Rename setlist',exact:true}).click();
+  await page.getByRole('textbox',{name:'Setlist name',exact:true}).fill('QA Renamed Set');
+  await page.getByRole('textbox',{name:'Setlist name',exact:true}).press('Enter');
+  await page.getByRole('heading',{name:'QA Renamed Set',exact:true}).waitFor();
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Delete setlist',exact:true}).click();
+  await page.getByRole('heading',{name:'QA Renamed Set',exact:true}).waitFor({state:'hidden'});
+  await page.getByRole('button',{name:/QA Live Set/}).click();
+  await page.getByRole('button',{name:'Start Performance',exact:true}).click();
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.getByRole('heading',{name:'QA Lantern Song',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  page.once('dialog',d=>d.dismiss());
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  if(!(await page.locator('.stage').count()))throw Error('Leave confirmation did not protect playback');
+  // Advance to the final cue and then to the end using the real nudge controls.
+  for(let i=0;i<8;i++)await page.getByRole('button',{name:'Move timeline forward 3 seconds',exact:true}).click();
+  await page.getByText('Song complete. Take your time.',{exact:true}).waitFor();
+  if(!(await page.locator('.stage-top-right').innerText()).includes('2 / 3'))throw Error('Song advanced itself');
+  await page.waitForTimeout(500);
+  if(!(await page.locator('.live-state').innerText()).includes('Song complete'))throw Error('Next song auto-started');
+  await page.getByRole('button',{name:'Open next song',exact:true}).click();
+  await page.getByText('Ready when you are',{exact:true}).waitFor();
+  if(!(await page.locator('.live-state').innerText()).includes('Ready when you are'))throw Error('Repeated song did not reset its clock');
+  if(!(await page.locator('.stage-top-right').innerText()).includes('3 / 3'))throw Error('Repeated entry lost');
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.getByRole('button',{name:/^Song Library/}).click();
+  await page.getByRole('textbox',{name:'Search song library',exact:true}).fill('CueLine QA');
+  if((await page.locator('.library-song').count())!==1)throw Error('Artist search failed');
+  await page.getByRole('button',{name:'Duplicate QA Lantern Song',exact:true}).click();
+  await page.getByRole('button',{name:'Edit QA Lantern Song (copy)',exact:true}).waitFor();
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Delete QA Lantern Song (copy)',exact:true}).click();
+  await page.getByRole('button',{name:'Edit QA Lantern Song (copy)',exact:true}).waitFor({state:'hidden'});
+  await page.getByRole('button',{name:'Clear search',exact:true}).click();
+  console.log('PASS setlist duplicate, rename with Enter, delete, guarded leave, song end, no auto-start, repeated-song reset, artist search and song duplicate/delete.');
+}

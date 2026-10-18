@@ -1,0 +1,37 @@
+async (page) => {
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.waitForTimeout(400);
+  if (!(await page.locator('.current-passage').innerText()).includes('GET READY')) throw Error('Countdown missing');
+  await page.getByRole('button',{name:'Pause timeline',exact:true}).click();
+  const frozen=await page.locator('.current-passage').innerText();
+  await page.waitForTimeout(700);
+  if (await page.locator('.current-passage').innerText()!==frozen) throw Error('Paused countdown moved');
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.getByText('Instrumental Intro',{exact:true}).waitFor({timeout:4000});
+  await page.waitForFunction(()=>document.querySelector('.current-passage p')?.textContent?.includes('Lanterns over quiet roads'),null,{timeout:4000});
+  await page.waitForTimeout(300);
+  await page.screenshot({path:'output/playwright/stage-landscape.png'});
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  if (!(await page.locator('.current-passage').innerText()).includes('PASSAGE 2')) throw Error('Manual automatic correction failed');
+  await page.waitForTimeout(500);
+  if (!(await page.locator('.current-passage').innerText()).includes('PASSAGE 2')) throw Error('Automatic clock jumped back');
+  await page.getByRole('button',{name:'Pause timeline',exact:true}).click();
+  await page.getByRole('button',{name:'Manual',exact:true}).click();
+  await page.getByRole('button',{name:'Tap zone: next passage',exact:true}).dblclick();
+  if (!(await page.locator('.current-passage').innerText()).includes('PASSAGE 1')) throw Error('Double tap skipped a cue');
+  await page.waitForTimeout(350);
+  await page.keyboard.press('ArrowRight');
+  if (!(await page.locator('.current-passage').innerText()).includes('PASSAGE 2')) throw Error('Keyboard next failed');
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  // Headless browser tabs do not generate OS visibility changes. Dispatch the
+  // same visibility event explicitly to verify the interruption handler.
+  await page.evaluate(()=>{ Object.defineProperty(document,'hidden',{value:true,configurable:true}); document.dispatchEvent(new Event('visibilitychange')); });
+  await page.getByText('Playback paused after an interruption.',{exact:false}).waitFor();
+  await page.evaluate(()=>{ delete document.hidden; document.dispatchEvent(new Event('visibilitychange')); });
+  if (!(await page.locator('.live-state').innerText()).includes('Paused')) throw Error('Visibility interruption did not pause');
+  await page.reload();
+  await page.getByRole('heading',{name:'QA Lantern Song',exact:true}).waitFor();
+  if (!(await page.locator('.live-state').innerText()).includes('Paused')) throw Error('Reload resumed playing');
+  await page.screenshot({path:'output/playwright/stage-recovery.png'});
+  console.log('PASS countdown pause/resume, intro, progression, correction, double tap, keyboard, visibility event and paused reload.');
+}

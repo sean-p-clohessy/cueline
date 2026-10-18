@@ -1,0 +1,1 @@
+() => ({width: innerWidth, scroll: document.documentElement.scrollWidth, buttons: [...document.querySelectorAll('button')].filter(b => { const r=b.getBoundingClientRect(); return r.width>0 && (r.width<47.9 || r.height<47.9); }).map(b=>({label:b.getAttribute('aria-label')||b.textContent,width:b.getBoundingClientRect().width,height:b.getBoundingClientRect().height}))})

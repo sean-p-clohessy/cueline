@@ -1,0 +1,32 @@
+async(page)=>{
+  await page.goto('http://localhost:4178/');
+  await page.getByRole('heading',{name:'A little cue. A lot of confidence.',exact:true}).waitFor();
+  await page.getByRole('button',{name:/make some music/}).click();
+  await page.getByText('Offline ready',{exact:true}).waitFor({timeout:20000});
+  await page.evaluate(()=>navigator.serviceWorker.ready);
+  await page.reload();
+  await page.getByRole('heading',{name:'Your songs. Your stage.',exact:true}).waitFor();
+  await page.context().setOffline(true);
+  await page.reload();
+  await page.getByRole('heading',{name:'Your songs. Your stage.',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Stage Amber on the Avenue',exact:true}).click();
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  await page.waitForTimeout(350);
+  if(!(await page.locator('.current-passage').innerText()).includes('The last train'))throw Error('Offline stage cue unavailable');
+  await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+  await page.waitForTimeout(300);
+  await page.getByRole('button',{name:'Pause timeline',exact:true}).click();
+  await page.screenshot({path:'output/playwright/offline-stage.png'});
+  await page.reload();
+  await page.getByRole('heading',{name:'Amber on the Avenue',exact:true}).waitFor();
+  if(!(await page.locator('.live-state').innerText()).includes('Paused'))throw Error('Offline reload resumed playback');
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.getByRole('button',{name:/^Setlists /}).click();
+  await page.getByRole('heading',{name:'Friday Night',exact:false}).waitFor();
+  await page.getByRole('button',{name:'Start Performance',exact:true}).click();
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.getByRole('heading',{name:'Slow Tide',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.context().setOffline(false);
+  console.log('PASS: production service-worker control, offline reload, offline lyrics, timeline, stage recovery and setlist navigation.');
+}

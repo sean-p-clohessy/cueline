@@ -1,0 +1,22 @@
+async (page) => {
+  await page.getByRole('textbox',{name:'Full song lyrics'}).fill('Lanterns over quiet roads\nBring us where the river goes\n\nHold a little light for me\nHere is where we want to be\n\nLet the last chord fade away');
+  await page.getByRole('button',{name:'Create passages',exact:true}).click();
+  await page.getByRole('heading',{name:'Lyric passages 3'}).waitFor();
+  await page.getByRole('button',{name:'Estimate timings',exact:true}).click();
+  await page.getByText('Estimated cues', {exact:false}).waitFor();
+  if ((await page.getByRole('textbox',{name:'Passage 1 start time',exact:true}).inputValue()) !== '00:02') throw Error('First cue not at intro end');
+  // Repeated chorus gets its own stable passage ID and an editable empty cue.
+  await page.getByRole('button',{name:'Repeat passage 2',exact:true}).click();
+  await page.getByRole('heading',{name:'Lyric passages 4'}).waitFor();
+  await page.getByRole('button',{name:'Merge above',exact:true}).nth(2).click();
+  await page.getByRole('heading',{name:'Lyric passages 3'}).waitFor();
+  const area=page.getByRole('textbox',{name:'Passage 2 text',exact:true});
+  await area.focus(); await area.evaluate(el=>el.setSelectionRange(59,59));
+  await page.getByRole('button',{name:'Split at cursor',exact:true}).nth(1).click();
+  await page.getByRole('heading',{name:'Lyric passages 4'}).waitFor();
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Estimate timings',exact:true}).click();
+  await page.getByRole('button',{name:'Stage preview',exact:true}).waitFor({state:'visible'});
+  await page.screenshot({path:'output/playwright/editor-landscape.png',fullPage:true});
+  console.log('PASS: create, paste, split, merge, repeated passage and estimated cues.');
+}
