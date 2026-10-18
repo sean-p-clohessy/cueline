@@ -51,6 +51,14 @@ Screenshots and test backups are in ignored `output/playwright/`. They are local
 - Production PWA: generated service worker installed, browser networking disabled, offline reload recovered the selected lyric, scrolling and next-song navigation worked, and the library remained available. No runtime errors reported.
 - Scripts: `qa-live.txt`, `qa-live-reliability.txt`, `qa-live-timed.txt`, `qa-live-offline.txt`. Fixtures use original text; test data stays in ignored browser profiles/output.
 
+## Navigation and addition feedback (v1.2.1)
+
+- Enlarged Live song controls measured 346×72px on tablet portrait, 474×72px on tablet landscape, 175×64px and 140×64px on phone portrait, and 384×56px on short landscape. Labels remained visible with no horizontal overflow.
+- Real browser: both addition pickers changed from Add to a green checkmark and Added! after saving. Confirmation persisted while adding other songs and filtering the library.
+- Rapid double-taps added one entry; deliberate repeats remained available. New entries survived reload.
+- Injected an IndexedDB save failure: the button showed a retryable error without claiming success; retry saved correctly.
+- Inspected screenshots at tablet portrait, narrow phone portrait and phone landscape. Browser workflow: `scripts/qa-feedback.txt`.
+
 ## Device checks still needed
 
 - Physical iPad Safari Add to Home Screen and offline launch.

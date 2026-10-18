@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { uid, moveItem, time, type Song, type Setlist } from "./model";
 import { Modal, SortableList, Empty } from "./ui";
+import { SetlistAddButton } from "./SetlistAddButton";
 export function Setlists({
   songs,
   lists,
@@ -33,6 +34,8 @@ export function Setlists({
   const [adding, setAdding] = useState(false);
   const [query, setQuery] = useState("");
   const [added, setAdded] = useState("");
+  const [addBusy, setAddBusy] = useState(false);
+  const [addedSongs, setAddedSongs] = useState<string[]>([]);
   const active = lists.find((s) => s.id === selected) ?? lists[0];
   const total = (s: Setlist) =>
     s.entries.reduce(
@@ -250,6 +253,8 @@ export function Setlists({
                 className="add-passage"
                 onClick={() => {
                   setQuery("");
+                  setAdded("");
+                  setAddedSongs([]);
                   setAdding(true);
                 }}
               >
@@ -352,22 +357,30 @@ export function Setlists({
                       {song.artist} · {time(song.duration)}
                     </small>
                   </div>
-                  <button
-                    className="btn"
-                    aria-label={`Add ${song.title}`}
-                    onClick={() => {
-                      update({
-                        ...active,
-                        entries: [
-                          ...active.entries,
-                          { id: uid(), songId: song.id },
-                        ],
-                      });
-                      setAdded(`${song.title} added`);
+                  <SetlistAddButton
+                    label={`Add ${song.title}`}
+                    disabled={addBusy}
+                    confirmed={addedSongs.includes(song.id)}
+                    add={async () => {
+                      setAddBusy(true);
+                      try {
+                        await save({
+                          ...active,
+                          updatedAt: Date.now(),
+                          entries: [
+                            ...active.entries,
+                            { id: uid(), songId: song.id },
+                          ],
+                        });
+                        setAddedSongs((ids) => [...ids, song.id]);
+                        setAdded(
+                          `${song.title} added to ${active.name}. Tap its green button again for a repeat.`,
+                        );
+                      } finally {
+                        setAddBusy(false);
+                      }
                     }}
-                  >
-                    <Plus size={19} /> Add
-                  </button>
+                  />
                 </div>
               ))}
           </div>

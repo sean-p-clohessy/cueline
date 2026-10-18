@@ -568,6 +568,32 @@ small {
   background: #90362f18;
   border-color: #b84c4c55;
 }
+.setlist-add-action {
+  flex-shrink: 0;
+  text-align: right;
+}
+.setlist-add-button {
+  min-width: 112px;
+}
+.setlist-add-button.is-added,
+.setlist-add-button.is-added:disabled {
+  color: #b6e8c5;
+  background: #20372a;
+  border-color: #4d795c;
+  opacity: 1;
+}
+.setlist-add-button.is-added:hover:not(:disabled) {
+  background: #294634;
+  border-color: #7ba68b;
+}
+.picker-row .setlist-add-error {
+  display: block;
+  max-width: 150px;
+  margin-top: 6px;
+  color: #f0b5b0;
+  font-size: 12px;
+  line-height: 1.5;
+}
 .error-bar {
   display: flex;
   align-items: center;

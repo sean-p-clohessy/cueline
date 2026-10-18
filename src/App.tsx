@@ -36,6 +36,7 @@ import { Stage, readSession, type Session } from "./Stage";
 import { Settings } from "./Settings";
 import { Empty, Modal } from "./ui";
 import { AddSong } from "./AddSong";
+import { SetlistAddButton } from "./SetlistAddButton";
 
 type Area = "library" | "setlists" | "settings";
 interface LibraryData {
@@ -62,6 +63,7 @@ export default function App() {
   const [sort, setSort] = useState("recent");
   const [toSet, setToSet] = useState<Song | null>(null);
   const [added, setAdded] = useState("");
+  const [addToSetBusy, setAddToSetBusy] = useState(false);
   const {
     offlineReady: [offlineReady],
     needRefresh: [needRefresh],
@@ -257,7 +259,7 @@ export default function App() {
             <BookOpen size={18} /> Quick guide <ArrowUpRight size={15} />
           </button>
           <div className="version">
-            CUELINE <span>v1.2</span>
+            CUELINE <span>v1.2.1</span>
           </div>
         </div>
       </aside>
@@ -700,20 +702,28 @@ export default function App() {
           {data.setlists.map((list) => (
             <div className="picker-row" key={list.id}>
               <strong>{list.name}</strong>
-              <button
-                className="btn"
-                onClick={() => {
-                  void saveSet({
-                    ...list,
-                    updatedAt: Date.now(),
-                    entries: [...list.entries, { id: uid(), songId: toSet.id }],
-                  })
-                    .then(() => setAdded(`Added to ${list.name}`))
-                    .catch(() => {});
+              <SetlistAddButton
+                label={`Add to ${list.name}`}
+                disabled={addToSetBusy}
+                add={async () => {
+                  setAddToSetBusy(true);
+                  try {
+                    await saveSet({
+                      ...list,
+                      updatedAt: Date.now(),
+                      entries: [
+                        ...list.entries,
+                        { id: uid(), songId: toSet.id },
+                      ],
+                    });
+                    setAdded(
+                      `Added to ${list.name}. Tap its green button again for a repeat.`,
+                    );
+                  } finally {
+                    setAddToSetBusy(false);
+                  }
                 }}
-              >
-                <Plus size={18} /> Add
-              </button>
+              />
             </div>
           ))}
           {!data.setlists.length && <p>Create a setlist first in Setlists.</p>}

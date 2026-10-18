@@ -1,0 +1,66 @@
+async(page)=>{
+  const welcome=page.getByRole('button',{name:/make some music/});if(await welcome.count())await welcome.click();
+  await page.setViewportSize({width:768,height:1024});
+  await page.getByRole('button',{name:/^Setlists /}).click();
+  await page.getByRole('button',{name:'New setlist',exact:true}).click();
+  await page.getByRole('textbox',{name:'Setlist name',exact:true}).fill('QA visible additions');
+  await page.getByRole('button',{name:'Save setlist',exact:true}).click();
+  await page.getByRole('button',{name:'Add songs from library',exact:true}).click();
+  await page.getByRole('button',{name:'Add Amber on the Avenue',exact:true}).dblclick();
+  const amber=page.getByRole('button',{name:'Add Amber on the Avenue again',exact:true});
+  await amber.waitFor();
+  if(await amber.innerText()!=='Added!')throw Error('No explicit added confirmation');
+  if(await page.locator('.set-song').count()!==1)throw Error('Rapid taps added duplicate songs');
+  await page.waitForTimeout(250);
+  const style=await amber.evaluate(el=>({bg:getComputedStyle(el).backgroundColor,color:getComputedStyle(el).color,opacity:getComputedStyle(el).opacity}));
+  if(style.bg!=='rgb(32, 55, 42)'||style.opacity!=='1')throw Error(JSON.stringify(style));
+  await page.getByRole('button',{name:'Add Neon Weather',exact:true}).click();
+  await page.getByRole('button',{name:'Add Neon Weather again',exact:true}).waitFor();
+  if(await amber.innerText()!=='Added!')throw Error('Adding another song cleared the confirmation');
+  await page.getByRole('textbox',{name:'Find a song for the setlist',exact:true}).fill('Neon');
+  await page.getByRole('textbox',{name:'Find a song for the setlist',exact:true}).fill('');
+  if(await amber.innerText()!=='Added!')throw Error('Search lost an added state');
+  await amber.click();
+  await page.waitForFunction(()=>document.querySelectorAll('.set-song').length===3);
+  // A storage failure must not show a green success state.
+  await page.evaluate(()=>{const original=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(...args){if(this.name==='setlists'&&window.qaFailSave){window.qaFailSave=false;throw new DOMException('QA storage failure','QuotaExceededError');}return original.apply(this,args);};window.qaFailSave=true;});
+  await page.getByRole('button',{name:'Add Slow Tide',exact:true}).click();
+  await page.getByText('Couldn’t add. Try again.',{exact:true}).waitFor();
+  if(await page.getByRole('button',{name:'Add Slow Tide',exact:true}).innerText()!=='Add')throw Error('Failed save showed success');
+  if(await page.locator('.set-song').count()!==3)throw Error('Failed save changed setlist');
+  await page.getByRole('button',{name:'Add Slow Tide',exact:true}).click();
+  await page.getByRole('button',{name:'Add Slow Tide again',exact:true}).waitFor();
+  for(const [width,height] of [[768,1024],[390,844],[320,740]]){
+    await page.setViewportSize({width,height});
+    if(await page.evaluate(()=>document.querySelector('dialog').scrollWidth>document.querySelector('dialog').clientWidth))throw Error('Picker overflows');
+    await page.screenshot({path:`output/playwright/added-feedback-${width}.png`});
+  }
+  await page.getByRole('button',{name:'Done',exact:true}).click();
+  await page.setViewportSize({width:768,height:1024});
+  await page.getByRole('button',{name:/^Song Library /}).click();
+  await page.getByRole('button',{name:'Add Amber on the Avenue to setlist',exact:true}).click();
+  await page.getByRole('button',{name:'Add to QA visible additions',exact:true}).click();
+  await page.getByRole('button',{name:'Add to QA visible additions again',exact:true}).waitFor();
+  await page.screenshot({path:'output/playwright/library-added-feedback.png'});
+  await page.getByRole('button',{name:'Done',exact:true}).click();
+  await page.getByRole('button',{name:/^Setlists /}).click();
+  await page.getByRole('button',{name:/QA visible additions/}).click();
+  if(await page.locator('.set-song').count()!==5)throw Error('Library picker did not save');
+  await page.reload();
+  await page.getByRole('button',{name:/^Setlists /}).click();
+  await page.getByRole('button',{name:/QA visible additions/}).click();
+  if(await page.locator('.set-song').count()!==5)throw Error('Additions did not survive reload');
+  await page.getByRole('button',{name:'Start Performance',exact:true}).click();
+  const sizes=[];
+  for(const [width,height] of [[768,1024],[1024,768],[390,844],[320,740],[844,390]]){
+    await page.setViewportSize({width,height});await page.waitForTimeout(150);
+    const metrics=await page.locator('.live-song-navigation .btn').evaluateAll(buttons=>buttons.map(button=>{const r=button.getBoundingClientRect();return {width:r.width,height:r.height,font:getComputedStyle(button).fontSize};}));
+    if(metrics.some(m=>m.width<130||m.height<(width<=700?64:height<=650?56:72)))throw Error(JSON.stringify(metrics));
+    if(await page.evaluate(()=>document.querySelector('.stage').scrollWidth>innerWidth))throw Error('Stage overflow');
+    sizes.push({width,height,buttons:metrics});
+    await page.screenshot({path:`output/playwright/larger-song-controls-${width}x${height}.png`});
+  }
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.getByRole('heading',{name:'Neon Weather',exact:true}).waitFor();
+  return {greenConfirmation:true,doubleTapGuard:true,deliberateRepeat:true,searchPreservesConfirmation:true,saveFailureAndRetry:true,bothPickers:true,reloadPersistence:true,sizes};
+}

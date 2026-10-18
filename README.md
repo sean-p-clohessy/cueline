@@ -55,6 +55,8 @@ All three included demo songs and all their lyrics were written for this applica
 
 Create, rename, duplicate and delete named setlists. Add songs from the library, including repeated songs. Each appearance has its own stable entry ID. Drag its handle with a finger or pointer, use the up/down buttons, or use keyboard dragging. Removing a setlist entry preserves the library song. Song count and estimated playing time update automatically. Start Performance opens the ordered set.
 
+Both setlist pickers confirm a successful save beside the item with a green checkmark and **Added!**. The confirmation stays visible while the picker is open, including when filtering songs. Rapid repeated taps are blocked briefly; tap the green button again to deliberately add a repeat. Failed saves show an error and allow a retry.
+
 ## Stage controls
 
 **Live is the default.** Open a song or start a setlist and the first lyric line is ready. There is no Play step, countdown or elapsed-time limit in Live. Keep a solo open, repeat a chorus or slow down with the drummer; the lyrics only move when you choose.
@@ -64,6 +66,8 @@ Create, rename, duplicate and delete named setlists. Add songs from the library,
 - **Previous line / Next line** provide large button alternatives. Accidental double taps within 300 ms advance only once.
 - **Left / Right** move one line. **Space** also advances when a control does not have keyboard focus. **R** returns to the first line after confirmation.
 - Separate **Previous song / Next song** controls follow setlist order. **Up / Down** also change songs, with confirmation partway through a song. The last line never starts another song automatically.
+
+Live song navigation uses full-width paired buttons: 72px tall on tablet, 64px on phone portrait and 56px in short landscape layouts.
 
 The selected line survives rotation and reload in the same tab. Repeated appearances of a song start independently. Display settings adjust lyric size, spacing, alignment, surrounding-lyric emphasis, artist visibility, swipe hints and the pure-black theme. Native touch scrolling remains within the lyric area; the page itself stays locked on stage. All existing phone/tablet orientations remain supported.
 

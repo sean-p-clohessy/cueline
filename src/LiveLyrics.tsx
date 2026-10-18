@@ -335,18 +335,18 @@ export function LiveLyrics({
       {songCount > 1 && (
         <nav className="live-song-navigation" aria-label="Setlist songs">
           <button
-            className="text-btn"
+            className="btn"
             disabled={entryIndex === 0}
             onClick={() => navigate(-1)}
           >
-            <SkipBack size={18} /> Previous song
+            <SkipBack size={24} /> Previous song
           </button>
           <button
-            className="text-btn"
+            className="btn"
             disabled={entryIndex === songCount - 1}
             onClick={() => navigate(1)}
           >
-            Next song <SkipForward size={18} />
+            Next song <SkipForward size={24} />
           </button>
         </nav>
       )}
