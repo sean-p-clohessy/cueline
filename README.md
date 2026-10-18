@@ -49,7 +49,9 @@ Choose Verse, Chorus, Bridge, Outro or Instrumental per passage. Instrumentals c
 
 **Estimate timings** distributes cues evenly from the intro to the end. These are clearly marked estimates, not synchronisation. Edit a cue as `mm:ss`, `mm:ss.s` or a number of seconds; clear it to remove it. Cues use song-relative time, excluding the initial count-in. Automatic mode requires every cue to be in increasing passage order, at or after the intro and before the end of the song. Fix invalid cues or use Live view, which needs no timestamps.
 
-All three included demo songs and all their lyrics were written for this application. They include different intros, repeated choruses and instrumentals. Their timings are illustrative estimates. Cover lyrics are fetched from the public LRCLIB API when you explicitly search/add a cover; CueLine does not scrape lyric websites or bundle commercial lyrics. LRCLIB is a community source, not a blanket licence to lyrics or performances. Only add material you are entitled to use. Source and recording attribution stay with the saved song and its backups.
+This deployment starts with the site owner's supplied backup: **31 songs and “Set 1” with 15 ordered entries**, including its repeated song. Saved lyrics, timings, source attribution and display preferences are included in the offline application. New visitors see the quick guide; existing installations retain their own library and settings. The original demo songs remain as test fixtures.
+
+Additional covers are fetched from the public LRCLIB API when you explicitly search/add one; CueLine does not scrape lyric websites. LRCLIB is a community source, not a blanket licence to lyrics or performances. Only add material you are entitled to use. Source and recording attribution stay with the saved song and its backups.
 
 ## Setlists
 
@@ -97,13 +99,13 @@ Recorded cues are separate from the saved song until you explicitly save. Partia
 
 ## Storage, privacy and backups
 
-Dexie manages a versioned IndexedDB database named `CueLine`. Version 1 contains songs (with ordered passages), setlists (with ordered entry IDs) and preferences. Timed playback uses a separate monotonic engine. Live derives individual display lines from saved passages without rewriting them or their timings. Stable line IDs and the setlist appearance index provide transient session recovery. Meaningful edits write immediately; editor writes are serialized. First launch seeds demos only once, even if you subsequently empty the library.
+Dexie manages a versioned IndexedDB database named `CueLine`. Version 1 contains songs (with ordered passages), setlists (with ordered entry IDs) and preferences. Timed playback uses a separate monotonic engine. Live derives individual display lines from saved passages without rewriting them or their timings. Stable line IDs and the setlist appearance index provide transient session recovery. Meaningful edits write immediately; editor writes are serialized. First launch validates and seeds `src/default-library.json` only when there is no existing library or preferences marker. It never overwrites existing data or repopulates a library you deliberately empty. The default data is a separate precached application chunk, so seeding also works offline after installation.
 
 **Settings → Export full backup** downloads a readable CueLine JSON file with all songs, timings, setlists and settings. The editor also exports single-song JSON files. Keep a copy off the performing device.
 
-**Import backup or song** validates format/version, required fields, bounded numbers, IDs and song references before changing anything. By default it adds copies with fresh song, passage, setlist and entry IDs. Replacement requires a checkbox and a separate confirmation; it replaces the whole library and settings within one IndexedDB transaction. Malformed or failed imports preserve existing data. Compatible wrappers are `{ format: "cueline", version: 1, ... }` and `{ format: "cueline-song", version: 1, song: ... }`; the validators are in `src/backup.ts`.
+**Import backup or song** validates format/version, required fields, bounded numbers, IDs and song references before changing anything. By default it adds copies with fresh song, passage, setlist and entry IDs. Replacement requires a checkbox and a separate confirmation; it replaces the whole library and settings within one IndexedDB transaction. Malformed or failed imports preserve existing data. Compatible wrappers are `{ format: "cueline", version: 1, ... }` and `{ format: "cueline-song", version: 1, song: ... }`; the validators are in `src/backupFormat.ts`.
 
-Storage is specific to the browser, device and site origin. Clearing site data, using a private window, storage eviction, changing the hosting URL or removing the installed app can lose local data. Request persistent storage in Settings where supported and keep exported backups. There is no account sync and no recoverable server copy. GitHub Pages serves only the application files; it receives no library or lyrics upload.
+Storage is specific to the browser, device and site origin. Clearing site data, using a private window, storage eviction, changing the hosting URL or removing the installed app can lose local data. Request persistent storage in Settings where supported and keep exported backups. There is no account sync and no recoverable server copy of your edits. GitHub Pages serves the application and its bundled starting library; subsequent library changes stay local and are not uploaded.
 
 Cover search sends the entered title to LRCLIB. Its results already include the lyrics, so choosing an available artist normally needs no second network request. When needed, a targeted request sends only the selected title/artist. These requests are sequential, spaced by at least 350 ms, identified with the documented `Lrclib-Client` header, cached, bounded by timeouts and respect `Retry-After`. A short server-overload response can be retried once after the specified delay; there is no background crawling or uploading of your library. See [LRCLIB's API documentation](https://lrclib.net/docs).
 
@@ -121,17 +123,18 @@ MusicBrainz provides additional artist discovery when the primary source has no 
 | `src/engine.ts` | Framework-independent monotonic timeline engine |
 | `src/model.ts` | Typed schema, lyric splitting, estimation and timing validation |
 | `src/db.ts` | Dexie versioned schema and atomic library operations |
-| `src/backup.ts` | Validation, collision-safe import and downloads |
+| `src/backupFormat.ts`, `src/backup.ts` | Database-independent validation, collision-safe import and downloads |
 | `src/Settings.tsx`, `src/ui.tsx` | Preferences, backup UI, native dialogs and drag handles |
 | `src/AddSong.tsx` | Search-first artist picker, ready-to-use cover import, simple own-lyrics form |
 | `src/lyrics.ts` | LRCLIB provider, LRC parsing, automatic passage preparation and recording selection |
 | `src/metadata.ts` | Additional artist discovery, independent of lyric sources |
-| `src/demo.ts` | Original demonstration content |
-| `scripts/qa-live*.txt` | Current live-view and retained timed-mode browser checks; other QA scripts record earlier release workflows |
+| `src/default-library.json` | Site owner's supplied first-launch library, setlist and preferences |
+| `src/demo.ts` | Original test fixtures |
+| `scripts/qa-default-library.txt` | Current first-launch/offline checks; other QA scripts record earlier releases or need their original demo fixtures |
 
 ## Testing and support limits
 
-See [VALIDATION.md](VALIDATION.md) for automated and browser evidence. The 52-test suite covers live line derivation, repeat identity, scroll selection, recovery and boundaries, plus countdown, exact cue boundaries, delayed reads, pause/resume, intros, recalibration, nudges, manual navigation, rehearsal capture, interruption recovery, repeated entries, timing validation, backup rejection/collision handling and real IndexedDB semantics via fake-indexeddb. Browser checks exercise real UI workflows, touch input, persistence and the production service worker.
+See [VALIDATION.md](VALIDATION.md) for automated and browser evidence. The 56-test suite covers first-launch seeding and protection of existing/emptied libraries, live line derivation, repeat identity, scroll selection, recovery and boundaries, plus countdown, exact cue boundaries, delayed reads, pause/resume, intros, recalibration, nudges, manual navigation, rehearsal capture, interruption recovery, repeated entries, timing validation, backup rejection/collision handling and real IndexedDB semantics via fake-indexeddb. Browser checks exercise real UI workflows, touch input, persistence and the production service worker.
 
 The interface uses Apple's design principles adapted for a web app: explicit navigation, strong contrast, at least 48px controls, adjustable large stage lyrics, visible focus, native modal focus containment, reduced-motion support and button alternatives to setlist dragging. Actual iPad Safari installation, physical foot pedals, VoiceOver and use by older musicians still require hands-on device/user validation. Browser emulation is useful evidence, not a substitute for those checks.
 
@@ -139,4 +142,4 @@ The interface uses Apple's design principles adapted for a web app: explicit nav
 
 The GitHub Actions workflow runs lint, tests and a production build, then deploys `dist` to GitHub Pages. Relative Vite asset paths and manifest scope support the `/cueline/` project path. Service-worker updates use the prompt strategy: a waiting version is applied only by the user's Settings action. No secrets or environment variables are needed.
 
-The source does not include browser profiles, personal backups or runtime libraries; those remain in ignored `output/`. The committed PNG icons are rebuilt with `python scripts/generate-icons.py` if Pillow is installed (optional development helper).
+The supplied default library is intentionally committed for this deployment. Browser profiles, test backups and later runtime libraries remain in ignored `output/` or local IndexedDB. The committed PNG icons are rebuilt with `python scripts/generate-icons.py` if Pillow is installed (optional development helper).

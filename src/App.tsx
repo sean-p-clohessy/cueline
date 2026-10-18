@@ -259,7 +259,7 @@ export default function App() {
             <BookOpen size={18} /> Quick guide <ArrowUpRight size={15} />
           </button>
           <div className="version">
-            CUELINE <span>v1.2.1</span>
+            CUELINE <span>v1.2.2</span>
           </div>
         </div>
       </aside>
@@ -593,8 +593,8 @@ export default function App() {
                 </button>
               </div>
               <div className="original-note">
-                Demo songs and lyrics are original to CueLine. Add your own
-                songs to make this space yours.
+                Your starting repertoire is saved on this device. Add or edit
+                songs to make it yours.
               </div>
             </div>
           ) : area === "setlists" ? (
@@ -676,8 +676,8 @@ export default function App() {
             </div>
           </div>
           <p className="notice">
-            CueLine shows lyrics; it doesn’t play music. Three original demo
-            songs are ready to try.
+            CueLine shows lyrics; it doesn’t play music. A starting song library
+            and setlist are ready to use.
           </p>
           <button className="btn primary full" onClick={closeGuide}>
             Let’s make some music <ChevronRight size={19} />

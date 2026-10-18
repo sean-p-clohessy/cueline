@@ -1,0 +1,50 @@
+async(page)=>{
+  const base=page.url().split('#')[0];
+  const summary=()=>page.evaluate(async()=>{
+    const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('CueLine');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+    const read=store=>new Promise((resolve,reject)=>{const r=db.transaction(store).objectStore(store).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+    const [songs,lists,settings]=await Promise.all([read('songs'),read('setlists'),read('settings')]);db.close();
+    return {songs:songs.length,lists:lists.map(list=>({name:list.name,entries:list.entries.length,titles:list.entries.map(entry=>songs.find(song=>song.id===entry.songId).title)})),fontSize:settings[0].fontSize};
+  });
+  await page.getByRole('button',{name:/make some music/}).waitFor();
+  await page.getByRole('button',{name:/make some music/}).click();
+  const initial=await summary();
+  if(initial.songs!==31||initial.lists.length!==1||initial.lists[0].name!=='Set 1'||initial.lists[0].entries!==15||initial.fontSize!==44)throw Error(JSON.stringify(initial));
+  if(initial.lists[0].titles[0]!=='Valerie'||initial.lists[0].titles[1]!=='Addicted To Love'||initial.lists[0].titles[9]!==initial.lists[0].titles[14])throw Error('Set order or repeat was lost');
+  await page.setViewportSize({width:768,height:1024});
+  await page.screenshot({path:'output/playwright/default-library-portrait.png',fullPage:true});
+  await page.getByRole('button',{name:'Start Performance',exact:true}).click();
+  await page.getByRole('heading',{name:'Valerie',exact:true}).waitFor();
+  if(await page.locator('.live-line').count()<2)throw Error('Starter lyrics missing');
+  if((await page.locator('.stage-top-right .tag').innerText()).trim()!=='1 / 15')throw Error('Wrong stage set size');
+  await page.getByRole('button',{name:'Next line',exact:true}).click();
+  if(!await page.locator('.live-line.is-active').getAttribute('aria-label').then(label=>label.startsWith('Line 2:')))throw Error('Live starter line navigation failed');
+  await page.evaluate(()=>{window.confirm=()=>true;});
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await page.getByRole('heading',{name:'Addicted To Love',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.evaluate(()=>navigator.serviceWorker.ready);
+  // Navigate away so the app closes its IndexedDB connections, then remove only
+  // this isolated QA browser's database. Cache Storage remains installed.
+  await page.goto(new URL('manifest.webmanifest',base).href);
+  await page.evaluate(()=>new Promise((resolve,reject)=>{const r=indexedDB.deleteDatabase('CueLine');r.onsuccess=resolve;r.onerror=()=>reject(r.error);r.onblocked=()=>reject(Error('QA database is still open'));}));
+  await page.context().setOffline(true);
+  try {
+    await page.goto(base);
+    await page.getByRole('button',{name:/make some music/}).waitFor();
+    await page.getByRole('button',{name:/make some music/}).click();
+    const offline=await summary();
+    if(JSON.stringify(initial)!==JSON.stringify(offline))throw Error('Offline first launch differs from backup');
+    // Emulate an existing user's independent edits and verify initialization
+    // does not replace them on the next offline application launch.
+    await page.evaluate(async()=>{
+      const db=await new Promise(resolve=>{const r=indexedDB.open('CueLine');r.onsuccess=()=>resolve(r.result)});
+      await new Promise((resolve,reject)=>{const tx=db.transaction(['songs','settings'],'readwrite');const r=tx.objectStore('songs').get('e03e40d6-5eb4-456b-818f-a0758b818fff');r.onsuccess=()=>{r.result.title='QA retained local title';tx.objectStore('songs').put(r.result);};const pref=tx.objectStore('settings').get('preferences');pref.onsuccess=()=>{pref.result.fontSize=60;tx.objectStore('settings').put(pref.result);};tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});db.close();
+    });
+    await page.reload();
+    await page.getByRole('button',{name:'Stage QA retained local title',exact:true}).waitFor();
+    const retained=await summary();
+    if(retained.songs!==31||retained.fontSize!==60)throw Error('Existing local settings changed');
+    return {initial,liveLyrics:true,setlistNavigation:true,offlineFirstLaunch:true,localEditsPreserved:true};
+  } finally { await page.context().setOffline(false); }
+}

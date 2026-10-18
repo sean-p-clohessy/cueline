@@ -1,0 +1,4475 @@
+{
+  "format": "cueline",
+  "version": 1,
+  "exportedAt": "2026-10-18T15:34:05.752Z",
+  "songs": [
+    {
+      "id": "04cab85f-2ff9-4187-b527-797e10a9cea5",
+      "title": "The Way It Is",
+      "artist": "Bruce Hornsby & The Range",
+      "duration": 297,
+      "bpm": null,
+      "intro": 49.54,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "cf6448cb-c6ae-4299-818c-476911af1bae",
+          "text": "Standing in line, marking time\nWaiting for the welfare dime\n'Cause they can't buy a job",
+          "kind": "verse",
+          "start": 49.54,
+          "estimated": false
+        },
+        {
+          "id": "060febcf-6e6d-41c1-89b6-908880d881d3",
+          "text": "The man in the silk suit hurries by\nAs he catches the poor old lady's eyes\nJust for fun he says, \"Get a job\"",
+          "kind": "verse",
+          "start": 58.15,
+          "estimated": false
+        },
+        {
+          "id": "93c414a0-3540-4c9e-a73a-ac58bf4e1e12",
+          "text": "That's just the way it is\nSome things will never change\nThat's just the way it is",
+          "kind": "verse",
+          "start": 69.65,
+          "estimated": false
+        },
+        {
+          "id": "31e3a262-2aec-4d30-b564-564da9af3d1e",
+          "text": "Ah, but don't you believe them",
+          "kind": "verse",
+          "start": 82.69,
+          "estimated": false
+        },
+        {
+          "id": "23b662aa-074a-4998-a336-ed5e07436e2b",
+          "text": "Said hey, little boy, you can't go where the others go\n'Cause you don't look like they do\nSaid hey, old man, how can you stand to think that way?",
+          "kind": "verse",
+          "start": 92.54,
+          "estimated": false
+        },
+        {
+          "id": "d0dc98c5-7c5a-4e2e-bec6-8e0ee7dbf2fb",
+          "text": "Did you really think about it before you made the rules?\nHe said, son",
+          "kind": "verse",
+          "start": 105.48,
+          "estimated": false
+        },
+        {
+          "id": "919e3853-8a0b-4702-bbb9-73a104a9773f",
+          "text": "That's just the way it is\nSome things will never change\nThat's just the way it is",
+          "kind": "verse",
+          "start": 112.63,
+          "estimated": false
+        },
+        {
+          "id": "f4f6ca46-dace-493d-9d6c-545b824aed3e",
+          "text": "Ah, but don't you believe them",
+          "kind": "verse",
+          "start": 125.88,
+          "estimated": false
+        },
+        {
+          "id": "5bb36265-e439-488f-8904-01ee42168bdc",
+          "text": "Mm, yeah",
+          "kind": "verse",
+          "start": 134.97,
+          "estimated": false
+        },
+        {
+          "id": "15e69fe2-37c8-4770-959b-a374697a3d91",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 136.87,
+          "estimated": false
+        },
+        {
+          "id": "a7a6ca9a-6c80-499b-9161-eb8e965e97bf",
+          "text": "Well, they passed a law in '64\nTo give those who ain't got a little more\nBut it only goes so far",
+          "kind": "verse",
+          "start": 187.82,
+          "estimated": false
+        },
+        {
+          "id": "5092abea-dcbb-4b79-93a5-5cb19dc965f0",
+          "text": "Because the law don't change another's mind\nWhen all it sees at the hiring time\nIs the line on the color bar, no",
+          "kind": "verse",
+          "start": 195.72,
+          "estimated": false
+        },
+        {
+          "id": "f0f2cd0a-2204-4896-acac-1ccc0016622b",
+          "text": "That's just the way it is\nSome things will never change\nThat's just the way it is",
+          "kind": "verse",
+          "start": 207.94,
+          "estimated": false
+        },
+        {
+          "id": "dab1b1fb-0755-420e-bf73-f0e5f5ee34d9",
+          "text": "That's just the way it is, it is, it is, it is",
+          "kind": "verse",
+          "start": 220.12,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37458724",
+        "recording": "Compilatie - Various Artist dts 58"
+      },
+      "updatedAt": 1792335369813
+    },
+    {
+      "id": "11c697b3-07c8-4b3b-9d0f-9ab9afc15e4c",
+      "title": "In A Broken Dream",
+      "artist": "Python Lee Jackson",
+      "duration": 223,
+      "bpm": null,
+      "intro": 39.47,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "da050045-5aec-49a6-bd6e-f26229f0c0bf",
+          "text": "Every day I spend my time\nDrinkin' wine, feelin' fine\nWaitin' here to find the sign",
+          "kind": "verse",
+          "start": 39.47,
+          "estimated": false
+        },
+        {
+          "id": "deada28f-2258-496b-bc29-4e527f7328fb",
+          "text": "That I can understand - yes I am\nIn the days between the hours\nIvory towers, bloody flowers",
+          "kind": "verse",
+          "start": 48.38,
+          "estimated": false
+        },
+        {
+          "id": "5434fa9a-502e-487d-8805-d23562200c98",
+          "text": "Push their heads into the air\nI don't care if I ever know - there I go",
+          "kind": "verse",
+          "start": 60.8,
+          "estimated": false
+        },
+        {
+          "id": "af20c972-cee7-489a-bbfc-ea084c1e56a9",
+          "text": "Don't push your love too far\nYour wounds won't leave a scar\nRight now is where you are",
+          "kind": "verse",
+          "start": 73.68,
+          "estimated": false
+        },
+        {
+          "id": "dac57eba-c7ba-4122-8059-96848b002e86",
+          "text": "In a broken dream\nDid someone bow their head?\nDid someone break the bread?",
+          "kind": "verse",
+          "start": 90.9,
+          "estimated": false
+        },
+        {
+          "id": "33d8170c-8b4d-4785-ab28-f6b613a87a06",
+          "text": "Good people are in bed\nBefore nine o'clock\nOn the pad before my eyes",
+          "kind": "verse",
+          "start": 110.25,
+          "estimated": false
+        },
+        {
+          "id": "ccd7a73a-8052-48a6-9b46-9f07a28b097a",
+          "text": "Paper cries, tellin' lies\nThe promises you gave\nFrom the grave of a broken heart, hmm",
+          "kind": "verse",
+          "start": 123.54,
+          "estimated": false
+        },
+        {
+          "id": "5099c06a-d791-4f08-9324-919375fe9e59",
+          "text": "Every day I spend my time\nDrinkin' wine, feelin' fine\nWaitin' here to find the sign",
+          "kind": "verse",
+          "start": 136.08,
+          "estimated": false
+        },
+        {
+          "id": "268f9771-1e59-453a-83af-64e3d5181235",
+          "text": "That I can understand - yes I am, oh",
+          "kind": "verse",
+          "start": 146.08,
+          "estimated": false
+        },
+        {
+          "id": "3cc2bb4a-27ef-4525-a440-b439e34352d2",
+          "text": "I sit here in my lonely room",
+          "kind": "verse",
+          "start": 164.36,
+          "estimated": false
+        },
+        {
+          "id": "7112204f-10b8-441d-bb71-29490c26e242",
+          "text": "Don't push your love too far\nYou know your wounds won't even leave a scar\nRight now is where you are",
+          "kind": "verse",
+          "start": 178.92,
+          "estimated": false
+        },
+        {
+          "id": "4edcf760-c627-4f6c-b10a-19b2428c8b21",
+          "text": "In a broken dream\nAnd don't you forget what I say - hoo, hoo",
+          "kind": "verse",
+          "start": 195.96,
+          "estimated": false
+        },
+        {
+          "id": "d407a2bb-8cc9-4746-a502-b1b20cae0dea",
+          "text": "Ivory towers, bloody flowers ...",
+          "kind": "verse",
+          "start": 213.97,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36674360",
+        "recording": "Billboard OLD TOP 1000"
+      },
+      "updatedAt": 1792335574196
+    },
+    {
+      "id": "1d4f5e14-2085-4152-89b4-a3fd0e7041e6",
+      "title": "Everybody Wants to Rule the World",
+      "artist": "Tears for Fears",
+      "duration": 251,
+      "bpm": null,
+      "intro": 28.23,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "b34b2f61-d5b5-4efe-b502-2764844c604b",
+          "text": "Welcome to your life\nThere's no turning back\nEven while we sleep",
+          "kind": "verse",
+          "start": 28.23,
+          "estimated": false
+        },
+        {
+          "id": "20263e12-4b41-4384-b6a8-135b07f0cfdc",
+          "text": "We will find you\nActing on your best behaviour\nTurn your back on Mother Nature",
+          "kind": "verse",
+          "start": 41.59,
+          "estimated": false
+        },
+        {
+          "id": "1ee63988-f5cb-4db7-ac8a-cc9eef69d4c0",
+          "text": "Everybody wants to rule the world",
+          "kind": "verse",
+          "start": 52.67,
+          "estimated": false
+        },
+        {
+          "id": "3999abee-786f-45e9-8be6-1b7575edbe3b",
+          "text": "It's my own design\nIt's my own remorse\nHelp me to decide",
+          "kind": "verse",
+          "start": 67.29,
+          "estimated": false
+        },
+        {
+          "id": "6b8420bb-a7c5-4a41-814d-2fb6f97ba934",
+          "text": "Help me make the\nMost of freedom and of pleasure\nNothing ever lasts forever",
+          "kind": "verse",
+          "start": 80.23,
+          "estimated": false
+        },
+        {
+          "id": "28a56251-bb66-4ee2-8d3f-c493e5967aa6",
+          "text": "Everybody wants to rule the world\nThere's a room where the light won't find you\nHolding hands while the walls come tumbling down",
+          "kind": "verse",
+          "start": 90.96,
+          "estimated": false
+        },
+        {
+          "id": "16addcff-1c9a-45e7-80ac-14603c827dfc",
+          "text": "When they do, I'll be right behind you\nSo glad we've almost made it\nSo sad they had to fade it",
+          "kind": "verse",
+          "start": 104.52,
+          "estimated": false
+        },
+        {
+          "id": "32dcb404-ff16-4ddc-a4e5-97bae85eea07",
+          "text": "Everybody wants to rule the world",
+          "kind": "verse",
+          "start": 116.55,
+          "estimated": false
+        },
+        {
+          "id": "71ce9e63-4429-4eac-ba92-d4f9b327aadc",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 122.06,
+          "estimated": false
+        },
+        {
+          "id": "e7c5f07a-c46b-4706-8579-60231f09d87e",
+          "text": "I can't stand this indecision\nMarried with a lack of vision\nEverybody wants to rule the-",
+          "kind": "verse",
+          "start": 167.88,
+          "estimated": false
+        },
+        {
+          "id": "1a89544b-31ed-4cc1-9bd1-72254a80994c",
+          "text": "Say that you'll never, never, never, never need it\nOne headline, why believe it?\nEverybody wants to rule the world",
+          "kind": "verse",
+          "start": 181.55,
+          "estimated": false
+        },
+        {
+          "id": "5c5b5681-2145-473f-be40-389027aae59c",
+          "text": "All for freedom and for pleasure\nNothing ever lasts forever\nEverybody wants to rule the world",
+          "kind": "verse",
+          "start": 202.08,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37465131",
+        "recording": "Was het nu 70, 80 of 90?"
+      },
+      "updatedAt": 1792335417088
+    },
+    {
+      "id": "1ec8d5a1-1d60-4dbe-a45b-ec3a19c833ed",
+      "title": "You Wear It Well",
+      "artist": "Rod Stewart",
+      "duration": 263,
+      "bpm": null,
+      "intro": 24.99,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "e4c3440b-a72f-49d5-b5a8-389120520aa9",
+          "text": "I had nothing to do on this hot afternoon\nBut to settle down and write you a line\nI've been meaning to phone you, but from Minnesota",
+          "kind": "verse",
+          "start": 24.99,
+          "estimated": false
+        },
+        {
+          "id": "0d4f9001-7e2d-4866-aaf1-302e84e17328",
+          "text": "Hell, it's been a very long time\nYou wear it well\nA little old-fashioned, but that's all right",
+          "kind": "verse",
+          "start": 37.21,
+          "estimated": false
+        },
+        {
+          "id": "00be82f8-0f5c-4af5-9e64-c9c5efbe1e7a",
+          "text": "Well, I suppose you're thinking, I bet he's sinking\nOr he wouldn't get in touch with me\nThough I ain't begging or losing my head",
+          "kind": "verse",
+          "start": 48.79,
+          "estimated": false
+        },
+        {
+          "id": "740d6a0f-779b-43d6-aae9-2da59cbe3899",
+          "text": "I sure do want you to know\nThat you wear it well\nThere ain't a lady in the land so fine, oh, my",
+          "kind": "verse",
+          "start": 61.22,
+          "estimated": false
+        },
+        {
+          "id": "35564f85-e555-46b1-aeff-71a70e3142c3",
+          "text": "Remember their basement parties, your brothers' karate\nThe all-day rock 'n' roll shows?\nThe homesick blues and the radical views",
+          "kind": "verse",
+          "start": 72.77,
+          "estimated": false
+        },
+        {
+          "id": "9883f092-3a47-412a-b23e-d8bd2bc9c0e9",
+          "text": "Haven't left a mark on you\nYou wear it well\nA little outta time, but I don't mind",
+          "kind": "verse",
+          "start": 84.71,
+          "estimated": false
+        },
+        {
+          "id": "2bd480e1-1ff2-4448-bfff-6c2072ef4bf4",
+          "text": "But I ain't forgetting that you were once mine\nBut I blew it without even trying\nNow I'm eating my heart out",
+          "kind": "verse",
+          "start": 95.88,
+          "estimated": false
+        },
+        {
+          "id": "6c2575b2-216e-4bf8-adbf-ccd24f554205",
+          "text": "Trying to get a letter through",
+          "kind": "verse",
+          "start": 106.35,
+          "estimated": false
+        },
+        {
+          "id": "1e67acec-5610-4c28-bae1-4fa9da0f28f7",
+          "text": "Since you've been gone, it's hard to carry on\nI'm gonna write about the birthday gown that I bought in town\nAnd you sat down and cried on the stairs",
+          "kind": "verse",
+          "start": 126.08,
+          "estimated": false
+        },
+        {
+          "id": "d4549907-1179-42c5-b9f7-add28cefac93",
+          "text": "You knew it didn't cost the earth, but for what it's worth\nYou made me feel a millionaire\nAnd you wear it well",
+          "kind": "verse",
+          "start": 139.36,
+          "estimated": false
+        },
+        {
+          "id": "00c98961-3f78-45b1-935f-7b25fb3ddda5",
+          "text": "Madame Onassis got nothing on you, no, no\nAnyway, my coffee is cold, and I'm getting told\nThat I gotta get back to work",
+          "kind": "verse",
+          "start": 149.66,
+          "estimated": false
+        },
+        {
+          "id": "365c03e6-301f-4969-8bbc-47bccdc6fb07",
+          "text": "So when the sun goes low and you're home all alone\nThink of me and try not to laugh\nAnd I'll wear it well",
+          "kind": "verse",
+          "start": 162.84,
+          "estimated": false
+        },
+        {
+          "id": "27666266-900a-436d-9355-d830ea6f7bf6",
+          "text": "I don't object if you call collect\n'Cause I ain't forgetting that you were once mine\nBut I blew it without even trying",
+          "kind": "verse",
+          "start": 173.15,
+          "estimated": false
+        },
+        {
+          "id": "2395f61b-2934-4fd9-a874-139be3d3a6ae",
+          "text": "Now I'm eating my heart out\nTrying to get back to you",
+          "kind": "verse",
+          "start": 186.33,
+          "estimated": false
+        },
+        {
+          "id": "dff39c97-cbfb-4833-902f-25ba4c025d08",
+          "text": "Oh, I love you, I love you, I love you, I love you\nOh, yeah",
+          "kind": "verse",
+          "start": 207.49,
+          "estimated": false
+        },
+        {
+          "id": "be1d74da-3393-48c1-8025-cf3ea166a8ac",
+          "text": "After all this, oh, it's the same address",
+          "kind": "verse",
+          "start": 230.46,
+          "estimated": false
+        },
+        {
+          "id": "2c0d5689-361b-4989-91b7-9651216325c9",
+          "text": "Since you've been gone, it's hard to carry on, oh, no",
+          "kind": "verse",
+          "start": 241.97,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36890829",
+        "recording": "The Collection"
+      },
+      "updatedAt": 1792336688128
+    },
+    {
+      "id": "29a59778-f9bf-4548-9d54-34c65c990aef",
+      "title": "How Long",
+      "artist": "Ace",
+      "duration": 240,
+      "bpm": null,
+      "intro": 0,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "cacdd3cb-fb0b-4779-a91c-fe9612d61151",
+          "text": "How long has this been going on?\nHow long has this been going on?",
+          "kind": "verse",
+          "start": 0,
+          "estimated": true
+        },
+        {
+          "id": "0415ede9-2245-43de-bcc2-37a2adb6a80e",
+          "text": "Well, your friends with their fancy persuasion\nDon't admit that it's part of a scheme\nBut I can't help but have my suspicion",
+          "kind": "verse",
+          "start": 18.5,
+          "estimated": true
+        },
+        {
+          "id": "b9121d3e-7697-4ea2-8668-dabd8cb482e8",
+          "text": "'Cause I ain't quite as dumb as I seem",
+          "kind": "verse",
+          "start": 36.9,
+          "estimated": true
+        },
+        {
+          "id": "98d76994-17cd-497f-8ced-27bf3c7a6a85",
+          "text": "And you said you was never intending\nTo break up our scene in this way\nBut there ain't any use in pretending",
+          "kind": "verse",
+          "start": 55.4,
+          "estimated": true
+        },
+        {
+          "id": "e1ad3797-a380-4c95-8c85-532e09300b80",
+          "text": "It could happen to us any day",
+          "kind": "verse",
+          "start": 73.8,
+          "estimated": true
+        },
+        {
+          "id": "be8cfc0a-a267-41f6-9a75-0010f2b98b65",
+          "text": "How long has this been going on?\nHow long has this been going on?",
+          "kind": "verse",
+          "start": 92.3,
+          "estimated": true
+        },
+        {
+          "id": "88b4d85f-f307-4793-88f0-e5f474c7dae1",
+          "text": "Oh, your friends with their fancy persuasion\nDon't admit that it's part of a scheme\nBut I can't help but have my suspicion",
+          "kind": "verse",
+          "start": 110.8,
+          "estimated": true
+        },
+        {
+          "id": "9b3d1e4d-513f-48d9-8bb9-53999cd8229a",
+          "text": "'Cause I ain't quite as dumb as I seem",
+          "kind": "verse",
+          "start": 129.2,
+          "estimated": true
+        },
+        {
+          "id": "5b89e2e2-75d2-496d-ba61-1b3ed6864b8b",
+          "text": "Oh, you said you was never intending\nTo break up our scene in this way\nBut there ain't any use in pretending",
+          "kind": "verse",
+          "start": 147.7,
+          "estimated": true
+        },
+        {
+          "id": "6f819479-2b06-4739-bf32-adf3c48ffc85",
+          "text": "It could happen to us any day",
+          "kind": "verse",
+          "start": 166.2,
+          "estimated": true
+        },
+        {
+          "id": "4b6719ee-66a5-4c77-a8d2-9619ae54bd9e",
+          "text": "And how long has this been going on?\nHow long has this been going on?\nHow long",
+          "kind": "verse",
+          "start": 184.6,
+          "estimated": true
+        },
+        {
+          "id": "a17a9893-6773-4daa-a466-b95a9a1af5c0",
+          "text": "How long has this been going on?\nHow long has this\nHow long has this been going on?",
+          "kind": "verse",
+          "start": 203.1,
+          "estimated": true
+        },
+        {
+          "id": "dfceee17-768f-4c25-aacb-7ece9b13a43a",
+          "text": "How long\nHow long has this been going on?",
+          "kind": "verse",
+          "start": 221.5,
+          "estimated": true
+        }
+      ],
+      "lyricSource": {
+        "type": "user"
+      },
+      "updatedAt": 1792336641671
+    },
+    {
+      "id": "2cbded7e-40a4-4747-9b79-04f545053d5b",
+      "title": "Money For Nothing",
+      "artist": "Dire Straits",
+      "duration": 506,
+      "bpm": null,
+      "intro": 4.68,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "5121a440-c2b5-4831-9986-a03e6c24a946",
+          "text": "I want my",
+          "kind": "verse",
+          "start": 4.68,
+          "estimated": false
+        },
+        {
+          "id": "e6667417-2823-4102-aef1-83bada81aec7",
+          "text": "I want my, I want my MTV",
+          "kind": "verse",
+          "start": 20.81,
+          "estimated": false
+        },
+        {
+          "id": "299f1040-e94b-4634-ac1e-cbc993716746",
+          "text": "I want my, I want my MTV",
+          "kind": "verse",
+          "start": 36.6,
+          "estimated": false
+        },
+        {
+          "id": "4278fdee-f8f9-4e21-9159-4cf8cb0cfbc0",
+          "text": "I want my, I want my MTV",
+          "kind": "verse",
+          "start": 53.76,
+          "estimated": false
+        },
+        {
+          "id": "3ab8aa47-53cc-4ef7-8e64-ef81d9609d8a",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 69.53,
+          "estimated": false
+        },
+        {
+          "id": "994a23ac-41db-4e0e-b36e-0f3fe3a0054f",
+          "text": "Now look at them yo-yos, that's the way you do it\nYou play the guitar on the MTV\nThat ain't workin', that's the way you do it",
+          "kind": "verse",
+          "start": 124.33,
+          "estimated": false
+        },
+        {
+          "id": "b22b1544-f679-4c6f-9b82-e3daa099b017",
+          "text": "Money for nothin' and your chicks for free\nNow that ain't workin', that's the way you do it\nLemme tell ya, them guys ain't dumb",
+          "kind": "verse",
+          "start": 135.25,
+          "estimated": false
+        },
+        {
+          "id": "afe1bb52-3d57-46a2-ba2b-ba104782342c",
+          "text": "Maybe get a blister on your little finger\nBaby, get a blister on your thumb\nWe gotta install microwave ovens",
+          "kind": "verse",
+          "start": 145.68,
+          "estimated": false
+        },
+        {
+          "id": "bc18b2ae-4ff9-4a13-8590-e624a78947b0",
+          "text": "Custom kitchen deliveries\nWe've got to move these refrigerators\nWe've got to move these colour TVs",
+          "kind": "verse",
+          "start": 156.86,
+          "estimated": false
+        },
+        {
+          "id": "d995fed1-8068-4f88-821f-fa20443971b3",
+          "text": "See the little faggot with the earring and the makeup\nYeah buddy, that's his own real hair\nThe little faggot got his own jet airplane",
+          "kind": "verse",
+          "start": 171.75,
+          "estimated": false
+        },
+        {
+          "id": "72b22503-3d97-41d7-be5e-4d831c155a84",
+          "text": "The little faggot, he's a millionaire\nWe gotta install microwave ovens\nCustom kitchen deliveries",
+          "kind": "verse",
+          "start": 181.75,
+          "estimated": false
+        },
+        {
+          "id": "e469f6cd-daff-4dcc-aaf7-5d2ed1c9d1c0",
+          "text": "We've got to move these refrigerators\nWe've got to move these colour TVs",
+          "kind": "verse",
+          "start": 192.89,
+          "estimated": false
+        },
+        {
+          "id": "393ab545-b668-4027-96b4-d806de8089ec",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 203.04,
+          "estimated": false
+        },
+        {
+          "id": "cfa58c80-e16c-48e4-92f8-272da192a1d4",
+          "text": "Got to install microwave ovens\nCustom kitchen deliveries\nWe've got to move these refrigerators",
+          "kind": "verse",
+          "start": 216.69,
+          "estimated": false
+        },
+        {
+          "id": "3b8820bb-be3d-45dc-bb48-87b60d6b1137",
+          "text": "We've got to move these colour TVs (look at him)\nI shoulda learned to play the guitar\nI shoulda learned to play them drums",
+          "kind": "verse",
+          "start": 228.28,
+          "estimated": false
+        },
+        {
+          "id": "a1a7add6-e0f2-4912-b5ef-e0e9437eb961",
+          "text": "Look at that mama, she come in stickin' in the camera\nMan, we could have some fun\nAnd he's up there, what's that? Hawaiian noises?",
+          "kind": "verse",
+          "start": 242.46,
+          "estimated": false
+        },
+        {
+          "id": "40e417d5-7c1a-4287-866d-d90d28284567",
+          "text": "He's bangin' on the bongos like a chimpanzee\nThat ain't workin', that's the way you do it\nGet your money for nothin', get your chicks for free",
+          "kind": "verse",
+          "start": 252.86,
+          "estimated": false
+        },
+        {
+          "id": "d2add25b-f973-4c47-b3db-2fcdfbdc7c56",
+          "text": "We gotta install microwave ovens\nCustom kitchen deliveries\nWe've got to move these refrigerators",
+          "kind": "verse",
+          "start": 263.93,
+          "estimated": false
+        },
+        {
+          "id": "747e255b-efd2-4905-a4ed-f896431a12e9",
+          "text": "We've got to move these colour TVs, lord",
+          "kind": "verse",
+          "start": 274.08,
+          "estimated": false
+        },
+        {
+          "id": "4f394a43-8f29-47c5-bf3a-0497bcbebc03",
+          "text": "Listen here\nNow, that ain't workin', that's the way you do it\nYou play the guitar on the MTV",
+          "kind": "verse",
+          "start": 294.33,
+          "estimated": false
+        },
+        {
+          "id": "6315e52f-56e7-4fbc-a52f-684aff6fe2f1",
+          "text": "That ain't workin', that's the way you do it\nMoney for nothin' and your chicks for free\nMoney for nothin'",
+          "kind": "verse",
+          "start": 303.21,
+          "estimated": false
+        },
+        {
+          "id": "7acef24a-921d-444f-91c9-14f5626b84ca",
+          "text": "Chicks for free\nGet your money for nothin'\nAnd your chicks for free",
+          "kind": "verse",
+          "start": 314.43,
+          "estimated": false
+        },
+        {
+          "id": "275dab6c-38ca-4e2e-98bd-58eae2cdf8d3",
+          "text": "Oozin' money for nothin'\nAnd your chicks for free\nGet your money for nothin'",
+          "kind": "verse",
+          "start": 324.52,
+          "estimated": false
+        },
+        {
+          "id": "fb9f3ef9-d993-4b13-9b17-37ce45b4159d",
+          "text": "Chicks for free\nMoney for nothin' (all that money for nothing)\nChicks for free",
+          "kind": "verse",
+          "start": 335.33,
+          "estimated": false
+        },
+        {
+          "id": "00321051-807b-4104-9192-20d4a70517e7",
+          "text": "Get your money for nothin'\nGet your chicks for free\nGet your money for nothin'",
+          "kind": "verse",
+          "start": 345.92,
+          "estimated": false
+        },
+        {
+          "id": "634567c5-c94d-4f1f-ae44-b10cb9d47257",
+          "text": "And your chicks for free\nGet your money for nothin' (what's that?)\nAnd your chicks for free (look at that, look at that)",
+          "kind": "verse",
+          "start": 356.49,
+          "estimated": false
+        },
+        {
+          "id": "bb40fb7a-9082-478d-a325-eb5696cf2c0e",
+          "text": "Get your money for nothin' (I want my, I want my)\nAnd your chicks for free (I want my MTV)\nMoney for nothin' (I want my, I want my)",
+          "kind": "verse",
+          "start": 367.96,
+          "estimated": false
+        },
+        {
+          "id": "6b7dc569-8007-49c2-b4cc-56ef461934dc",
+          "text": "Chicks for free (I want my MTV)\nGet your money for nothin' (I want my, I want my)\nAnd your chicks for free (I want my MTV)",
+          "kind": "verse",
+          "start": 378.33,
+          "estimated": false
+        },
+        {
+          "id": "493abe3b-1053-4bc0-9351-9e1bc9889f33",
+          "text": "Get your money for nothin' (I want my, I want my)\nAnd your chicks for free (I want my MTV)\nEasy, easy money (for nothing)",
+          "kind": "verse",
+          "start": 389.26,
+          "estimated": false
+        },
+        {
+          "id": "acf1c745-df2d-4e92-9520-8d10ae800d7c",
+          "text": "Easy, easy chicks (for free)\nEasy, easy money (for nothing)\nChicks for free (I want my MTV)",
+          "kind": "verse",
+          "start": 399.75,
+          "estimated": false
+        },
+        {
+          "id": "cb766b55-522c-4b34-80ab-9001555b3f7b",
+          "text": "That ain't workin'",
+          "kind": "verse",
+          "start": 410.69,
+          "estimated": false
+        },
+        {
+          "id": "2f82568b-5f25-47eb-b7d0-755dce6c5e4c",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 413.85,
+          "estimated": false
+        },
+        {
+          "id": "81af8741-e515-44d4-af0d-102125886e24",
+          "text": "Money for nothing",
+          "kind": "verse",
+          "start": 475.19,
+          "estimated": false
+        },
+        {
+          "id": "15574c3d-0e16-49a0-99e4-654b0dc92a35",
+          "text": "Chicks for free\nMoney for nothing\nChicks for free",
+          "kind": "verse",
+          "start": 484.64,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37415193",
+        "recording": "Vários (RFA)"
+      },
+      "updatedAt": 1792336737654
+    },
+    {
+      "id": "3604860f-fd64-44db-bbcc-7019d637fb7e",
+      "title": "Handbags And Gladrags",
+      "artist": "Rod Stewart",
+      "duration": 265,
+      "bpm": null,
+      "intro": 13.43,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "63da61a4-ecc6-43f9-841c-a915daeddb58",
+          "text": "Ever seen a blind man cross the road",
+          "kind": "verse",
+          "start": 13.43,
+          "estimated": false
+        },
+        {
+          "id": "d8797e34-3104-4cd4-826f-02c3c5efc5de",
+          "text": "Trying to make the other side?\nEver seen a young girl growing old\nTrying to make herself a bride?",
+          "kind": "verse",
+          "start": 31.06,
+          "estimated": false
+        },
+        {
+          "id": "accc9dd5-2c7a-4256-b601-8396404d3855",
+          "text": "So what becomes of you my love?\nWhen they have finally stripped you of\nThe handbags and the gladrags",
+          "kind": "verse",
+          "start": 52.33,
+          "estimated": false
+        },
+        {
+          "id": "4f01dd90-ca8d-4fbb-b6d3-986cc9b5e7a9",
+          "text": "That your granddad had to sweat so you could buy, baby",
+          "kind": "verse",
+          "start": 70.7,
+          "estimated": false
+        },
+        {
+          "id": "73b3153a-55a6-4476-9574-314d22f1b9c6",
+          "text": "Once I was a young man\nAnd all I thought I had to do was smile",
+          "kind": "verse",
+          "start": 84.38,
+          "estimated": false
+        },
+        {
+          "id": "5f54e424-4a85-4ca0-acfb-8c4c9f839b81",
+          "text": "You are still a young girl\nAnd you bought everything in style, listen\nBut once you think you're in, you're out",
+          "kind": "verse",
+          "start": 95.73,
+          "estimated": false
+        },
+        {
+          "id": "748be3cf-fddf-46ec-83fa-5d037ffd4acf",
+          "text": "'Cause you don't mean a single thing without\nThe handbags and the gladrags\nThat your granddad had to sweat so you could buy",
+          "kind": "verse",
+          "start": 115.11,
+          "estimated": false
+        },
+        {
+          "id": "afa74476-a1d6-45c1-a4cd-1b45098af0cb",
+          "text": "Sing a song of six-pence for your sake\nAnd take a bottle full of rye\nFour and twenty blackbirds in a cake",
+          "kind": "verse",
+          "start": 139.53,
+          "estimated": false
+        },
+        {
+          "id": "4670be8b-b25c-453c-a538-8a62a12f04e0",
+          "text": "And bake them all in a pie\nThey told me you missed school today\nSo what I suggest, you just throw them all away",
+          "kind": "verse",
+          "start": 156.32,
+          "estimated": false
+        },
+        {
+          "id": "01fd3bd9-4d0f-4cb6-8a5b-94a0afdaa845",
+          "text": "The handbags and the gladrags\nThat your poor old granddad had to sweat to buy",
+          "kind": "verse",
+          "start": 176.09,
+          "estimated": false
+        },
+        {
+          "id": "b8156ca2-9e71-4a4f-b654-27417da27024",
+          "text": "They told me you missed school today",
+          "kind": "verse",
+          "start": 187.94,
+          "estimated": false
+        },
+        {
+          "id": "0904e7de-042f-4fa6-a394-4fcf05b2deca",
+          "text": "So I suggest you just throw them all away\nThe handbags and the gladrags\nThat your poor old granddad had to sweat to buy ya",
+          "kind": "verse",
+          "start": 199.67,
+          "estimated": false
+        },
+        {
+          "id": "75065cc5-0267-4112-902e-1e5a692fa8b2",
+          "text": "Bye, bye\nHmm mmm",
+          "kind": "verse",
+          "start": 226.32,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37527714",
+        "recording": "None"
+      },
+      "updatedAt": 1792336705640
+    },
+    {
+      "id": "3ef9beed-ed0e-4dc8-9252-eed419fe5141",
+      "title": "Brown Sugar",
+      "artist": "The Rolling Stones",
+      "duration": 229,
+      "bpm": null,
+      "intro": 29.79,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "569355df-d75c-4607-a271-1420e1c203cd",
+          "text": "Gold Coast slave ship bound for cotton fields\nSold in the market down in New Orleans\nScarred old slaver, he's doin' all right",
+          "kind": "verse",
+          "start": 29.79,
+          "estimated": false
+        },
+        {
+          "id": "b58f2fea-e9c4-48fb-897e-a1f2ccf97dd9",
+          "text": "Hear him whip the women, just around midnight\nBrown Sugar, how come you taste so good?\nBrown Sugar, just like a young girl should, oh no",
+          "kind": "verse",
+          "start": 41.04,
+          "estimated": false
+        },
+        {
+          "id": "b0a16a34-ae5d-4624-ad4f-2f70ed21cba8",
+          "text": "Drums beatin' cold, English blood runs hot\nLady of the house wonderin' when it's gonna stop\nHouse boy knows that he's doin' all right",
+          "kind": "verse",
+          "start": 68.39,
+          "estimated": false
+        },
+        {
+          "id": "99804158-2540-4136-ae1c-4921c883fdd4",
+          "text": "You should have heard him, just around midnight\nBrown Sugar, how come you taste so good?\nBrown Sugar, just like a young girl should, yeah",
+          "kind": "verse",
+          "start": 78.58,
+          "estimated": false
+        },
+        {
+          "id": "7c1212f7-48c2-4462-a439-fbed5abd66f2",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 96.37,
+          "estimated": false
+        },
+        {
+          "id": "6a7e16fc-d3f5-4909-be61-913c2347de98",
+          "text": "Brown Sugar, how come you dance so good?\nOh, got me quittin'\nBrown Sugar, just like a black girl should, yeah",
+          "kind": "verse",
+          "start": 129.43,
+          "estimated": false
+        },
+        {
+          "id": "493d1ecd-2a22-49e3-a00f-4b6974e05593",
+          "text": "Now, I bet your mama was a tent show queen\nAnd all her boyfriends were sweet 16\nI'm no school boy but I know what I like",
+          "kind": "verse",
+          "start": 142.9,
+          "estimated": false
+        },
+        {
+          "id": "db5235fc-dc89-4a4a-951a-c9d41ccee533",
+          "text": "You should have heard them, just around midnight\nBrown Sugar, how come you taste so good? Oh, no no\nBrown Sugar, just like a young girl should",
+          "kind": "verse",
+          "start": 153.07,
+          "estimated": false
+        },
+        {
+          "id": "c2d855b4-694e-406b-ad50-93b48dc40a62",
+          "text": "I said, yeah, yeah, yeah, woo\nHow come you, how come you dance so good?\nYeah, yeah, yeah, woo",
+          "kind": "verse",
+          "start": 179.59,
+          "estimated": false
+        },
+        {
+          "id": "dd173be4-2c60-40ef-85a8-d90014469170",
+          "text": "Just like a, just like a black girl should\nYeah, yeah, yeah, woo",
+          "kind": "verse",
+          "start": 191.23,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37009443",
+        "recording": "FluxBlog's Survey Mixes (1971)"
+      },
+      "updatedAt": 1792336991184
+    },
+    {
+      "id": "43acebd9-248d-420c-aff6-ab059ca1517f",
+      "title": "Tie Your Mother Down",
+      "artist": "Queen",
+      "duration": 290,
+      "bpm": null,
+      "intro": 71.65,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "ca1c48cf-7e00-492f-924e-2975417c195e",
+          "text": "Ooh, yeah\nOoh, yeah",
+          "kind": "verse",
+          "start": 71.65,
+          "estimated": false
+        },
+        {
+          "id": "f2eacf96-b676-4366-ac3d-ea730ef0baca",
+          "text": "Get your party gown and get your pigtail down\nAnd get your heart beatin', baby\nGot my timin' right, I got my act all tight",
+          "kind": "verse",
+          "start": 83.46,
+          "estimated": false
+        },
+        {
+          "id": "3a42bc22-04a9-44b2-964b-c39cb1ae1031",
+          "text": "It's gotta be tonight, my little school babe\nYour momma says you don't\nAnd your daddy says you won't",
+          "kind": "verse",
+          "start": 94.32,
+          "estimated": false
+        },
+        {
+          "id": "66f5a9e6-cd2c-4660-b083-2eb46eeab46c",
+          "text": "And I'm boilin' up inside\nAin't no way I'm gonna lose out this time\nOh, no",
+          "kind": "verse",
+          "start": 101.39,
+          "estimated": false
+        },
+        {
+          "id": "b88bde42-748a-42da-9de8-f84a27d87487",
+          "text": "Tie your mother down\nTie your mother down\nLock your daddy out of doors",
+          "kind": "verse",
+          "start": 111.92,
+          "estimated": false
+        },
+        {
+          "id": "e337755c-8c5a-45de-b7c3-f7b0641b0aca",
+          "text": "I don't need him nosin' around\nTie your mother down\nTie your mother down",
+          "kind": "verse",
+          "start": 117.08,
+          "estimated": false
+        },
+        {
+          "id": "aedc2476-c1b6-4719-b459-d16760a2e7d8",
+          "text": "Give me all your love tonight",
+          "kind": "verse",
+          "start": 123.34,
+          "estimated": false
+        },
+        {
+          "id": "cb818072-8843-441f-b1a1-2de849f1239e",
+          "text": "\"You're such a dirty louse, go, get out of my house\"\nThat's all I ever get from your\nYour family ties, in fact, I don't think I ever heard",
+          "kind": "verse",
+          "start": 132.77,
+          "estimated": false
+        },
+        {
+          "id": "07142059-ebaf-460a-8f6b-bfbb0a251e7a",
+          "text": "A single little civil word from those guys\nBut you know, I don't give a light\nI'm gonna make out all right",
+          "kind": "verse",
+          "start": 144.13,
+          "estimated": false
+        },
+        {
+          "id": "31c1be01-4f7b-4078-ac81-407f6ec42a45",
+          "text": "I've got a sweetheart in hand\nTo put a stop to all that\nSnipin' and grousin' goin' on all night",
+          "kind": "verse",
+          "start": 151.81,
+          "estimated": false
+        },
+        {
+          "id": "facb2d11-a0b3-459b-befc-9606e8a662c6",
+          "text": "Tie your mother down\nTie your mother down\nTake your little brother swimmin'",
+          "kind": "verse",
+          "start": 158.21,
+          "estimated": false
+        },
+        {
+          "id": "f73f7a2c-f9c1-4404-bb6b-29217cfbb9af",
+          "text": "With a brick, that's all right\nTie your mother down (yeah, yeah)\nTie your mother down",
+          "kind": "verse",
+          "start": 163.32,
+          "estimated": false
+        },
+        {
+          "id": "d0e23eaf-3e4a-4105-9dcd-263fe643a6e1",
+          "text": "Or you ain't no friend of mine",
+          "kind": "verse",
+          "start": 169.68,
+          "estimated": false
+        },
+        {
+          "id": "aa4eccac-0019-494c-8011-7514eda5c057",
+          "text": "Oh, no (no, no)",
+          "kind": "verse",
+          "start": 177.99,
+          "estimated": false
+        },
+        {
+          "id": "4b8081ba-7192-4439-aa79-39eea8f58aca",
+          "text": "(Bad guy)",
+          "kind": "verse",
+          "start": 193.69,
+          "estimated": false
+        },
+        {
+          "id": "84477978-8a2e-4e08-b713-2d3b597e403d",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 195.91,
+          "estimated": false
+        },
+        {
+          "id": "63f3d00a-e1f9-418c-9e43-f773198b7a06",
+          "text": "Your mommy and your daddy\nGonna plague me till I die\nThey can't understand it",
+          "kind": "verse",
+          "start": 215.09,
+          "estimated": false
+        },
+        {
+          "id": "8ab0e595-d5f2-4a8b-8165-e0d1299680ab",
+          "text": "I'm just a peace-loving guy",
+          "kind": "verse",
+          "start": 220.99,
+          "estimated": false
+        },
+        {
+          "id": "ea1ecdf3-c808-4398-9c1b-518aa8f6439f",
+          "text": "Tie your mother down\nTie your mother down\nGet that big, big, big, big, big, big daddy out the door",
+          "kind": "verse",
+          "start": 230.26,
+          "estimated": false
+        },
+        {
+          "id": "5bce56dc-b252-46cc-b1d5-3f96a365ff2a",
+          "text": "Tie your mother down, yeah\nTie your mother down\nGive me all your love tonight",
+          "kind": "verse",
+          "start": 236.29,
+          "estimated": false
+        },
+        {
+          "id": "38f3c457-819c-4d46-b098-d378f5dc10a4",
+          "text": "All your love tonight\n(Give me every inch of your love)",
+          "kind": "verse",
+          "start": 249.96,
+          "estimated": false
+        },
+        {
+          "id": "e0b4e62f-d82a-4835-bb33-89331393b75a",
+          "text": "All your love tonight\n(Yeah, gotta get my timin' right, ay)\nAll your love",
+          "kind": "verse",
+          "start": 264.41,
+          "estimated": false
+        },
+        {
+          "id": "b97a299d-b4ba-433b-9b47-e3022142c119",
+          "text": "Tonight",
+          "kind": "verse",
+          "start": 280.38,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37099520",
+        "recording": "A Day At The Races (1976 - 2011 Remastered)"
+      },
+      "updatedAt": 1792335641018
+    },
+    {
+      "id": "452531c6-6d6e-4ab2-85ba-371e9270f95d",
+      "title": "Bright Side of the Road",
+      "artist": "Van Morrison",
+      "duration": 242,
+      "bpm": null,
+      "intro": 12.36,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "4f9e9854-6526-4ef5-9bf4-97c089b6caac",
+          "text": "From the dark end of the street\nTo the bright side of the road\nWe'll be lovers once again",
+          "kind": "verse",
+          "start": 12.36,
+          "estimated": false
+        },
+        {
+          "id": "66da95bb-2440-474e-9ada-2222cf13937d",
+          "text": "On the bright side of the road\nLittle darlin', come with me\nWon't you help me share my load",
+          "kind": "verse",
+          "start": 25.7,
+          "estimated": false
+        },
+        {
+          "id": "7997fe1a-6073-4834-bffe-4b6e69da990b",
+          "text": "From the dark end of the street\nTo the bright side of the road\nInto this life we're born",
+          "kind": "verse",
+          "start": 44.47,
+          "estimated": false
+        },
+        {
+          "id": "95b931fc-524e-457c-b21c-e1c84685f997",
+          "text": "Baby sometimes, sometimes we don't know why\nAnd time seems to go by so fast\nIn the twinkling of an eye",
+          "kind": "verse",
+          "start": 59.39,
+          "estimated": false
+        },
+        {
+          "id": "2378229d-fb90-4ea5-a92a-aa8578a612dc",
+          "text": "Let's enjoy it while we can (let's enjoy it while we can)\nWon't you help me share my load (help me share my load)\nFrom the dark end of the street",
+          "kind": "verse",
+          "start": 77.17,
+          "estimated": false
+        },
+        {
+          "id": "4820df6a-ab42-4d85-ab14-cb6beb62afa4",
+          "text": "To the bright side of the road",
+          "kind": "verse",
+          "start": 90.48,
+          "estimated": false
+        },
+        {
+          "id": "67e19d45-9937-4252-a9bd-ec8156216c12",
+          "text": "Into this life we're born\nBaby sometimes, sometimes we don't know why\nAnd time seems to go by so fast",
+          "kind": "verse",
+          "start": 119.91,
+          "estimated": false
+        },
+        {
+          "id": "ee566b60-40be-4ea3-b2cb-4cb824d772e0",
+          "text": "In the twinkling of an eye\nLet's enjoy it while we can (let's enjoy it while we can)\nHelp me sing my song (help me sing my song)",
+          "kind": "verse",
+          "start": 137.02,
+          "estimated": false
+        },
+        {
+          "id": "58fa366f-3b1c-416f-9f77-237206c67701",
+          "text": "Little darling come alone\nTo the bright side of the road\nOn the dark end of the street (on the dark end of the street)",
+          "kind": "verse",
+          "start": 153.55,
+          "estimated": false
+        },
+        {
+          "id": "76325918-61d4-4eb7-a65a-a26be80b8bb6",
+          "text": "To the bright side of the road (to the bright side of the road)\nLittle darling come alone\nOn the bright side of the road",
+          "kind": "verse",
+          "start": 169.38,
+          "estimated": false
+        },
+        {
+          "id": "8e689942-5a68-4f70-80f8-d5f4a02e7b73",
+          "text": "On the dark end of the street (on the dark end of the street)\nTo the bright side of the road (to the bright sight of the road)",
+          "kind": "verse",
+          "start": 185.48,
+          "estimated": false
+        },
+        {
+          "id": "43bb0510-8c64-4e8d-9167-5fc0ec968347",
+          "text": "We'll be lovers once again\nOn the bright side of the road\nYeah, we'll be, we'll be lovers once again",
+          "kind": "verse",
+          "start": 196.87,
+          "estimated": false
+        },
+        {
+          "id": "84945a8b-8157-46c8-a95c-e7d7fffecdaa",
+          "text": "On the bright side of the road",
+          "kind": "verse",
+          "start": 210.4,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37419905",
+        "recording": "The Philosopher's Stone (Disc2"
+      },
+      "updatedAt": 1792336425955
+    },
+    {
+      "id": "542c94c9-7855-4db5-ac92-03afb4ce9c14",
+      "title": "saturday nights alright",
+      "artist": "elton john",
+      "duration": 296,
+      "bpm": null,
+      "intro": 13.09,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "78d0f036-b4de-4571-896b-f510750a8ca6",
+          "text": "It's getting late, have you seen my mates?\nMa, tell me when the boys get here\nIt's seven o'clock and I wanna rock",
+          "kind": "verse",
+          "start": 13.09,
+          "estimated": false
+        },
+        {
+          "id": "8ed4eec6-685d-4fd3-9f1a-d3db27651be3",
+          "text": "Wanna get a belly full of beer\nMy old man's drunker than a barrel full of monkeys\nAnd my old lady, she don't care",
+          "kind": "verse",
+          "start": 22,
+          "estimated": false
+        },
+        {
+          "id": "3279c767-af34-437c-a810-364fac8affcf",
+          "text": "My sister looks cute in her braces and boots\nA handful of grease in her hair",
+          "kind": "verse",
+          "start": 31.97,
+          "estimated": false
+        },
+        {
+          "id": "78bc1f75-0fac-4daa-82e6-8e0223b7dde7",
+          "text": "Oh, don't give us none of your aggravation\nWe had it with your discipline\nOh, Saturday night's alright for fighting",
+          "kind": "verse",
+          "start": 40.94,
+          "estimated": false
+        },
+        {
+          "id": "a9bf1ea0-de5a-4648-a1db-3814341ff7dd",
+          "text": "Get a little action in\nGet about as oiled as a diesel train\nGonna set this dance alight",
+          "kind": "verse",
+          "start": 50.99,
+          "estimated": false
+        },
+        {
+          "id": "cbbb613d-9107-4a1d-8b57-0688fac72d25",
+          "text": "Cause saturday night's the night I like\nSaturday night's alright, alright, alright\nOoh",
+          "kind": "verse",
+          "start": 60.2,
+          "estimated": false
+        },
+        {
+          "id": "d6554c56-c5e1-4920-94e9-1445f40a4a4f",
+          "text": "Well, they're packed pretty tight in here tonight\nI'm looking for a dolly who'll see me right\nI may use a little muscle to get what I need",
+          "kind": "verse",
+          "start": 79.01,
+          "estimated": false
+        },
+        {
+          "id": "b6dfb446-ea31-47a4-9eaf-441eb17330ee",
+          "text": "I may sink a little drink and shout out \"She's with me!\"\nA couple of the sound that I really like\nAre the sounds of a switchblade and a motorbike",
+          "kind": "verse",
+          "start": 88.75,
+          "estimated": false
+        },
+        {
+          "id": "fe010dde-4f66-4243-b656-0c8c8a70fc35",
+          "text": "I'm a juvenile product of the working class\nWhose best friend floats in the bottom of a glass\nOh",
+          "kind": "verse",
+          "start": 98.1,
+          "estimated": false
+        },
+        {
+          "id": "0ae20887-6391-47b0-9524-43edf94a197c",
+          "text": "Don't give us none of your aggravation\nWe had it with your discipline\nSaturday night's alright for fighting",
+          "kind": "verse",
+          "start": 107.89,
+          "estimated": false
+        },
+        {
+          "id": "db589de2-dc79-4611-a7b9-2372710c8f96",
+          "text": "Get a little action in\nGet about as oiled as a diesel train\nGonna set this dance alight",
+          "kind": "verse",
+          "start": 116.95,
+          "estimated": false
+        },
+        {
+          "id": "0c563796-6a63-4524-bbf8-8ab6cc43c9fc",
+          "text": "Cause Saturday night's the night I like\nSaturday night's alright, alright, alright\nOoh",
+          "kind": "verse",
+          "start": 126.44,
+          "estimated": false
+        },
+        {
+          "id": "f23671e1-cfac-4b98-885d-c9d77252d388",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 137.84,
+          "estimated": false
+        },
+        {
+          "id": "ce45af5f-9a2b-4046-9dec-2ce71d2aa977",
+          "text": "Oh\nDon't give us none of your aggravation\nWe had it with your discipline",
+          "kind": "verse",
+          "start": 165.72,
+          "estimated": false
+        },
+        {
+          "id": "aed61cf5-f2e1-40b3-b307-2d289975d827",
+          "text": "Cause Saturday night's alright for fighting\nGet a little action in\nGet about as oiled as a diesel train",
+          "kind": "verse",
+          "start": 173.32,
+          "estimated": false
+        },
+        {
+          "id": "10385040-d989-4db3-b103-0230ae0ed615",
+          "text": "Gonna set this dance alight\nCause Saturday night's the night I like\nSaturday night's alright, alright, alright",
+          "kind": "verse",
+          "start": 182.78,
+          "estimated": false
+        },
+        {
+          "id": "4d4c5417-0c62-4a3c-88ba-989955fed179",
+          "text": "Ooh",
+          "kind": "verse",
+          "start": 193.73,
+          "estimated": false
+        },
+        {
+          "id": "076f10f4-5c4d-4aad-a48d-09786413624d",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 197.53,
+          "estimated": false
+        },
+        {
+          "id": "9c3abda8-9153-4110-a195-bfbe9b52e360",
+          "text": "Saturday! Saturday! Saturday!\nSaturday! Saturday! Saturday!\nSaturday! Saturday! Saturday night's alright",
+          "kind": "verse",
+          "start": 210.82,
+          "estimated": false
+        },
+        {
+          "id": "595d25f3-e58c-42bb-a128-578cb148c36f",
+          "text": "Saturday! Saturday! Saturday!\nSaturday! Saturday! Saturday!\nSaturday! Saturday! Saturday night's alright",
+          "kind": "verse",
+          "start": 223.3,
+          "estimated": false
+        },
+        {
+          "id": "e808952a-3f70-4ed3-a9f2-949908d16acb",
+          "text": "Saturday! Saturday! Saturday!\nSaturday! Saturday! Saturday!\nSaturday! Saturday! Saturday night's alright, whoo",
+          "kind": "verse",
+          "start": 235.93,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/17411622",
+        "recording": "hires masters 70s rock"
+      },
+      "updatedAt": 1792333709696
+    },
+    {
+      "id": "5ef1d632-afca-4e8e-8032-95a6f287898e",
+      "title": "Sultans of Swing",
+      "artist": "Dire Straits",
+      "duration": 393,
+      "bpm": null,
+      "intro": 12.84,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "93dde6a5-5a7e-4e59-962b-150a61b8d986",
+          "text": "You get a shiver in the dark, it's raining in the park, but meantime\nSouth of the river, you stop and you hold everything",
+          "kind": "verse",
+          "start": 12.84,
+          "estimated": false
+        },
+        {
+          "id": "22975e4a-f2cf-4f5c-82fa-f595c0e607b0",
+          "text": "A band is blowing Dixie, double-four time\nYou feel alright when you hear that music ring",
+          "kind": "verse",
+          "start": 26.94,
+          "estimated": false
+        },
+        {
+          "id": "f27cc504-185d-4849-a25c-256120bcfcf0",
+          "text": "Well, now you step inside, but you don't see too many faces\nComing in out of the rain to hear the jazz go down",
+          "kind": "verse",
+          "start": 41.84,
+          "estimated": false
+        },
+        {
+          "id": "1823991c-7859-42d8-ad57-1b845243a6e0",
+          "text": "Competition in other places\nAh, but the horns, they blowing that sound\nWay on down south",
+          "kind": "verse",
+          "start": 56.48,
+          "estimated": false
+        },
+        {
+          "id": "9e4e4f2f-f4aa-40de-8ac1-a4bdfebeac08",
+          "text": "Way on down south, London town",
+          "kind": "verse",
+          "start": 72.54,
+          "estimated": false
+        },
+        {
+          "id": "74a15b73-ea07-4b97-974b-22c610b39854",
+          "text": "You check out Guitar George, he knows all the chords\nMind, he's strictly rhythm, he doesn't want to make it cry or sing",
+          "kind": "verse",
+          "start": 87.16,
+          "estimated": false
+        },
+        {
+          "id": "90f5012f-5c6b-4ed8-a272-8df2f60c8f71",
+          "text": "Yes and an old guitar is all he can afford\nWhen he gets up under the lights to play his thing",
+          "kind": "verse",
+          "start": 101.5,
+          "estimated": false
+        },
+        {
+          "id": "ef8f4fc7-f38c-49db-b63c-95ae81cd2b49",
+          "text": "And Harry doesn't mind if he doesn't make the scene\nHe's got a daytime job, he's doing alright",
+          "kind": "verse",
+          "start": 117.42,
+          "estimated": false
+        },
+        {
+          "id": "5e11f76e-cc76-44e6-94bb-16d76ce53d35",
+          "text": "He can play the honky-tonk like anything\nSaving it up for Friday night",
+          "kind": "verse",
+          "start": 130.58,
+          "estimated": false
+        },
+        {
+          "id": "e7a2d698-d48d-4d1b-8e5e-eabda1d0bbde",
+          "text": "With the Sultans\nWith the Sultans of Swing",
+          "kind": "verse",
+          "start": 143.9,
+          "estimated": false
+        },
+        {
+          "id": "63567230-3ef3-47be-8c77-5311997464b6",
+          "text": "And a crowd of young boys, they're fooling around in the corner",
+          "kind": "verse",
+          "start": 161.96,
+          "estimated": false
+        },
+        {
+          "id": "611bbd5e-77d7-4f0c-ad3c-ff6da878d2b7",
+          "text": "Drunk and dressed in their best brown baggies and their platform soles\nThey don't give a damn about any trumpet-playing band",
+          "kind": "verse",
+          "start": 169.13,
+          "estimated": false
+        },
+        {
+          "id": "35640ab0-6a92-49ce-b0b9-ecd36582edc8",
+          "text": "It ain't what they call rock and roll",
+          "kind": "verse",
+          "start": 182.42,
+          "estimated": false
+        },
+        {
+          "id": "add27529-95fa-4ad2-a9f4-241b109f118c",
+          "text": "And the Sultans\nYeah, the Sultans, they played creole\nCreole",
+          "kind": "verse",
+          "start": 189.35,
+          "estimated": false
+        },
+        {
+          "id": "699ca285-0372-45b9-8c50-ab72423e2aa0",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 202.36,
+          "estimated": false
+        },
+        {
+          "id": "d6ea87d1-342c-425f-ad53-49ee7a96481f",
+          "text": "And then the man, he steps right up to the microphone",
+          "kind": "verse",
+          "start": 253.67,
+          "estimated": false
+        },
+        {
+          "id": "92f2a716-3cc0-4c28-b2e2-d58df724500c",
+          "text": "And says at last, just as the time bell rings",
+          "kind": "verse",
+          "start": 260.26,
+          "estimated": false
+        },
+        {
+          "id": "fc10aed1-e4df-4daf-a102-43307e3bc6ae",
+          "text": "\"Goodnight, now it's time to go home\"\nThen he makes it fast with one more thing\n\"We are the Sultans",
+          "kind": "verse",
+          "start": 267.48,
+          "estimated": false
+        },
+        {
+          "id": "87b0baae-40ca-4c3b-ad3e-c5b998e38996",
+          "text": "We are the Sultans of Swing\"",
+          "kind": "verse",
+          "start": 283.32,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36847085",
+        "recording": "Dire Straits"
+      },
+      "updatedAt": 1792335510312
+    },
+    {
+      "id": "631d9a92-0650-4e14-9f65-eaca053acb70",
+      "title": "Down Under",
+      "artist": "Men At Work",
+      "duration": 221,
+      "bpm": null,
+      "intro": 11.34,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "98e60098-f7e6-472e-ab47-638fe477baa2",
+          "text": "Traveling in a fried-out Kombi",
+          "kind": "verse",
+          "start": 11.34,
+          "estimated": false
+        },
+        {
+          "id": "ade50e6d-f5ce-47db-858e-b88ba68f7769",
+          "text": "On a hippie trail, head full of zombie\nI met a strange lady, she made me nervous\nShe took me in and gave me breakfast",
+          "kind": "verse",
+          "start": 16.32,
+          "estimated": false
+        },
+        {
+          "id": "0f65758b-3375-4075-9505-5b2fa12b562a",
+          "text": "And she said\n\"Do you come from a land down under",
+          "kind": "verse",
+          "start": 28.74,
+          "estimated": false
+        },
+        {
+          "id": "92f3e171-ad54-4733-bc25-82e96c3963b8",
+          "text": "Where women glow and men plunder?",
+          "kind": "verse",
+          "start": 34.2,
+          "estimated": false
+        },
+        {
+          "id": "d5c77e6f-2c9f-495a-8d48-b4e8f89c79b4",
+          "text": "Can't you hear, can't you hear the thunder?\nYou better run, you better take cover\"",
+          "kind": "verse",
+          "start": 38.77,
+          "estimated": false
+        },
+        {
+          "id": "d874b0b6-daed-4846-90ad-cc6db5484feb",
+          "text": "Buying bread from a man in Brussels",
+          "kind": "verse",
+          "start": 56.77,
+          "estimated": false
+        },
+        {
+          "id": "28d36e9d-583c-4dcf-b681-291d3c30b928",
+          "text": "He was six-foot-four and full of muscle",
+          "kind": "verse",
+          "start": 60.58,
+          "estimated": false
+        },
+        {
+          "id": "192104a7-8c6c-440a-bfb9-d7dc205ff0b8",
+          "text": "I said, \"Do you speak-a my language?\"\nHe just smiled and gave me a Vegemite sandwich\nAnd he said",
+          "kind": "verse",
+          "start": 65.77,
+          "estimated": false
+        },
+        {
+          "id": "b6a26b7f-39bb-4664-92e3-ef339714099f",
+          "text": "\"I come from a land down under",
+          "kind": "verse",
+          "start": 74.61,
+          "estimated": false
+        },
+        {
+          "id": "c981d3e3-ced3-497b-ba26-88cb745393e0",
+          "text": "Where beer does flow and men chunder",
+          "kind": "verse",
+          "start": 79.21,
+          "estimated": false
+        },
+        {
+          "id": "3d3b99cc-c273-46f8-bd79-0001df738be5",
+          "text": "Can't you hear, can't you hear the thunder?\nYou better run, you better take cover, yeah\"",
+          "kind": "verse",
+          "start": 84.08,
+          "estimated": false
+        },
+        {
+          "id": "f42f1686-98cc-4cb5-9274-35d8c42ab9af",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 91.84,
+          "estimated": false
+        },
+        {
+          "id": "9b17aead-a719-45dc-b1f8-3e49ed13cc87",
+          "text": "Lying in a den in Bombay",
+          "kind": "verse",
+          "start": 119.08,
+          "estimated": false
+        },
+        {
+          "id": "e156c381-060e-4817-85e7-ccd3326b81a7",
+          "text": "With a slack jaw and not much to say",
+          "kind": "verse",
+          "start": 123.56,
+          "estimated": false
+        },
+        {
+          "id": "a152a3f6-ed40-46e7-8ff5-a335f29afffa",
+          "text": "I said to the man, \"Are you trying to tempt me?",
+          "kind": "verse",
+          "start": 128.04,
+          "estimated": false
+        },
+        {
+          "id": "ce3396c6-65fb-4274-8c52-3ab26305f59e",
+          "text": "Because I come from the land of plenty\"\nAnd he said\nOh, \"Do you come from a land down under? (Oh, yeah-yeah)",
+          "kind": "verse",
+          "start": 132.52,
+          "estimated": false
+        },
+        {
+          "id": "4f62e116-c2a0-4d0a-a7b9-1ae44ce5d4b4",
+          "text": "Where women glow and men plunder?",
+          "kind": "verse",
+          "start": 141.69,
+          "estimated": false
+        },
+        {
+          "id": "b244c7db-98d4-4940-9e69-c69ce156d061",
+          "text": "Can't you hear, can't you hear the thunder?\nYou better run, you better take cover\", 'cause we are\nLiving in a land down under",
+          "kind": "verse",
+          "start": 145.9,
+          "estimated": false
+        },
+        {
+          "id": "da538ce5-c0ad-4bb3-a926-e24200fd5ac2",
+          "text": "Where women glow and men plunder (yeah)\nCan't you hear, can't you hear the thunder? (Thunder)\nYou better-better run, you better take cover",
+          "kind": "verse",
+          "start": 159.61,
+          "estimated": false
+        },
+        {
+          "id": "77a361bb-b900-4f85-9ab5-d53004c488ac",
+          "text": "Living in a land down under\nWhere women glow and men plunder",
+          "kind": "verse",
+          "start": 172.75,
+          "estimated": false
+        },
+        {
+          "id": "db7545e0-d98c-41c0-bcd7-3f4be76c24ff",
+          "text": "Can't you hear, can't you hear the thunder? Ooh, yeah\nYou better run, you better take cover",
+          "kind": "verse",
+          "start": 181.71,
+          "estimated": false
+        },
+        {
+          "id": "96369e3a-d14b-411e-bd96-bd441d12b6b4",
+          "text": "(We are) living in a land down under (ooh, yeah)\nWhere women glow and men plunder",
+          "kind": "verse",
+          "start": 189.36,
+          "estimated": false
+        },
+        {
+          "id": "c35f50d7-8e9b-4370-a9ed-9567ac82883b",
+          "text": "Can't you, can't you hear the thunder? (Can't you, can't you hear the thunder?)\nYou better run, you better take cover",
+          "kind": "verse",
+          "start": 198.66,
+          "estimated": false
+        },
+        {
+          "id": "2b3f4de4-2209-445e-9c4b-e5076581249f",
+          "text": "Living in a land down under (living in a land down under)\nWhere women glow and men plunder\nCan't you, can't you hear the thunder?",
+          "kind": "verse",
+          "start": 208.36,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36842558",
+        "recording": "514 M de visualizações"
+      },
+      "updatedAt": 1792336718582
+    },
+    {
+      "id": "681715dd-c2ca-460d-8847-ead9bb991753",
+      "title": "Power of Love",
+      "artist": "Huey Lewis & The News",
+      "duration": 240,
+      "bpm": null,
+      "intro": 0,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "dccc2572-6f27-4d8d-9ad0-992bb2d846f5",
+          "text": "The power of love is a curious thing\nMake a one man weep, make another man sing\nChange a hawk to a little white dove",
+          "kind": "verse",
+          "start": 0,
+          "estimated": true
+        },
+        {
+          "id": "6b8fb9a4-8a6f-4b8f-9ef7-fc623c2810ac",
+          "text": "More than a feeling, that's the power of love\nTougher than diamonds, rich like cream\nStronger and harder than a bad girl's dream",
+          "kind": "verse",
+          "start": 17.1,
+          "estimated": true
+        },
+        {
+          "id": "c98e3bdb-34a2-404d-bc5b-1a8d4a9f2193",
+          "text": "Make a bad one good, mm, make a wrong one right\nPower of love that keep you home at night\nYou don't need money, don't take fame",
+          "kind": "verse",
+          "start": 34.3,
+          "estimated": true
+        },
+        {
+          "id": "edeccde9-3d9c-411d-abeb-c1699cc10e2d",
+          "text": "Don't need no credit card to ride this train\nIt's strong and it's sudden, and it's cruel sometimes\nBut it might just save your life",
+          "kind": "verse",
+          "start": 51.4,
+          "estimated": true
+        },
+        {
+          "id": "f03f0745-d7f9-44de-9b8e-c8095a0c7e01",
+          "text": "That's the power of love\nThat's the power of love\nFirst time you feel it, it might make you sad",
+          "kind": "verse",
+          "start": 68.6,
+          "estimated": true
+        },
+        {
+          "id": "68d16844-dad2-40f9-8cb8-3c42c18aad81",
+          "text": "Next time you feel it, it might make you mad\nBut you'll be glad, baby, when you've found\nThat's the power makes the world go 'round",
+          "kind": "verse",
+          "start": 85.7,
+          "estimated": true
+        },
+        {
+          "id": "a644b299-c4ad-4189-a496-51aab7455b02",
+          "text": "And it don't take money, don't take fame\nDon't need no credit card to ride this train\nIt's strong and it's sudden, it can be cruel sometimes",
+          "kind": "verse",
+          "start": 102.9,
+          "estimated": true
+        },
+        {
+          "id": "67586e58-a866-4c2c-b9ab-57a779ae0e4f",
+          "text": "But it might just save your life\nThey say that all in love is fair\nYeah, but you don't care (ooh)",
+          "kind": "verse",
+          "start": 120,
+          "estimated": true
+        },
+        {
+          "id": "3606ab81-8509-43e3-81ae-426c9591c33d",
+          "text": "But you know what to do (what to do)\nWhen it gets hold of you\nAnd with a little help from above",
+          "kind": "verse",
+          "start": 137.1,
+          "estimated": true
+        },
+        {
+          "id": "6798c693-cbf5-4197-9f1d-1a2807e81c75",
+          "text": "You feel the power of love\nYou feel the power of love\nCan you feel it?",
+          "kind": "verse",
+          "start": 154.3,
+          "estimated": true
+        },
+        {
+          "id": "7c6cb394-8bfe-4d42-9b89-c20e31358d55",
+          "text": "Hm-hm\nIt don't take money, and it don't take fame\nDon't need no credit card to ride this train",
+          "kind": "verse",
+          "start": 171.4,
+          "estimated": true
+        },
+        {
+          "id": "6e050604-9162-417d-8f20-2dcc65f47740",
+          "text": "Tougher than diamonds and stronger than steel\nBut you won't feel nothin' 'til you feel\nYou feel the power, just feel the power of love",
+          "kind": "verse",
+          "start": 188.6,
+          "estimated": true
+        },
+        {
+          "id": "e84792cd-788f-4823-ba18-adffc055b427",
+          "text": "That's the power, mm, that's the power of love\nYou feel the power of love\nYou feel the power of love",
+          "kind": "verse",
+          "start": 205.7,
+          "estimated": true
+        },
+        {
+          "id": "a1aa8ec2-e553-4af8-ae44-0ccce7710320",
+          "text": "Feel the power of love",
+          "kind": "verse",
+          "start": 222.9,
+          "estimated": true
+        }
+      ],
+      "lyricSource": {
+        "type": "user"
+      },
+      "updatedAt": 1792336242136
+    },
+    {
+      "id": "6caf72c2-3b3e-4f14-8128-ecf1b3d7a33e",
+      "title": "Just What I Needed",
+      "artist": "The Cars",
+      "duration": 226,
+      "bpm": null,
+      "intro": 16.98,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "e3b4d458-37d1-42d6-99d5-d08d24359f9f",
+          "text": "I don't mind you comin' here\nWastin' all my time\n'Cause when you're standin' oh so near",
+          "kind": "verse",
+          "start": 16.98,
+          "estimated": false
+        },
+        {
+          "id": "9374f9fa-1be1-4fa5-80fc-277e38796bbd",
+          "text": "I kinda lose my mind\nIt's not the perfume that you wear\nIt's not the ribbons in your hair",
+          "kind": "verse",
+          "start": 28.9,
+          "estimated": false
+        },
+        {
+          "id": "790b0d8e-f9c1-435a-b566-2493560b17a2",
+          "text": "I don't mind you comin' here\nAnd wastin' all my time",
+          "kind": "verse",
+          "start": 40.42,
+          "estimated": false
+        },
+        {
+          "id": "047cb6a1-e8b9-45f3-9a6e-ef4f29347120",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 48.56,
+          "estimated": false
+        },
+        {
+          "id": "f481fd2a-4e93-4b88-88ac-f453cd4f6a89",
+          "text": "I don't mind you hangin' out\nAnd talkin' in your sleep\nIt doesn't matter where you've been",
+          "kind": "verse",
+          "start": 63.2,
+          "estimated": false
+        },
+        {
+          "id": "3a3d3b61-f859-4a1a-9bc2-f93819d54b70",
+          "text": "As long as it was deep, yeah\nYou always knew to wear it well and\nYou look so fancy, I can tell",
+          "kind": "verse",
+          "start": 74.4,
+          "estimated": false
+        },
+        {
+          "id": "33d1a571-34f9-4755-8ed2-5c6d4e57e517",
+          "text": "And I don't mind you hangin' out\nAnd talkin' in your sleep\nI guess you're just what I needed (just what I needed)",
+          "kind": "verse",
+          "start": 85.66,
+          "estimated": false
+        },
+        {
+          "id": "b8b42c9e-c15b-457b-88ad-ed2b28fc8e62",
+          "text": "I needed someone to feed\nI guess you're just what I needed (just what I needed)\nI needed someone to bleed",
+          "kind": "verse",
+          "start": 97.01,
+          "estimated": false
+        },
+        {
+          "id": "02177654-4302-4e23-a6dc-fb8933e05853",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 108.8,
+          "estimated": false
+        },
+        {
+          "id": "73012f26-d5cc-4f9f-a14e-06e8db7a5d93",
+          "text": "I don't mind you comin' here\nAnd wastin' all my time, time\n'Cause when you're standin' oh so near",
+          "kind": "verse",
+          "start": 125.99,
+          "estimated": false
+        },
+        {
+          "id": "175c5e0d-6683-4f73-a0fb-ce058517dd8c",
+          "text": "I kinda lose my mind, yeah\nIt's not the perfume that you wear\nIt's not the ribbons in your hair",
+          "kind": "verse",
+          "start": 136.65,
+          "estimated": false
+        },
+        {
+          "id": "0233d77e-3a11-401b-a4f8-a411d2ef5efb",
+          "text": "And I don't mind you comin' here\nAnd wastin' all my time\nI guess you're just what I needed (just what I needed)",
+          "kind": "verse",
+          "start": 148.45,
+          "estimated": false
+        },
+        {
+          "id": "9c8ec0a2-edfc-42bc-b2d4-5cc4811b863a",
+          "text": "I needed someone to feed\nI guess you're just what I needed (just what I needed)\nI needed someone to bleed",
+          "kind": "verse",
+          "start": 160.22,
+          "estimated": false
+        },
+        {
+          "id": "e53f04fe-3f73-4046-887d-40d3e43df3f9",
+          "text": "You're just what I needed",
+          "kind": "verse",
+          "start": 182.73,
+          "estimated": false
+        },
+        {
+          "id": "2117ed9c-364c-42cc-8e8f-26d0613cd2a6",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 186.42,
+          "estimated": false
+        },
+        {
+          "id": "73a4638c-a90c-4654-8a8a-95b8c590f14e",
+          "text": "You're just what I needed",
+          "kind": "verse",
+          "start": 200.95,
+          "estimated": false
+        },
+        {
+          "id": "1f711420-4260-4963-b0a0-18e684e99144",
+          "text": "You're just what I needed, yeah, yeah\nThank you\nThank you a lot",
+          "kind": "verse",
+          "start": 210.86,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36965640",
+        "recording": "The Ultimate Rock Collection Gold and Platinum; 1974-1979, Disc 3"
+      },
+      "updatedAt": 1792336498974
+    },
+    {
+      "id": "73763150-8342-46b0-9165-a72f80c55995",
+      "title": "Addicted To Love",
+      "artist": "Robert Palmer",
+      "duration": 364,
+      "bpm": null,
+      "intro": 52.17,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "abd5ae5a-bf6b-4811-be78-d02a7272c160",
+          "text": "Your lights are on but you're not home\nYour mind is not your own\nYour heart sweats, your body shakes",
+          "kind": "verse",
+          "start": 52.17,
+          "estimated": false
+        },
+        {
+          "id": "97e65729-6dbd-45f6-b599-f25bb6d8af92",
+          "text": "Another kiss is what it takes\nYou can't sleep, no, you can't eat\nThere's no doubt, you're in deep",
+          "kind": "verse",
+          "start": 65.18,
+          "estimated": false
+        },
+        {
+          "id": "72062f25-516b-4067-abf6-0c2d5ca4cb2c",
+          "text": "Your throat is tight, you can't breathe\nAnother kiss is all you need\nWoah, you like to think that you're immune to the stuff, oh yeah",
+          "kind": "verse",
+          "start": 77.9,
+          "estimated": false
+        },
+        {
+          "id": "f3e5924d-3d76-4378-ad86-0d8ab3732d6a",
+          "text": "It's closer to the truth to say you can't get enough\nYou know you're gonna have to face it, you're addicted to love",
+          "kind": "verse",
+          "start": 95.41,
+          "estimated": false
+        },
+        {
+          "id": "761b6a3a-8fea-4083-be82-025a0643af16",
+          "text": "You see the signs but you can't read\nYou're runnin' at a different speed\nYour heart beats in double time",
+          "kind": "verse",
+          "start": 103.7,
+          "estimated": false
+        },
+        {
+          "id": "db39b9e8-22ce-4cce-bfee-e0e4a90edb24",
+          "text": "Another kiss and you'll be mine\nA one track mind, you can't be saved\nOblivion is all you crave",
+          "kind": "verse",
+          "start": 116.65,
+          "estimated": false
+        },
+        {
+          "id": "2119bc2f-7bfe-4fa4-9d3b-3d0fbfe7bbc5",
+          "text": "If there's some left for you\nYou don't mind if you do\nWoah, you like to think that you're immune to the stuff, oh yeah",
+          "kind": "verse",
+          "start": 129.62,
+          "estimated": false
+        },
+        {
+          "id": "4cab3531-275c-4831-ab78-60a9e55fa1d3",
+          "text": "It's closer to the truth to say you can't get enough\nYou know you're gonna have to face it, you're addicted to love",
+          "kind": "verse",
+          "start": 147.08,
+          "estimated": false
+        },
+        {
+          "id": "9535da8a-f301-43dd-a622-d601f2c3f6cb",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 155.9,
+          "estimated": false
+        },
+        {
+          "id": "f9296af2-dd31-49d7-a23b-8d95e6208d1c",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 168.68,
+          "estimated": false
+        },
+        {
+          "id": "4cce348d-76f4-4b49-b1ef-da32b1478589",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nYou're addicted to love",
+          "kind": "verse",
+          "start": 181.69,
+          "estimated": false
+        },
+        {
+          "id": "44cfe6d8-2489-45f9-a745-f7403905d19d",
+          "text": "You're addicted to love\nMight as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 196.16,
+          "estimated": false
+        },
+        {
+          "id": "d4cf8cd7-bb9f-401d-b654-1126bce3c95f",
+          "text": "Might as well face it\nMight as well face it\nMight as well face it",
+          "kind": "verse",
+          "start": 207.46,
+          "estimated": false
+        },
+        {
+          "id": "9d0b3731-2dcc-496c-ba1a-e173c1614be5",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nOoh, yeah",
+          "kind": "verse",
+          "start": 220.16,
+          "estimated": false
+        },
+        {
+          "id": "e0bee9f8-83d2-4b65-b6df-6649156e839b",
+          "text": "Your lights are on but you're not home\nYour will is not your own\nYour heart sweats, your teeth grind",
+          "kind": "verse",
+          "start": 245.68,
+          "estimated": false
+        },
+        {
+          "id": "f0d05e2e-c78b-4bca-8b2d-85619146353b",
+          "text": "Another kiss and you'll be mine\nWhoa, you like to think that you're immune to the stuff, oh yeah",
+          "kind": "verse",
+          "start": 258.73,
+          "estimated": false
+        },
+        {
+          "id": "42fab85d-1ea9-41bf-9466-31a6955fa2c8",
+          "text": "It's closer to the truth to say you can't get enough\nYou know you're gonna have to face it, you're addicted to love",
+          "kind": "verse",
+          "start": 271.87,
+          "estimated": false
+        },
+        {
+          "id": "60563a93-c2f2-4dbc-982d-060e969887b8",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 280.79,
+          "estimated": false
+        },
+        {
+          "id": "10a0f7da-debf-438a-8f23-b236179b87aa",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 293.33,
+          "estimated": false
+        },
+        {
+          "id": "0308f4d8-40da-4b88-bbce-1a7794f786aa",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 306.04,
+          "estimated": false
+        },
+        {
+          "id": "bb948533-4cf0-43a5-b018-784da9b6b799",
+          "text": "Might as well face it\nMight as well face it, you're addicted to love\nMight as well face it",
+          "kind": "verse",
+          "start": 323.4,
+          "estimated": false
+        },
+        {
+          "id": "4d3fbb02-2ef4-489d-9f6d-403b8b12225f",
+          "text": "Might as well face it\nMight as well face it\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 336.35,
+          "estimated": false
+        },
+        {
+          "id": "06859aae-07a7-4416-bf36-8417512f4f25",
+          "text": "Might as well face it, you're addicted to love\nMight as well face it, you're addicted to love\nMight as well face it, you're addicted to love",
+          "kind": "verse",
+          "start": 349.22,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37167226",
+        "recording": "20 #1’s: 80's Pop"
+      },
+      "updatedAt": 1792332598137
+    },
+    {
+      "id": "77277b60-14d0-4961-a3dd-9ef83bd6fa65",
+      "title": "I Guess That's Why They Call It The Blues",
+      "artist": "Elton John",
+      "duration": 282,
+      "bpm": null,
+      "intro": 8.64,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "9aa3f31e-ea60-4770-8218-7eb413aaf166",
+          "text": "Don't wish it away\nDon't look at it like it's forever\nBetween you and me",
+          "kind": "verse",
+          "start": 8.64,
+          "estimated": false
+        },
+        {
+          "id": "bdaf58ea-57f8-461a-ab28-017054cc83d0",
+          "text": "I could honestly say\nThat things can only get better\nAnd while I'm away",
+          "kind": "verse",
+          "start": 24.4,
+          "estimated": false
+        },
+        {
+          "id": "91fb7d38-d6c3-4f7d-aa80-1e2c84c830f2",
+          "text": "Dust out the demons inside\nAnd it won't be long\nBefore you and me run",
+          "kind": "verse",
+          "start": 37.58,
+          "estimated": false
+        },
+        {
+          "id": "54f12264-fa71-4556-b192-5d783548562c",
+          "text": "To the place in our hearts\nWhere we hide",
+          "kind": "verse",
+          "start": 48.13,
+          "estimated": false
+        },
+        {
+          "id": "1f5db28c-c482-4113-b789-402b802247c1",
+          "text": "And I guess that's why they call it the blues\nTime on my hands could be time spent with you\nLaughin' like children, livin' like lovers",
+          "kind": "verse",
+          "start": 58.35,
+          "estimated": false
+        },
+        {
+          "id": "a9d81b83-6d99-4b20-8141-83bada34ec00",
+          "text": "Rollin' like thunder under the covers\nAnd I guess that's why they call it the blues",
+          "kind": "verse",
+          "start": 75.22,
+          "estimated": false
+        },
+        {
+          "id": "dc8f0ba4-e1f9-4d1d-93fa-5c539d633532",
+          "text": "Just stare into space\nPicture my face in your hands\nLive for each second",
+          "kind": "verse",
+          "start": 92.32,
+          "estimated": false
+        },
+        {
+          "id": "1049c9e1-88a1-469d-b165-a4a6947c4ddd",
+          "text": "Without hesitation\nAnd never forget I'm your man\nWait on me girl",
+          "kind": "verse",
+          "start": 104.83,
+          "estimated": false
+        },
+        {
+          "id": "42f8200f-afa3-47e4-8b3b-e97ff62ad0fa",
+          "text": "Cry in the night if it helps\nBut more than ever\nI simply love you",
+          "kind": "verse",
+          "start": 118.12,
+          "estimated": false
+        },
+        {
+          "id": "86f26c39-c921-46de-907c-3614628389d5",
+          "text": "More than I love life itself",
+          "kind": "verse",
+          "start": 128.53,
+          "estimated": false
+        },
+        {
+          "id": "f6a0704f-a208-462d-b724-6e396f430f9a",
+          "text": "And I guess that's why they call it the blues\nTime on my hands could be time spent with you\nLaughin' like children, livin' like lovers",
+          "kind": "verse",
+          "start": 138.63,
+          "estimated": false
+        },
+        {
+          "id": "f22b28c5-08e3-4101-bc78-2c7f960d14f1",
+          "text": "Rollin' like thunder under the covers\nAnd I guess that's why they call it the blues",
+          "kind": "verse",
+          "start": 155.89,
+          "estimated": false
+        },
+        {
+          "id": "9e5c794b-cd6a-4b4e-93b5-e0db945bbfd2",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 170.21,
+          "estimated": false
+        },
+        {
+          "id": "bf619e2b-da2e-4ec1-a893-0bc1ad4c9c4c",
+          "text": "Wait on me, girl\nCry in the night if it helps\nBut more than ever, I simply love you",
+          "kind": "verse",
+          "start": 193.4,
+          "estimated": false
+        },
+        {
+          "id": "4f92f852-2231-4586-a865-3e1bca3ac9e5",
+          "text": "More than I love life itself",
+          "kind": "verse",
+          "start": 209.28,
+          "estimated": false
+        },
+        {
+          "id": "d30c0059-1290-45f3-a62f-880dab8f6663",
+          "text": "And I guess that's why they call it the blues\nTime on my hands could be time spent with you\nLaughin' like children, livin' like lovers",
+          "kind": "verse",
+          "start": 218.71,
+          "estimated": false
+        },
+        {
+          "id": "f723be99-56e7-4307-ae2a-17a2dcbe1eeb",
+          "text": "Rollin' like thunder under the covers\nAnd I guess that's why they call it the blues\n(Laughing like children, living like lovers)",
+          "kind": "verse",
+          "start": 236.16,
+          "estimated": false
+        },
+        {
+          "id": "69f16fcc-f017-46ac-8ec0-3371dd047a57",
+          "text": "And I guess that's why they call it the blues\n(Laughing like children, living like lovers)\nAnd I guess that's why they call it the blues",
+          "kind": "verse",
+          "start": 252.04,
+          "estimated": false
+        },
+        {
+          "id": "c901c2b5-8039-48bb-8a14-f5f99dff0cdf",
+          "text": "And I guess that's why they call it the blues",
+          "kind": "verse",
+          "start": 270.32,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36992712",
+        "recording": "Missing You 2: An Album Of Love"
+      },
+      "updatedAt": 1792336294901
+    },
+    {
+      "id": "774648aa-0659-4ec0-bd96-94ccd4ab30d2",
+      "title": "Werewolves Of London",
+      "artist": "Warren Zevon",
+      "duration": 204,
+      "bpm": null,
+      "intro": 20.25,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "839bea7c-27ae-45f3-a607-14026217a1d3",
+          "text": "I saw a werewolf with a Chinese menu in his hand\nWalking through the streets of SoHo in the rain\nHe was looking for the place called Lee Ho Fooks",
+          "kind": "verse",
+          "start": 20.25,
+          "estimated": false
+        },
+        {
+          "id": "559dc64a-faf4-47f0-9877-f57054251c9b",
+          "text": "For to get a big dish of beef chow mein\nAh-hoo, werewolves of London\nAh-hoo",
+          "kind": "verse",
+          "start": 34.18,
+          "estimated": false
+        },
+        {
+          "id": "f0b34dc8-fbcd-470f-bb32-b9761f5aac7b",
+          "text": "Ah-hoo, werewolves of London\nAh-hoo\nYou hear him howling around your kitchen door",
+          "kind": "verse",
+          "start": 48.33,
+          "estimated": false
+        },
+        {
+          "id": "c8f22b42-da31-4846-8e40-944508958c77",
+          "text": "You better not let him in\nLittle old lady got mutilated late last night\nWerewolves of London again",
+          "kind": "verse",
+          "start": 62.41,
+          "estimated": false
+        },
+        {
+          "id": "4f02117f-2f5f-4d8a-a429-217dc5ab1a5c",
+          "text": "Ah-hoo, werewolves of London\nAh-hoo\nAh-hoo, werewolves of London",
+          "kind": "verse",
+          "start": 76.21,
+          "estimated": false
+        },
+        {
+          "id": "34135aae-0d2d-4428-8bb2-aee47982418c",
+          "text": "Ah-hoo, huh",
+          "kind": "verse",
+          "start": 90.52,
+          "estimated": false
+        },
+        {
+          "id": "98c63d35-d1ea-4dfb-8ae0-659bba91eccf",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 94.13,
+          "estimated": false
+        },
+        {
+          "id": "d8cedaba-251b-4cb8-a954-49fc2c291594",
+          "text": "He's the hairy handed gent who ran amok in Kent\nLately he's been overheard in Mayfair\nYou better stay away from him, he'll rip your lungs out Jim",
+          "kind": "verse",
+          "start": 112.43,
+          "estimated": false
+        },
+        {
+          "id": "9a10d2b7-929c-41d7-99ff-9936f3b8738b",
+          "text": "Huh, I'd like to meet his tailor\nAh-hoo, werewolves of London\nAh-hoo",
+          "kind": "verse",
+          "start": 126.1,
+          "estimated": false
+        },
+        {
+          "id": "9609f126-f0c7-4fb4-9a22-acd5587fdff7",
+          "text": "Ah-hoo, werewolves of London\nAh-hoo\nWell, I saw Lon Chaney walking with the Queen",
+          "kind": "verse",
+          "start": 141.13,
+          "estimated": false
+        },
+        {
+          "id": "96e06c58-4630-49b3-9528-c7318cb4aa34",
+          "text": "Doin' the werewolves of London\nI saw Lon Chaney Jr. walking with the Queen, uh\nDoin' the werewolves of London",
+          "kind": "verse",
+          "start": 154.95,
+          "estimated": false
+        },
+        {
+          "id": "e920dc1e-c850-428d-9e07-cf034aeed8c2",
+          "text": "I saw a werewolf drinkin' a piña colada at Trader Vic's\nHis hair was perfect\nAh-hoo, werewolves of London",
+          "kind": "verse",
+          "start": 168.1,
+          "estimated": false
+        },
+        {
+          "id": "8b9ee3e6-58e0-49c0-b3a8-2821e7ca77c3",
+          "text": "Hey draw blood\nAh-hoo, werewolves of London",
+          "kind": "verse",
+          "start": 186.35,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37463454",
+        "recording": "Driving In My Car - The Ultimate Collection"
+      },
+      "updatedAt": 1792337058962
+    },
+    {
+      "id": "8b6707b0-84f5-4355-9459-401d671d1d49",
+      "title": "Maggie May",
+      "artist": "Rod Stewart",
+      "duration": 315,
+      "bpm": null,
+      "intro": 45.94,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "9a4e102a-0fd3-4697-af19-1fb2d67369d8",
+          "text": "Wake up Maggie\nI think I got something to say to you\nIt's late September and I really should be back at school",
+          "kind": "verse",
+          "start": 45.94,
+          "estimated": false
+        },
+        {
+          "id": "22a1d42f-d536-4ce1-a1f4-e387b8069850",
+          "text": "I know I keep you amused\nBut I feel I'm being used\nOh Maggie, I couldn't have tried anymore",
+          "kind": "verse",
+          "start": 62.84,
+          "estimated": false
+        },
+        {
+          "id": "5d70826b-8794-4e12-b162-9080d3802e01",
+          "text": "You led me away from home\nJust to save you from being alone\nYou stole my heart and that's what really hurts",
+          "kind": "verse",
+          "start": 77.71,
+          "estimated": false
+        },
+        {
+          "id": "a397cfdb-d145-429f-8d16-9e7143631704",
+          "text": "The morning sun when it's in your face\nReally shows your age\nBut that don't worry me none, in my eyes you're everything",
+          "kind": "verse",
+          "start": 92.09,
+          "estimated": false
+        },
+        {
+          "id": "8bbbf058-76a3-4d48-b3c3-f46ead79dbfd",
+          "text": "I laughed at all of your jokes\nMy love you didn't need to coax\nOh Maggie, I couldn't have tried anymore",
+          "kind": "verse",
+          "start": 107.32,
+          "estimated": false
+        },
+        {
+          "id": "6ccd8a6e-43cb-4e81-878f-7101adc48a74",
+          "text": "You led me away from home\nJust to save you from being alone\nYou stole my soul and that's a pain I can do without",
+          "kind": "verse",
+          "start": 120.97,
+          "estimated": false
+        },
+        {
+          "id": "0e1d5617-2b88-4475-9229-5f6aea899360",
+          "text": "All I needed was a friend to lend, a guiding hand\nBut you turned into a lover\nAnd Mother what a lover, you wore me out",
+          "kind": "verse",
+          "start": 137.28,
+          "estimated": false
+        },
+        {
+          "id": "e43137b2-63b7-4b23-bf9f-254f20a3909c",
+          "text": "All you did was wreck my bed\nAnd in the morning kick me in the head\nOh Maggie I couldn't have tried anymore",
+          "kind": "verse",
+          "start": 151.73,
+          "estimated": false
+        },
+        {
+          "id": "203e31ab-82a5-4dea-805f-a9ec5a499d49",
+          "text": "You led me away from home\n'Cause you didn't want to be alone\nYou stole my heart, I couldn't leave you if I tried",
+          "kind": "verse",
+          "start": 166.7,
+          "estimated": false
+        },
+        {
+          "id": "95963f0f-65ee-442f-b81d-fce20cfb6f6b",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 180.13,
+          "estimated": false
+        },
+        {
+          "id": "6193b923-ea7a-40a6-baf7-fa29f3badcae",
+          "text": "I suppose I could collect my books and get on back to school\nOr steal my daddy's cue and make a living out of playing pool",
+          "kind": "verse",
+          "start": 195.72,
+          "estimated": false
+        },
+        {
+          "id": "c6f17a6d-c36b-4cc2-81e9-5825b4bade8b",
+          "text": "Or find myself a rock and roll band\nThat needs a helpin' hand\nOh Maggie, I wished I'd never seen your face",
+          "kind": "verse",
+          "start": 211.7,
+          "estimated": false
+        },
+        {
+          "id": "f0c02187-59bb-477c-a590-b505787ffb0d",
+          "text": "You made a first-class fool out of me\nBut I'm as blind as a fool can be\nYou stole my heart but I love you anyway",
+          "kind": "verse",
+          "start": 226.76,
+          "estimated": false
+        },
+        {
+          "id": "1160b6da-7f15-4fb2-8ba5-29888953c9b0",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 240.15,
+          "estimated": false
+        },
+        {
+          "id": "4ab4b25a-7578-46c7-bde8-185164fe3f60",
+          "text": "Maggie, I wished I'd never seen your face",
+          "kind": "verse",
+          "start": 255.87,
+          "estimated": false
+        },
+        {
+          "id": "c2341242-9495-4b17-ab1b-8fe26172bab5",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 263.61,
+          "estimated": false
+        },
+        {
+          "id": "cd9d5010-f6fc-4d20-97fe-4f9e0cfbcfdf",
+          "text": "I'll get on back home, one of these days",
+          "kind": "verse",
+          "start": 312.21,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36840578",
+        "recording": "Billboard: 1971"
+      },
+      "updatedAt": 1792335592683
+    },
+    {
+      "id": "90c97db5-6466-407c-97f4-9e5092d57ae4",
+      "title": "Something Got Me Started",
+      "artist": "Simply Red",
+      "duration": 241,
+      "bpm": null,
+      "intro": 2.79,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "37cde48f-b66e-43cc-8aa9-4ee57e995976",
+          "text": "I love you\nShow me",
+          "kind": "verse",
+          "start": 2.79,
+          "estimated": false
+        },
+        {
+          "id": "5315adbb-b025-46a3-bf69-b8c63b2a0b28",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 9.74,
+          "estimated": false
+        },
+        {
+          "id": "02267e58-3142-432a-bc1d-b2577849fe90",
+          "text": "Something got me started\nYou know that I will love you\nLately since we parted",
+          "kind": "verse",
+          "start": 26.5,
+          "estimated": false
+        },
+        {
+          "id": "afba9a55-a09b-449a-8e7b-aaf459cca5b8",
+          "text": "I truly know that I need you\nI'd give it all up for you\nI'd give it all up for you",
+          "kind": "verse",
+          "start": 38.11,
+          "estimated": false
+        },
+        {
+          "id": "6c1c69a9-a157-4020-a79c-b40e6864c1fe",
+          "text": "I'd give it all up for you\nI'd give it all up for you\nI'd give it all up for you (yes, I would)",
+          "kind": "verse",
+          "start": 47.93,
+          "estimated": false
+        },
+        {
+          "id": "da8d554a-7afc-46d6-a933-bbbd3d02ad3c",
+          "text": "I'd give it all up for you (yes, I would)\nI'd give it all up for you (yes, I would)\nI'd give it all up for you (yes, I would)",
+          "kind": "verse",
+          "start": 54.42,
+          "estimated": false
+        },
+        {
+          "id": "043a813a-3d4f-4beb-93a7-8ab9113dabf7",
+          "text": "Totally broken-hearted\nGuilty of what I did to you\nLately since we parted",
+          "kind": "verse",
+          "start": 69.42,
+          "estimated": false
+        },
+        {
+          "id": "033eab10-6db2-4fc5-811f-4ebbc44e5ed3",
+          "text": "I truly know that I need you\nYes a little because\nI'd give it all up for you",
+          "kind": "verse",
+          "start": 80.99,
+          "estimated": false
+        },
+        {
+          "id": "412ca836-ba5b-4059-bac0-bfe4d98b510f",
+          "text": "I'd give it all up for you\nI'd give it all up for you\nI'd give it all up for you",
+          "kind": "verse",
+          "start": 88.69,
+          "estimated": false
+        },
+        {
+          "id": "286b493a-f97d-4cdb-b2e4-2998f47d6ef4",
+          "text": "I'd give it all up for you (yes, I would)\nI'd give it all up for you (yes, I would)\nI'd give it all up for you (yes, I would)",
+          "kind": "verse",
+          "start": 94.94,
+          "estimated": false
+        },
+        {
+          "id": "05241e7f-0e96-4112-b9e2-705a4f4a9cd8",
+          "text": "I'd give it all up for you (yes, I would)",
+          "kind": "verse",
+          "start": 101.58,
+          "estimated": false
+        },
+        {
+          "id": "499afc5d-ed24-41dd-b9df-04f58e8d28c8",
+          "text": "C'mon",
+          "kind": "verse",
+          "start": 111.54,
+          "estimated": false
+        },
+        {
+          "id": "28a98306-cbaa-41b6-ae33-6d95da76ff21",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 112.73,
+          "estimated": false
+        },
+        {
+          "id": "05cb66d3-d02e-47c6-86be-169bfde2ade4",
+          "text": "I really love you",
+          "kind": "verse",
+          "start": 131.11,
+          "estimated": false
+        },
+        {
+          "id": "183c2092-f23e-4671-948e-c649749beb0e",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 133.69,
+          "estimated": false
+        },
+        {
+          "id": "71f6ea9b-6b88-4674-8c00-0d0960d4faa4",
+          "text": "C'mon\nI'd give it all up for you\nI'd give it all up for you",
+          "kind": "verse",
+          "start": 153.67,
+          "estimated": false
+        },
+        {
+          "id": "a429bd0e-2b2b-47e4-99ae-764064c6489f",
+          "text": "I'd give it all up for you\nI'd give it all up for you\nI'd give it all up for you (yes, I would)",
+          "kind": "verse",
+          "start": 159.24,
+          "estimated": false
+        },
+        {
+          "id": "696455a3-e721-4e0f-a95e-c428f7535b63",
+          "text": "I'd give it all up for you (yes, I would)\nI'd give it all up for you (yes, I would)\nI'd give it all up for you (yes, I would)",
+          "kind": "verse",
+          "start": 165.69,
+          "estimated": false
+        },
+        {
+          "id": "4dddc6a0-935c-4e3d-9650-95078f0ea5f3",
+          "text": "Yes, I would\nYes, I would\nYes, I would, hey yeah",
+          "kind": "verse",
+          "start": 173.52,
+          "estimated": false
+        },
+        {
+          "id": "491caa18-628a-491d-bfca-a98b4a4333cd",
+          "text": "Yes, I would, yeah\nYes, I would (something got me started)\nHey, ayy (something got me started)",
+          "kind": "verse",
+          "start": 188.5,
+          "estimated": false
+        },
+        {
+          "id": "3d44bb1f-0a3d-4149-a690-72fd6fd28ae9",
+          "text": "You've got to help me now (something got me started)\nYou've got to help me now (something got me started)",
+          "kind": "verse",
+          "start": 206.83,
+          "estimated": false
+        },
+        {
+          "id": "199fa25b-3e32-4100-8b5b-824f5798b824",
+          "text": "You've got to help me now (something got me started)\nYou've got to help me now (something got me started)\nI'll take it out",
+          "kind": "verse",
+          "start": 215.32,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36962960",
+        "recording": "Weekend Songs"
+      },
+      "updatedAt": 1792335529237
+    },
+    {
+      "id": "928846f7-28e9-4e6c-866f-419fbc491ec6",
+      "title": "Somewhere In My Heart",
+      "artist": "Aztec Camera",
+      "duration": 231,
+      "bpm": null,
+      "intro": 7,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "58b3d20d-610b-43db-a4d9-dfcc53c2dd58",
+          "text": "Summer in the city where the air is still\nA baby being born to the overkill\nWell who cares what people say",
+          "kind": "verse",
+          "start": 7,
+          "estimated": false
+        },
+        {
+          "id": "97ba7f26-d87c-45b2-8556-a0efbb8f1652",
+          "text": "We walk down love's motorway\nAmbition and love wearing boxing gloves\nAnd singing hearts and flowers",
+          "kind": "verse",
+          "start": 17.51,
+          "estimated": false
+        },
+        {
+          "id": "629d380c-f70e-4fdd-a7f1-756bd166db55",
+          "text": "But somewhere in my heart\nThere is a star that shines for you\nSilver splits the blue",
+          "kind": "verse",
+          "start": 27.75,
+          "estimated": false
+        },
+        {
+          "id": "4915e7a1-be3d-4a99-af54-360434d54f33",
+          "text": "Love will see it through\nAnd somewhere in my heart\nThere is the will to set you free",
+          "kind": "verse",
+          "start": 38.95,
+          "estimated": false
+        },
+        {
+          "id": "404ad85a-4130-48d5-926a-232026732ab4",
+          "text": "All you've got to be is true\nA star above the city in the northern chill\nA baby being born to the overkill",
+          "kind": "verse",
+          "start": 49.62,
+          "estimated": false
+        },
+        {
+          "id": "31ca8608-50ae-4b11-a5d3-bd0d91e22fd8",
+          "text": "No say, no place to go\nA TV, a radio\nAmbition and love wearing boxing gloves",
+          "kind": "verse",
+          "start": 64.33,
+          "estimated": false
+        },
+        {
+          "id": "289f4ab9-f022-4d04-b023-fdcf5df3813c",
+          "text": "And singing hearts and flowers\nBut somewhere in my heart\nThere is a star that shines for you",
+          "kind": "verse",
+          "start": 73.94,
+          "estimated": false
+        },
+        {
+          "id": "3e5cb04c-6149-4a08-b801-b34580f247ab",
+          "text": "Silver splits the blue\nLove will see it through\nAnd somewhere in my heart",
+          "kind": "verse",
+          "start": 85.25,
+          "estimated": false
+        },
+        {
+          "id": "7dc342c7-6e0e-428e-bacc-6743e8e9ee3e",
+          "text": "There is the will to set you free\nAll you've got to be is true",
+          "kind": "verse",
+          "start": 94.87,
+          "estimated": false
+        },
+        {
+          "id": "8453cf46-de65-439d-94ec-792930536531",
+          "text": "Who could heal\nWhat's never been as one?\nAnd our hearts have been torn",
+          "kind": "verse",
+          "start": 108.05,
+          "estimated": false
+        },
+        {
+          "id": "e9b11d70-28cd-4ded-83e0-e6b4f3093675",
+          "text": "Since the day we were born\nJust like anyone\nFrom Westwood to Hollywood",
+          "kind": "verse",
+          "start": 115.24,
+          "estimated": false
+        },
+        {
+          "id": "aa9e7339-7ff2-44ac-b873-cee4ee3f9ed1",
+          "text": "The one thing that's understood\nIs that you can't buy time\nBut you can sell your soul",
+          "kind": "verse",
+          "start": 125.07,
+          "estimated": false
+        },
+        {
+          "id": "95d56cd4-ac8f-4fbc-bbb8-ed3dc3f74a6f",
+          "text": "And the closest thing to Heaven is to rock and roll",
+          "kind": "verse",
+          "start": 131.45,
+          "estimated": false
+        },
+        {
+          "id": "41a829d8-3e0f-4652-8030-eaf14ccce8d4",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 136.35,
+          "estimated": false
+        },
+        {
+          "id": "8836728d-8cab-45b1-ae6e-d79c08bb81d1",
+          "text": "But somewhere in my heart\nThere is a star that shines for you\nSilver splits the blue",
+          "kind": "verse",
+          "start": 149.81,
+          "estimated": false
+        },
+        {
+          "id": "cfa91612-afa9-4dd9-9e27-5306fbd24130",
+          "text": "Love will see it through\nAnd somewhere in my heart\nThere is the will to set you free",
+          "kind": "verse",
+          "start": 160.57,
+          "estimated": false
+        },
+        {
+          "id": "77a484ba-de29-4ce4-aa3d-b250961d45dc",
+          "text": "All you've got to be is true\nSomewhere in my heart\nThere is a star that shines for you",
+          "kind": "verse",
+          "start": 171.59,
+          "estimated": false
+        },
+        {
+          "id": "e5303643-86c0-4730-a7e3-e356a1fe23b8",
+          "text": "Silver splits the blue\nLove will see it through\nAnd somewhere in my heart",
+          "kind": "verse",
+          "start": 185.88,
+          "estimated": false
+        },
+        {
+          "id": "f0813ffc-ef92-429a-9dd8-2d171cfbf024",
+          "text": "There is the will to set you free\nAll you've got to be is true",
+          "kind": "verse",
+          "start": 195.3,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36988345",
+        "recording": "Now That's What I Call Music! 1988 (CD2)"
+      },
+      "updatedAt": 1792335494179
+    },
+    {
+      "id": "9f8d0eb0-91cc-41a8-a468-6eb33e9d0e84",
+      "title": "Bad Case of Loving You",
+      "artist": "Robert Palmer",
+      "duration": 190,
+      "bpm": null,
+      "intro": 5.56,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "67c02434-6d1b-4d32-bee6-2d4014256bba",
+          "text": "Wooah",
+          "kind": "verse",
+          "start": 5.56,
+          "estimated": false
+        },
+        {
+          "id": "52525831-5868-4822-a264-b1168dc30f1a",
+          "text": "A hot summer night, fell like a net\nI've gotta find my baby yet\nI need you to soothe my head",
+          "kind": "verse",
+          "start": 12.78,
+          "estimated": false
+        },
+        {
+          "id": "42579a2e-8598-452c-8bbb-98d933f4bf28",
+          "text": "Turn my blue heart to red\nDoctor, doctor give me the news\nI've got a bad case of lovin' you",
+          "kind": "verse",
+          "start": 32.87,
+          "estimated": false
+        },
+        {
+          "id": "8a30e390-9751-4d1c-974c-75a77655eeb3",
+          "text": "No pill's gonna cure my ill\nI've got a bad case of lovin' you",
+          "kind": "verse",
+          "start": 46.74,
+          "estimated": false
+        },
+        {
+          "id": "3b00f180-a4af-4e4e-879e-051dd0025181",
+          "text": "A pretty face don't make no pretty heart\nI learned that buddy, from the start\nYou think I'm cute, a little bit shy",
+          "kind": "verse",
+          "start": 59.42,
+          "estimated": false
+        },
+        {
+          "id": "947c73c1-df9b-4f7d-8475-0252e9a1470f",
+          "text": "Momma, I ain't that kind of guy\nDoctor, doctor give me the news\nI've got a bad case of lovin' you",
+          "kind": "verse",
+          "start": 78.64,
+          "estimated": false
+        },
+        {
+          "id": "8c089fea-256f-46ce-af86-27f91f6fb3f3",
+          "text": "No pill's gonna cure my ill\nI've got a bad case of lovin' you",
+          "kind": "verse",
+          "start": 92.74,
+          "estimated": false
+        },
+        {
+          "id": "70bc730e-ecfd-4ad4-b2e8-040bdc9db6ac",
+          "text": "Wooah",
+          "kind": "verse",
+          "start": 104.66,
+          "estimated": false
+        },
+        {
+          "id": "406640cf-2fad-4a18-a0e9-dec4e9eff469",
+          "text": "I know you like it, you like it on top\nTell me momma are you gonna stop",
+          "kind": "verse",
+          "start": 120.01,
+          "estimated": false
+        },
+        {
+          "id": "2352a213-dd79-4f0f-8ae3-9063b7777e86",
+          "text": "You had me down, 21 to zip\nSmile of Judas on your lip\nShake my fist, knock on wood",
+          "kind": "verse",
+          "start": 137.13,
+          "estimated": false
+        },
+        {
+          "id": "fe47e525-4c42-4a4a-8752-6028f1f489d2",
+          "text": "I've got it bad and I've got it good\nDoctor, doctor give me the news\nI've got a bad case of lovin' you",
+          "kind": "verse",
+          "start": 159.15,
+          "estimated": false
+        },
+        {
+          "id": "1e1f63ce-f9af-4774-9c81-535505c1bb71",
+          "text": "No pill's gonna cure my ill\nI've got a bad case of lovin' you",
+          "kind": "verse",
+          "start": 173.16,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/33810591",
+        "recording": "Sleeping Dogs Licensed Music"
+      },
+      "updatedAt": 1792336280542
+    },
+    {
+      "id": "a894c4ca-8431-45c7-830e-def733aee3af",
+      "title": "Still haven’t found",
+      "artist": "U2",
+      "duration": 240,
+      "bpm": null,
+      "intro": 0,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "1078dfdc-bb33-4090-853b-c3b04c55e037",
+          "text": "I have climbed the highest mountains\nI have run through the fields\nOnly to be with you",
+          "kind": "verse",
+          "start": 0,
+          "estimated": true
+        },
+        {
+          "id": "83933dcf-b83a-42a4-9225-f637b93c7bc5",
+          "text": "Only to be with you",
+          "kind": "verse",
+          "start": 12.6,
+          "estimated": true
+        },
+        {
+          "id": "3fd316ca-ee8b-49f1-9e23-fdef89c7bae3",
+          "text": "I have run, I have crawled\nI have scaled these city walls\nThese city walls",
+          "kind": "verse",
+          "start": 25.3,
+          "estimated": true
+        },
+        {
+          "id": "5d5ca0bf-ceaf-4a5b-83f9-c7db67b2d21a",
+          "text": "Only to be with you",
+          "kind": "verse",
+          "start": 37.9,
+          "estimated": true
+        },
+        {
+          "id": "53bd1f50-f50b-47e1-8926-a889cc8a3d04",
+          "text": "But I still haven't found\nWhat I'm looking for\nBut I still haven't found",
+          "kind": "verse",
+          "start": 50.5,
+          "estimated": true
+        },
+        {
+          "id": "8bf7a789-1245-414a-8d1d-a03249fbf852",
+          "text": "What I'm looking for",
+          "kind": "verse",
+          "start": 63.2,
+          "estimated": true
+        },
+        {
+          "id": "a5c96d47-cbd5-490e-9c03-2fe6b0a3c468",
+          "text": "I have kissed honey lips\nFelt the healing in her fingertips\nIt burned like fire",
+          "kind": "verse",
+          "start": 75.8,
+          "estimated": true
+        },
+        {
+          "id": "f6d4f0b7-a0ee-42ce-b137-e55e9ee25acd",
+          "text": "This burning desire",
+          "kind": "verse",
+          "start": 88.4,
+          "estimated": true
+        },
+        {
+          "id": "27abe774-c7dc-49cf-8d64-13861776c8e3",
+          "text": "I have spoke with the tongue of angels\nI have held the hand of a devil\nIt was warm in the night",
+          "kind": "verse",
+          "start": 101.1,
+          "estimated": true
+        },
+        {
+          "id": "363bee96-2839-461b-b359-d546c1a5909f",
+          "text": "I was cold as a stone",
+          "kind": "verse",
+          "start": 113.7,
+          "estimated": true
+        },
+        {
+          "id": "85b49fff-b0c1-4d84-af7e-9aebbfe35c3b",
+          "text": "But I still haven't found\nWhat I'm looking for\nBut I still haven't found",
+          "kind": "verse",
+          "start": 126.3,
+          "estimated": true
+        },
+        {
+          "id": "49ac2afd-1b92-4861-9cc1-22b087beef12",
+          "text": "What I'm looking for",
+          "kind": "verse",
+          "start": 138.9,
+          "estimated": true
+        },
+        {
+          "id": "915ba295-2a5f-43d0-906a-e740c6de4fd9",
+          "text": "I believe in the Kingdom Come\nThen all the colours will bleed into one\nBleed into one",
+          "kind": "verse",
+          "start": 151.6,
+          "estimated": true
+        },
+        {
+          "id": "a606ded8-0084-43ce-a45a-5a668241d47c",
+          "text": "But yes, I'm still running",
+          "kind": "verse",
+          "start": 164.2,
+          "estimated": true
+        },
+        {
+          "id": "ae7aba8a-6b7f-43be-ba38-60425d8b9ed5",
+          "text": "You broke the bonds and you loosed the chains\nCarried the cross of my shame\nOf my shame",
+          "kind": "verse",
+          "start": 176.8,
+          "estimated": true
+        },
+        {
+          "id": "36ef56b5-f142-4e65-a7b5-3a25b5d7aec7",
+          "text": "You know I believe it",
+          "kind": "verse",
+          "start": 189.5,
+          "estimated": true
+        },
+        {
+          "id": "d0b9a9f5-3473-464c-8398-136d0f32f4d7",
+          "text": "But I still haven't found\nWhat I'm looking for\nBut I still haven't found",
+          "kind": "verse",
+          "start": 202.1,
+          "estimated": true
+        },
+        {
+          "id": "dfd44db7-b9f5-41e7-b075-72d225ca3075",
+          "text": "What I'm looking for\nBut I still haven't found\nWhat I'm looking for",
+          "kind": "verse",
+          "start": 214.7,
+          "estimated": true
+        },
+        {
+          "id": "bed40225-8d41-46bc-ad5f-357db101c701",
+          "text": "But I still haven't found\nWhat I'm looking for",
+          "kind": "verse",
+          "start": 227.4,
+          "estimated": true
+        }
+      ],
+      "lyricSource": {
+        "type": "user"
+      },
+      "updatedAt": 1792336408233
+    },
+    {
+      "id": "ac15cf23-92c0-43be-a014-fd802c4ab3e2",
+      "title": "Starman",
+      "artist": "David Bowie",
+      "duration": 258,
+      "bpm": null,
+      "intro": 10.59,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "6d61aee6-b654-4165-9738-04778b26b1f7",
+          "text": "Goodbye love\nGoodbye love\nDidn't know what time it was the lights were low oh oh",
+          "kind": "verse",
+          "start": 10.59,
+          "estimated": false
+        },
+        {
+          "id": "a41da007-e8ec-4b8e-85e3-479cbb113c40",
+          "text": "I leaned back on my radio oh oh\nSome cat was layin down some rock n roll lotta soul, he said\nThen the loud sound did seem to fade a ade",
+          "kind": "verse",
+          "start": 25.31,
+          "estimated": false
+        },
+        {
+          "id": "a66a1fa2-1d64-4821-b103-343660bdf85c",
+          "text": "Came back like a slow voice on a wave of phase a ase\nThat werent no DJ that was hazy cosmic jive\nThere's a starman waiting in the sky",
+          "kind": "verse",
+          "start": 42.12,
+          "estimated": false
+        },
+        {
+          "id": "d7e4ca72-8059-48ee-8795-37f70fe718e0",
+          "text": "He'd like to come and meet us\nBut he thinks he'd blow our minds\nThere's a starman waiting in the sky",
+          "kind": "verse",
+          "start": 60.85,
+          "estimated": false
+        },
+        {
+          "id": "36835690-707d-40f2-8121-ccb0f4bc8207",
+          "text": "He's told us not to blow it\n'Cause he knows it's all worthwhile\nHe told me:",
+          "kind": "verse",
+          "start": 70.42,
+          "estimated": false
+        },
+        {
+          "id": "51d03ce1-05ce-4ea2-b59e-209757109aab",
+          "text": "Let the children lose it\nLet the children use it\nLet all the children boogie",
+          "kind": "verse",
+          "start": 76.26,
+          "estimated": false
+        },
+        {
+          "id": "3d56f262-4684-4e25-b656-160523da45c2",
+          "text": "I had to phone someone so I picked on you ou ou\nHey, that's far out so you heard him too! oo oo\nSwitch on the TV we may pick him up on channel two",
+          "kind": "verse",
+          "start": 99.85,
+          "estimated": false
+        },
+        {
+          "id": "42d5c8bd-8d4f-4f6a-8526-4cd96dba3927",
+          "text": "Look out your window I can see his light I ight\nIf we can sparkle he may land tonight I ight\nDon't tell your poppa or he'll get us locked up in fright",
+          "kind": "verse",
+          "start": 116.55,
+          "estimated": false
+        },
+        {
+          "id": "ddc3a50d-b6b0-4c10-b3bd-7937a96af1d5",
+          "text": "There's a starman waiting in the sky\nHe'd like to come and meet us\nBut he thinks he'd blow our minds",
+          "kind": "verse",
+          "start": 134.54,
+          "estimated": false
+        },
+        {
+          "id": "543d0cdb-a9a7-4168-ac70-e9f53553313d",
+          "text": "There's a starman waiting in the sky\nHe's told us not to blow it\n'Cause he knows it's all worthwhile",
+          "kind": "verse",
+          "start": 144.34,
+          "estimated": false
+        },
+        {
+          "id": "1bd4d06b-9850-4504-82ef-0ac9cc2e33d2",
+          "text": "He told me:\nLet the children lose it\nLet the children use it",
+          "kind": "verse",
+          "start": 153.82,
+          "estimated": false
+        },
+        {
+          "id": "f495d154-9318-4408-8e7a-d92984d22b28",
+          "text": "Let all the children boogie\nStarman waiting in the sky\nHe'd like to come and meet us",
+          "kind": "verse",
+          "start": 159.56,
+          "estimated": false
+        },
+        {
+          "id": "6f7df38e-7757-480f-bc56-b2aea2cbb4da",
+          "text": "But he thinks he'd blow our minds\nThere's a starman waiting in the sky\nHe's told us not to blow it",
+          "kind": "verse",
+          "start": 168.78,
+          "estimated": false
+        },
+        {
+          "id": "440a5e90-b0ec-4a64-b987-20c4cd88c7af",
+          "text": "Cause he knows it's all worthwhile\nHe told me:\nLet the children lose it",
+          "kind": "verse",
+          "start": 178.28,
+          "estimated": false
+        },
+        {
+          "id": "9d75cbe2-7ec8-45b7-9294-771cb48f6e2a",
+          "text": "Let the children use it\nLet all the children boogie",
+          "kind": "verse",
+          "start": 183.7,
+          "estimated": false
+        },
+        {
+          "id": "861396ca-691d-4323-8e25-2b6a4d9e098d",
+          "text": "La, la, la, la la\nLa, la, la la, la, la, la la\nLa, la, la la, la, la, la la",
+          "kind": "verse",
+          "start": 197.24,
+          "estimated": false
+        },
+        {
+          "id": "6ee1405d-506a-4062-aa3c-e9f8f489730b",
+          "text": "La, la, la la, la, la, la la\nLa, la, la la, la, la, la la\nLa, la, la la, la, la, la la",
+          "kind": "verse",
+          "start": 210.25,
+          "estimated": false
+        },
+        {
+          "id": "ad4d25b3-2c08-4428-8df0-5fa6f8eccd91",
+          "text": "La, la, la la, la, la, la la\nLa, la, la la, la, la, la la\nLa, la, la la, la, la, la la",
+          "kind": "verse",
+          "start": 223.78,
+          "estimated": false
+        },
+        {
+          "id": "09b71a6f-dad3-42b7-855f-559b0ee4bf91",
+          "text": "La, la, la la, la, la, la la\nLa, la, la la, la, la, la la\nLa, la, la la, la, la, la la",
+          "kind": "verse",
+          "start": 237.96,
+          "estimated": false
+        },
+        {
+          "id": "4112fb4e-7826-4165-a7af-4a9e788b7a2a",
+          "text": "La, la, la la, la, la, la la",
+          "kind": "verse",
+          "start": 251.66,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36937790",
+        "recording": "M_Old"
+      },
+      "updatedAt": 1792335448236
+    },
+    {
+      "id": "b507b308-557b-44ca-9f2f-b97388484e32",
+      "title": "Moneys too tight",
+      "artist": "Simply Red",
+      "duration": 269.5836729,
+      "bpm": null,
+      "intro": 27.58,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "b5512776-2b25-4224-8ff8-70c221b84749",
+          "text": "I been laid off from work my rent is due\nMy kids all need brand new shoes\nSo, I went to the bank to see what they could do",
+          "kind": "verse",
+          "start": 27.58,
+          "estimated": false
+        },
+        {
+          "id": "b906f51d-023a-46dd-9753-c9305ee58219",
+          "text": "They said, \"Son, look like bad luck got a hold on you\"\nMoney's too tight to mention\nI can't get an unemployment extension",
+          "kind": "verse",
+          "start": 39.24,
+          "estimated": false
+        },
+        {
+          "id": "8dc93625-651a-4013-8813-8f1ea89fd896",
+          "text": "Money's too tight to mention\nI went to my brother to see what he could do",
+          "kind": "verse",
+          "start": 52.17,
+          "estimated": false
+        },
+        {
+          "id": "50f1c072-7211-4a53-846c-021a811ec128",
+          "text": "He said, \"Brother, I'd like to help you\nBut I'm unable to\"\nSo, I called on my father, father",
+          "kind": "verse",
+          "start": 65.64,
+          "estimated": false
+        },
+        {
+          "id": "0d8a79e3-0292-4afc-8c68-fc084f69fa3e",
+          "text": "Almighty Father, He said\n\"Money's too tight to mention\"\nOh money, money, money, money",
+          "kind": "verse",
+          "start": 72.91,
+          "estimated": false
+        },
+        {
+          "id": "6794cd48-a739-4772-a591-0903cd250553",
+          "text": "Money's too tight to mention\nI can't even qualify for my pension\nWe're talking about Reaganomics",
+          "kind": "verse",
+          "start": 86.03,
+          "estimated": false
+        },
+        {
+          "id": "b661fcf9-bc9a-41dd-b80b-147e9f12884f",
+          "text": "Oh Lord, down in the Congress\nThey're passing all kinds of bills\nFrom down on Capitol Hill, we've tried it",
+          "kind": "verse",
+          "start": 98.86,
+          "estimated": false
+        },
+        {
+          "id": "470f91a2-236e-4ac3-ba96-699e52bc7074",
+          "text": "Money's too tight to mention, cutback",
+          "kind": "verse",
+          "start": 111.57,
+          "estimated": false
+        },
+        {
+          "id": "8b295e35-37d5-4915-b473-818768f41b7f",
+          "text": "Money's too tight to mention\nOh, money, money, money, money\nWe're talking about money, money",
+          "kind": "verse",
+          "start": 119.99,
+          "estimated": false
+        },
+        {
+          "id": "d029f1c9-602e-46a0-bcef-600c2360530c",
+          "text": "We're talking about money, money\nWe're talking about money, money\nWe're talking about money, money",
+          "kind": "verse",
+          "start": 130.73,
+          "estimated": false
+        },
+        {
+          "id": "2c6b88e5-16d8-4fda-9ec0-f36c7f2f863f",
+          "text": "We're talking about money, money\nWe're talking about money, money\nWe're talking about money, money",
+          "kind": "verse",
+          "start": 137.13,
+          "estimated": false
+        },
+        {
+          "id": "0e33044e-2500-4cb0-be18-f81e7bc68782",
+          "text": "Money, money, money\nWe're talking about the dollar bill\nAnd that old man that's over the hill",
+          "kind": "verse",
+          "start": 142.81,
+          "estimated": false
+        },
+        {
+          "id": "d5b2ad9a-ec58-44a5-9720-d7c11857c672",
+          "text": "Now what are we all to do\nWhen money's got a hold on you?\nMoney's too tight to mention",
+          "kind": "verse",
+          "start": 154.11,
+          "estimated": false
+        },
+        {
+          "id": "ffd60200-4867-4542-ac3d-eebf07b843e9",
+          "text": "Oh money, money, money, money\nMoney's too tight to mention\nDinero money, oh",
+          "kind": "verse",
+          "start": 165.77,
+          "estimated": false
+        },
+        {
+          "id": "01dcc4f1-a251-4d8d-a25c-b7c6fafdebdf",
+          "text": "I'm talking about money, money\nI'm talking about money, money\nI'm talking about money, money",
+          "kind": "verse",
+          "start": 179.53,
+          "estimated": false
+        },
+        {
+          "id": "a6ab82d2-7e17-4bf1-8eda-fe9732a1ab43",
+          "text": "I'm talking about money, money\nYeah, I'm talking, Ronnie\nI'm talking about Ronnie, Ronnie",
+          "kind": "verse",
+          "start": 185.94,
+          "estimated": false
+        },
+        {
+          "id": "7179f211-df69-4bfd-8cd6-7a26fd27dc48",
+          "text": "I'm talking about Ronnie, Ronnie\nI'm talking about Ronnie, Ronnie\nDid the earth move for you Nancy?",
+          "kind": "verse",
+          "start": 192.28,
+          "estimated": false
+        },
+        {
+          "id": "82f6e39a-55db-4f24-953d-8429f5a958a3",
+          "text": "Did the earth move for you Nancy?\nDid the earth move for you Nancy?\nDid the earth move for you Nancy?",
+          "kind": "verse",
+          "start": 198.54,
+          "estimated": false
+        },
+        {
+          "id": "f8033593-44c7-4a44-babb-36559f6b052f",
+          "text": "Yeah, I'm talkin' Nancy\nYeah, I'm talkin' Nancy\nYeah, I'm talkin' Nancy",
+          "kind": "verse",
+          "start": 204.91,
+          "estimated": false
+        },
+        {
+          "id": "ecf903ae-75dc-4c34-9301-3548f2af63a1",
+          "text": "Yeah, I'm talkin' Nancy\nYeah, I'm talkin' Nancy\nYeah, I'm talkin' Nancy",
+          "kind": "verse",
+          "start": 211.32,
+          "estimated": false
+        },
+        {
+          "id": "32b4b15f-abdb-4112-a90f-b15d00a7d20d",
+          "text": "Yeah, I'm talkin' Nancy\nYeah, I'm talkin' about a\nYeah, yeah, yeah",
+          "kind": "verse",
+          "start": 217.79,
+          "estimated": false
+        },
+        {
+          "id": "c3270c58-2354-4b1c-8642-3d613edc375d",
+          "text": "Oh, oh, hey\nOoh, oh, I want some\nMoney, money, money",
+          "kind": "verse",
+          "start": 225.74,
+          "estimated": false
+        },
+        {
+          "id": "9e918641-0dd9-4bf0-bc08-382078192e92",
+          "text": "Hey\nI ... dream I had ... old man\nDecided ... all that money",
+          "kind": "verse",
+          "start": 239.29,
+          "estimated": false
+        },
+        {
+          "id": "c29abed2-a36e-43c8-b0b2-cc99c8c4c221",
+          "text": "Oh",
+          "kind": "verse",
+          "start": 255.42,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/18511090",
+        "recording": "The Very Best Of Simply Red (CD 2)"
+      },
+      "updatedAt": 1792336653868
+    },
+    {
+      "id": "ba9ba445-d839-4dee-a9d1-4fc2859ad24e",
+      "title": "First Cut is the Deepest",
+      "artist": "Rod Stewart",
+      "duration": 234,
+      "bpm": null,
+      "intro": 1.94,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "eba9a072-9b05-45c2-98c1-2466b4765c12",
+          "text": "I would have given you all of my heart",
+          "kind": "verse",
+          "start": 1.94,
+          "estimated": false
+        },
+        {
+          "id": "e4a7a5da-ac71-4f02-b7b8-d9fb8e8b6f13",
+          "text": "But there's someone who's torn it apart\nAnd she's taken just all that I had\nBut if you wan' I'll try to love again",
+          "kind": "verse",
+          "start": 28.78,
+          "estimated": false
+        },
+        {
+          "id": "0c8f603d-b101-4e94-b1a6-33ba8bf061d4",
+          "text": "Baby, I'll try to love again but I know\nThe first cut is the deepest\nBaby I know",
+          "kind": "verse",
+          "start": 45.74,
+          "estimated": false
+        },
+        {
+          "id": "5ce6cf70-ff67-4dd9-84fa-fcf264465552",
+          "text": "The first cut is the deepest\n'Cause when it come to being lucky she's cursed\nWhen it comes to lovin' me she's worse",
+          "kind": "verse",
+          "start": 60.07,
+          "estimated": false
+        },
+        {
+          "id": "602c8416-f537-4074-bcf4-6623fffa5ae2",
+          "text": "I still want you by my side",
+          "kind": "verse",
+          "start": 75.33,
+          "estimated": false
+        },
+        {
+          "id": "b357c918-e83c-4f3a-ae7a-85ef08b3e58f",
+          "text": "Just to help me dry the tears that I've cried\nAnd I'm sure goin' to give you a try\nIf you wan' to try to love again...",
+          "kind": "verse",
+          "start": 84.61,
+          "estimated": false
+        },
+        {
+          "id": "d0a95211-1773-47e2-831b-0c1ee34d7a5a",
+          "text": "Try...\nBaby, I'll try to love again but I know\nThe first cut is the deepest",
+          "kind": "verse",
+          "start": 99.13,
+          "estimated": false
+        },
+        {
+          "id": "6cf32af8-e4e6-425c-b9cc-33b8b32b4b19",
+          "text": "Baby I know\nThe first cut is the deepest\n'Cause when it come to being lucky she's cursed",
+          "kind": "verse",
+          "start": 118.12,
+          "estimated": false
+        },
+        {
+          "id": "f3c5b991-82f1-4740-9001-268383076143",
+          "text": "When it come to lovin' me she's worse\nI still want you by my side",
+          "kind": "verse",
+          "start": 132.89,
+          "estimated": false
+        },
+        {
+          "id": "c92b4632-f175-4354-8cbe-55ad3c755b49",
+          "text": "Just to help me dry the tears that I've cried\nBut I'm sure gonna give you a try\n'Cause if you wan' I'll try to love again",
+          "kind": "verse",
+          "start": 160.93,
+          "estimated": false
+        },
+        {
+          "id": "bd173311-c8da-4ccc-a2da-2f9686ca9fc9",
+          "text": "Oh baby\nI'll try to love again, but I know\nThe first cut is the deepest",
+          "kind": "verse",
+          "start": 177.79,
+          "estimated": false
+        },
+        {
+          "id": "6af045ea-2098-49df-9791-82943440cc0d",
+          "text": "Baby I know\nThe first cut is the deepest\nWhen it come to being lucky she's cursed",
+          "kind": "verse",
+          "start": 191.38,
+          "estimated": false
+        },
+        {
+          "id": "20d15111-c1d7-4e4c-9adc-2981db65a689",
+          "text": "When it come to lovin' me she's worse\nThe first cut is the deepest\nBaby I know",
+          "kind": "verse",
+          "start": 215.53,
+          "estimated": false
+        },
+        {
+          "id": "a552c767-7e60-45f5-83ed-3d68e50860fb",
+          "text": "The first cut is the deepest\nI'll try to love again",
+          "kind": "verse",
+          "start": 217.75,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37519282",
+        "recording": "Whatever 6"
+      },
+      "updatedAt": 1792335617303
+    },
+    {
+      "id": "c0123ac8-44f3-434f-913f-9515118f404a",
+      "title": "Reelin’ In the Years",
+      "artist": "Steely Dan",
+      "duration": 275,
+      "bpm": null,
+      "intro": 30.03,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "a5d5919d-c30d-435d-b403-38c2c4bf1d99",
+          "text": "Your everlasting summer and you can see it fading fast\nSo you grab a piece of something that you think is gonna last",
+          "kind": "verse",
+          "start": 30.03,
+          "estimated": false
+        },
+        {
+          "id": "270e31ee-b2cd-4e46-b617-e6edcf7c444a",
+          "text": "Well, you wouldn't even know a diamond if you held it in your hand\nThe things you think are precious I can't understand\nAre you reelin' in the years?",
+          "kind": "verse",
+          "start": 36.84,
+          "estimated": false
+        },
+        {
+          "id": "b241152f-09a6-47b9-a3f7-1160e828a9fa",
+          "text": "Stowin' away the time\nAre you gatherin' up the tears?\nHave you had enough of mine",
+          "kind": "verse",
+          "start": 47.98,
+          "estimated": false
+        },
+        {
+          "id": "11c0ade4-e986-4e60-82de-19aa575929c5",
+          "text": "Are you reelin' in the years?\nStowin' away the time\nAre you gatherin' up the tears?",
+          "kind": "verse",
+          "start": 58.37,
+          "estimated": false
+        },
+        {
+          "id": "d85909ee-5d14-4e0a-8823-a1e7f560b1e7",
+          "text": "Have you had enough of mine\nYou've been telling me you're a genius since you were seventeen",
+          "kind": "verse",
+          "start": 68.74,
+          "estimated": false
+        },
+        {
+          "id": "a6d871d8-f7e7-4166-b7c0-8ce1a81ecd0d",
+          "text": "In all the time I've known you I still don't know what you mean\nThe weekend at the college didn't turn out like you planned",
+          "kind": "verse",
+          "start": 77.22,
+          "estimated": false
+        },
+        {
+          "id": "5d4eb0b2-274b-4fed-862e-f6814e9c147e",
+          "text": "The things that pass for knowledge I can't understand\nAre you reelin' in the years?\nStowin' away the time",
+          "kind": "verse",
+          "start": 84.47,
+          "estimated": false
+        },
+        {
+          "id": "afd66ae5-5ecd-44d9-88c3-9a66e61de02c",
+          "text": "Are you gatherin' up the tears?\nHave you had enough of mine\nAre you reelin' in the years?",
+          "kind": "verse",
+          "start": 94.95,
+          "estimated": false
+        },
+        {
+          "id": "43cd8d7b-d633-4dd8-bf88-5dda20cc0b5a",
+          "text": "Stowin' away the time\nAre you gatherin' up the tears?\nHave you had enough of mine",
+          "kind": "verse",
+          "start": 106.06,
+          "estimated": false
+        },
+        {
+          "id": "2d424d03-c68e-497c-8ee8-aca67f8c5ba4",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 118.6,
+          "estimated": false
+        },
+        {
+          "id": "8e0467aa-9a24-49ad-a6f1-1f66a6acbb86",
+          "text": "I've spent a lot of money and I've spent a lot of time\nThe trip we made to Hollywood is etched upon my mind",
+          "kind": "verse",
+          "start": 173.83,
+          "estimated": false
+        },
+        {
+          "id": "e99a454c-3875-4253-b8fd-2b704ccd9f56",
+          "text": "After all the things we've done and seen you find another man\nThe things you think are useless I can't understand\nAre you reelin' in the years?",
+          "kind": "verse",
+          "start": 181.11,
+          "estimated": false
+        },
+        {
+          "id": "f776d460-d150-4c82-bb9a-394b1b043cad",
+          "text": "Stowin' away the time\nAre you gatherin' up the tears?\nHave you had enough of mine",
+          "kind": "verse",
+          "start": 192.31,
+          "estimated": false
+        },
+        {
+          "id": "f68b66f7-6158-443d-9bdd-2e4ffcdfa822",
+          "text": "Are you reelin' in the years?\nStowin' away the time\nAre you gatherin' up the tears?",
+          "kind": "verse",
+          "start": 202.65,
+          "estimated": false
+        },
+        {
+          "id": "c08ec264-a262-4f3a-9b54-c8ad730a8c4a",
+          "text": "Have you had enough of mine",
+          "kind": "verse",
+          "start": 213.32,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37018379",
+        "recording": "Citizen"
+      },
+      "updatedAt": 1792335428612
+    },
+    {
+      "id": "e03e40d6-5eb4-456b-818f-a0758b818fff",
+      "title": "Valerie",
+      "artist": "Steve Winwood",
+      "duration": 248,
+      "bpm": null,
+      "intro": 10.64,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "409cde47-e98d-4ee9-8957-7768442c20d8",
+          "text": "So wild, standing there\nWith her hands in her hair\nI can't help remember",
+          "kind": "verse",
+          "start": 10.64,
+          "estimated": false
+        },
+        {
+          "id": "6e33247a-8935-4d67-a055-856a7a6da717",
+          "text": "Just where she touched me\nThere's still no face\nHere in her place",
+          "kind": "verse",
+          "start": 21.73,
+          "estimated": false
+        },
+        {
+          "id": "eabcf6e3-1d88-4b3a-80ce-426c634dbe5a",
+          "text": "So cool, she was like\nJazz on a Summer's day\nMusic, high and sweet",
+          "kind": "verse",
+          "start": 34.65,
+          "estimated": false
+        },
+        {
+          "id": "f6fe976c-2355-4d01-861b-94e3268ea272",
+          "text": "Then she just blew away\nNow she can't be that warm\nWith the wind in her arms",
+          "kind": "verse",
+          "start": 46.22,
+          "estimated": false
+        },
+        {
+          "id": "729511c4-5f7f-47ec-979d-6d8c81823785",
+          "text": "Valerie, call on me\nCall on me, Valerie\nCome and see me",
+          "kind": "verse",
+          "start": 62.34,
+          "estimated": false
+        },
+        {
+          "id": "642601e5-8830-4407-98d5-4a5c1f7d9d81",
+          "text": "I'm the same boy I used to be\nLove songs fill the night",
+          "kind": "verse",
+          "start": 74.52,
+          "estimated": false
+        },
+        {
+          "id": "76da069b-7a06-444d-aaa4-e2ed29bd1a92",
+          "text": "But they don't tell it all\nNot how lovers cry out\nJust like they're dying",
+          "kind": "verse",
+          "start": 89.51,
+          "estimated": false
+        },
+        {
+          "id": "c92b26d2-83b3-4ab6-9674-351e8f266ac4",
+          "text": "Her cries hang there\nIn time, somewhere\nSomeday, some good wind",
+          "kind": "verse",
+          "start": 101.23,
+          "estimated": false
+        },
+        {
+          "id": "4dcf65d8-75e4-42dd-a898-d291cd3f0837",
+          "text": "May blow her back to me\nSome night I may hear\nHer like she used to be",
+          "kind": "verse",
+          "start": 114.65,
+          "estimated": false
+        },
+        {
+          "id": "3dac8be4-4b19-4685-85ba-0dba7a28290e",
+          "text": "No it can't be that warm",
+          "kind": "verse",
+          "start": 125.49,
+          "estimated": false
+        },
+        {
+          "id": "712556cf-36ce-44e2-92c2-06aaf2fa224c",
+          "text": "With the wind in her arms\nValerie, call on me\nCall on me, Valerie",
+          "kind": "verse",
+          "start": 132.67,
+          "estimated": false
+        },
+        {
+          "id": "07a4ac25-cfbd-4a92-a3bf-acfec0ea1137",
+          "text": "Come and see me\nI'm the same boy I used to be",
+          "kind": "verse",
+          "start": 147.4,
+          "estimated": false
+        },
+        {
+          "id": "c56c609e-da3c-43a8-9cba-7f7196b2e063",
+          "text": "Instrumental",
+          "kind": "instrumental",
+          "start": 155.35,
+          "estimated": false
+        },
+        {
+          "id": "bbcd6ab0-8ec0-4dfb-bd69-ef7be28ff0d2",
+          "text": "So cool, she was like\nJazz on a Summer's day\nMusic, high and sweet",
+          "kind": "verse",
+          "start": 188.37,
+          "estimated": false
+        },
+        {
+          "id": "a1fcacfd-da31-4214-9df2-1475e1a64f00",
+          "text": "Then she just blew away\nNow she can't be that warm\nWith the wind in your arms",
+          "kind": "verse",
+          "start": 199.71,
+          "estimated": false
+        },
+        {
+          "id": "3d75f974-c3e7-4c85-83a0-1bce12642d56",
+          "text": "Valerie, call on me\nCall on me, Valerie\nCome and see me",
+          "kind": "verse",
+          "start": 215.87,
+          "estimated": false
+        },
+        {
+          "id": "5b3700e6-2b85-49ba-a3fe-5a6cc9020a4b",
+          "text": "I'm the same boy I used to be",
+          "kind": "verse",
+          "start": 227.78,
+          "estimated": false
+        },
+        {
+          "id": "4a4661fb-d747-477e-9c42-a5108de79a51",
+          "text": "I'm the same boy I used to be",
+          "kind": "verse",
+          "start": 242.03,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/37327731",
+        "recording": "Je T'aime 2007"
+      },
+      "updatedAt": 1792335471034
+    },
+    {
+      "id": "e1225ada-8066-42f3-9c50-4e9853f40633",
+      "title": "Sledgehammer",
+      "artist": "Peter Gabriel",
+      "duration": 416,
+      "bpm": null,
+      "intro": 39.08,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "deafdf5b-cb9f-41aa-b4bb-3526da87e3ba",
+          "text": "Hey, hey, you there\nTell me how have you been?\nYou could have a steam train",
+          "kind": "verse",
+          "start": 39.08,
+          "estimated": false
+        },
+        {
+          "id": "8746c9f7-f63b-4eac-bb96-222984a31814",
+          "text": "If you'd just lay down your tracks\nYou could have an aeroplane flying\nIf you bring your blue sky back",
+          "kind": "verse",
+          "start": 53.1,
+          "estimated": false
+        },
+        {
+          "id": "b018182f-708e-4e90-8dd3-0503e1a6d80a",
+          "text": "All you do is call me\nI'll be anything you need\nYou could have a big dipper",
+          "kind": "verse",
+          "start": 67.42,
+          "estimated": false
+        },
+        {
+          "id": "b2aa9b61-71a8-419e-98f7-6646af402b76",
+          "text": "Going up and down, all around the bends\nYou could have a bumper car, bumping\nThis amusement never ends",
+          "kind": "verse",
+          "start": 82.15,
+          "estimated": false
+        },
+        {
+          "id": "3c1a015b-3b2e-4e8c-8a56-8338300dc97b",
+          "text": "I wanna be your sledgehammer\nWhy don't you call my name?\nYeah, oh, let me be your sledgehammer",
+          "kind": "verse",
+          "start": 97.55,
+          "estimated": false
+        },
+        {
+          "id": "f04cf39f-7c05-41b4-b47f-bcb3449b749f",
+          "text": "This will be my testimony",
+          "kind": "verse",
+          "start": 115.72,
+          "estimated": false
+        },
+        {
+          "id": "1e33cfc6-139d-4957-b8ed-84bf841b80a4",
+          "text": "Show me 'round your fruitcage\n'Cause I will be your honey bee\nOpen up your fruitcage",
+          "kind": "verse",
+          "start": 127.33,
+          "estimated": false
+        },
+        {
+          "id": "33e7c28d-2313-4caf-a85e-12e78e103b74",
+          "text": "Where the fruit is as sweet as can be\nI wanna be your sledgehammer\nWhy don't you call my name?",
+          "kind": "verse",
+          "start": 142.5,
+          "estimated": false
+        },
+        {
+          "id": "0120290c-6410-4a41-a016-07910b1d7c58",
+          "text": "Yeah, you'd better call the sledgehammer\nPut your mind at rest\nI'm going to be the sledgehammer",
+          "kind": "verse",
+          "start": 159.48,
+          "estimated": false
+        },
+        {
+          "id": "99c80d3e-13f6-4ff2-b5fe-e99654ca6ed0",
+          "text": "This can be my testimony\nYeah, I'm your sledgehammer\nLet there be no doubt about it",
+          "kind": "verse",
+          "start": 175.39,
+          "estimated": false
+        },
+        {
+          "id": "63747ad0-bba2-4389-b46b-f7ac6000fe2c",
+          "text": "(Sledge, sledge)\n(Sledgehammer)",
+          "kind": "verse",
+          "start": 188.56,
+          "estimated": false
+        },
+        {
+          "id": "cf1a2cc6-733c-428b-9bb0-5e33522985c4",
+          "text": "I get it right\nI kicked the habit (kicked the habit, kicked the habit)\nShed my skin (shed my skin)",
+          "kind": "verse",
+          "start": 217.53,
+          "estimated": false
+        },
+        {
+          "id": "bf17ae40-9ca3-4694-9000-18d86b0b80a3",
+          "text": "This is the new stuff (this is the new stuff)\nI go dancing in (we can go dancing in)\nOh, won't you show for me? (Show for me)",
+          "kind": "verse",
+          "start": 228.4,
+          "estimated": false
+        },
+        {
+          "id": "1260b43d-5b12-466e-9248-2540aab7560a",
+          "text": "I will show for you (show for you)\nShow for me (show for me)\nOh, I will show for you",
+          "kind": "verse",
+          "start": 241.81,
+          "estimated": false
+        },
+        {
+          "id": "98ee9305-d019-43f0-95aa-6faef67a6d3b",
+          "text": "Yeah, yeah, yeah, yeah, yeah, I do mean you\n(Show for me)\nOnly you",
+          "kind": "verse",
+          "start": 255.81,
+          "estimated": false
+        },
+        {
+          "id": "53e0ce47-c29a-4200-844f-3e764412f5e1",
+          "text": "You been coming through\n(Show for you)\nI'm gonna build that power",
+          "kind": "verse",
+          "start": 261.87,
+          "estimated": false
+        },
+        {
+          "id": "373d7771-b63e-49a8-b7b5-ddfdc6d1889a",
+          "text": "Build, build up that power, hey\n(Show for me)\nI've been feeding the rhythm",
+          "kind": "verse",
+          "start": 266.49,
+          "estimated": false
+        },
+        {
+          "id": "6fe525b6-ca9d-45bd-8605-b4316798abf1",
+          "text": "I've been feeding the rhythm\n(Show for you)\nGonna feel that power, hey, build in you",
+          "kind": "verse",
+          "start": 270.89,
+          "estimated": false
+        },
+        {
+          "id": "21f98e12-d2c5-49ba-989a-0d4dec222ce5",
+          "text": "(Show for me)\nYeah, come on, come on, help me do\nCome on, come on, help me do",
+          "kind": "verse",
+          "start": 278.6,
+          "estimated": false
+        },
+        {
+          "id": "ffca0ae7-8eaa-4113-b18d-61cc4c1d915b",
+          "text": "Show for you\nYeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah, you\n(Show for me)",
+          "kind": "verse",
+          "start": 283.88,
+          "estimated": false
+        },
+        {
+          "id": "f6b99b27-490d-403d-8c84-f66bcfb8cd1a",
+          "text": "I've been feeding the rhythm\nI've been feeding the rhythm\n(Show for you)",
+          "kind": "verse",
+          "start": 289.01,
+          "estimated": false
+        },
+        {
+          "id": "caeac650-02e4-4ed7-93a6-95ebb4a819ef",
+          "text": "It's what we're doing, doing\nAll day and night\n(Show for me)",
+          "kind": "verse",
+          "start": 293.97,
+          "estimated": false
+        },
+        {
+          "id": "f4a41896-2af8-48fd-9653-f36a1d8c5516",
+          "text": "Come on, come on, help me do\nCome on, come on, help me do\n(Show for you)",
+          "kind": "verse",
+          "start": 299.71,
+          "estimated": false
+        },
+        {
+          "id": "aa717091-303d-46f8-a6a0-a0d0477f2d8a",
+          "text": "Yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah, you\n(Show for me)\nI've been feeding the rhythm",
+          "kind": "verse",
+          "start": 304.48,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36921124",
+        "recording": "Summer 2003: 06.14.03 West Palm Beach, FL"
+      },
+      "updatedAt": 1792335482678
+    },
+    {
+      "id": "e73f40ec-5871-4b55-ae37-776334b4f882",
+      "title": "One - U2",
+      "artist": "U2",
+      "duration": 276.4570749,
+      "bpm": null,
+      "intro": 14.17,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "f64661a9-602b-41b7-b71b-fea896ceb883",
+          "text": "Is it getting better?\nOr do you feel the same?\nWill it make it easier on you now?",
+          "kind": "verse",
+          "start": 14.17,
+          "estimated": false
+        },
+        {
+          "id": "26fe5175-2025-43ee-9fec-2bd943a4af7b",
+          "text": "You got someone to blame\nYou say, one love, one life\nWhen it's one need in the night",
+          "kind": "verse",
+          "start": 29.96,
+          "estimated": false
+        },
+        {
+          "id": "12f8d62e-b2de-40b0-a505-8d1840bf400a",
+          "text": "One love, we get to share it\nLeaves you baby if you don't care for it",
+          "kind": "verse",
+          "start": 45.46,
+          "estimated": false
+        },
+        {
+          "id": "4670bff4-4737-4182-998b-2832311fe1f8",
+          "text": "Did I disappoint you?\nOr leave a bad taste in your mouth?\nYou act like you never had love",
+          "kind": "verse",
+          "start": 67.69,
+          "estimated": false
+        },
+        {
+          "id": "31ee9a2b-0a93-405d-ae32-7cc9f9209e3a",
+          "text": "And you want me to go without\nWell it's too late tonight\nTo drag the past out into the light",
+          "kind": "verse",
+          "start": 82.34,
+          "estimated": false
+        },
+        {
+          "id": "bb32b4b1-3237-4bc6-b6b8-07118cfb5e55",
+          "text": "We're one but we're not the same\nWe get to carry each other, carry each other\nOne!",
+          "kind": "verse",
+          "start": 98.12,
+          "estimated": false
+        },
+        {
+          "id": "6a950280-b768-4301-a13d-d26180858bcd",
+          "text": "Have you come here for forgiveness?\nHave you come to raise the dead?\nHave you come here to play Jesus?",
+          "kind": "verse",
+          "start": 120.08,
+          "estimated": false
+        },
+        {
+          "id": "28b837f2-a413-46f8-bfe3-82fef9c08059",
+          "text": "To the lepers in your head\nDid I ask too much? More than a lot\nYou gave me nothin' now it's all I got",
+          "kind": "verse",
+          "start": 135.83,
+          "estimated": false
+        },
+        {
+          "id": "9d7aa931-621c-4d74-a964-87b779b66015",
+          "text": "We're one but we're not the same\nWell we hurt each other then we do it again\nYou say love is a temple, love a higher law",
+          "kind": "verse",
+          "start": 151.2,
+          "estimated": false
+        },
+        {
+          "id": "32b95705-f459-4dbb-8a1e-54b5c686aa9c",
+          "text": "Love is a temple, love the higher law\nYou ask me to enter but then you make me crawl\nAnd I can't be holdin' on to what you got",
+          "kind": "verse",
+          "start": 166.37,
+          "estimated": false
+        },
+        {
+          "id": "8f1afa26-73a5-46bf-9b1b-e584391576a9",
+          "text": "When all you got is hurt\nOne love, one blood\nOne life, you got to do what you should",
+          "kind": "verse",
+          "start": 183.52,
+          "estimated": false
+        },
+        {
+          "id": "731d780e-089e-4b67-9d40-e90200581bd0",
+          "text": "One life, with each other\nSisters, brothers\nOne life but we're not the same",
+          "kind": "verse",
+          "start": 196.4,
+          "estimated": false
+        },
+        {
+          "id": "536e9370-014e-4d5c-b315-73a95dbd9fe9",
+          "text": "We get to carry each other, carry each other\nOne\nOne",
+          "kind": "verse",
+          "start": 210.66,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/24219258",
+        "recording": "18 Singles"
+      },
+      "updatedAt": 1792335658565
+    },
+    {
+      "id": "e8b454d6-2369-4b65-beec-019f895cef19",
+      "title": "Layla",
+      "artist": "Eric Clapton",
+      "duration": 329,
+      "bpm": null,
+      "intro": 0.86,
+      "countdown": 5,
+      "notes": "",
+      "passages": [
+        {
+          "id": "de3e6624-3186-4798-9834-76274213aa0f",
+          "text": "See if you can spot this one",
+          "kind": "verse",
+          "start": 0.86,
+          "estimated": false
+        },
+        {
+          "id": "d304081e-f625-4ccd-9d8b-e899d7b8e7e5",
+          "text": "What will you do when you get lonely?\nNo one waiting by your side\nYou've been running hiding much too long",
+          "kind": "verse",
+          "start": 31.95,
+          "estimated": false
+        },
+        {
+          "id": "e81e4f4e-5dd0-4066-8641-f1fdf06d238b",
+          "text": "You know it's just your foolish pride\nLayla\nGot me on my knees",
+          "kind": "verse",
+          "start": 47.21,
+          "estimated": false
+        },
+        {
+          "id": "763d5fef-f4e9-4011-b5a2-a9408b8ec3a2",
+          "text": "Layla\nBegging darling please\nLayla",
+          "kind": "verse",
+          "start": 56.76,
+          "estimated": false
+        },
+        {
+          "id": "4fab3e53-3b60-4580-97c6-b3b0087c4bc1",
+          "text": "Darling won't you ease my worried mind?\nTried to give you consolation\nWhen your old man had let you down",
+          "kind": "verse",
+          "start": 64.84,
+          "estimated": false
+        },
+        {
+          "id": "f0ca6f62-9533-44c8-aad0-92a447764256",
+          "text": "Like a fool I fell in love with you\nYou turned my whole world upside down, Layla\nGot me on my knees",
+          "kind": "verse",
+          "start": 83.02,
+          "estimated": false
+        },
+        {
+          "id": "4b2858b0-0fab-4d89-a667-0da639d85c73",
+          "text": "Layla\nBegging darling please\nLayla",
+          "kind": "verse",
+          "start": 97.88,
+          "estimated": false
+        },
+        {
+          "id": "09fc04b3-22c3-4d0d-93fb-4a2429ecc780",
+          "text": "Darling won't you ease my worried mind?\nMake the best of the situation\n'Fore I finally go insane",
+          "kind": "verse",
+          "start": 106.04,
+          "estimated": false
+        },
+        {
+          "id": "e8e7a5c8-5aea-4b2e-9928-8d1a3dcab6ff",
+          "text": "Please don't say we'll never find a way\nTell me all my love's in vain\nLayla",
+          "kind": "verse",
+          "start": 123.98,
+          "estimated": false
+        },
+        {
+          "id": "28985fbe-a6bd-4a55-8cee-014e245710a3",
+          "text": "Got me on my knees\nLayla\nI'm begging darling please",
+          "kind": "verse",
+          "start": 136.54,
+          "estimated": false
+        },
+        {
+          "id": "1f780fd7-d37e-400b-bdb7-995350d6e112",
+          "text": "Layla\nDarling won't you ease my worried mind?\n(Yeah-yeah-yeah-yeah)",
+          "kind": "verse",
+          "start": 143.67,
+          "estimated": false
+        },
+        {
+          "id": "8a93e645-d38e-4a70-85a7-2cde4e66af60",
+          "text": "Layla\nGot me on my knees\nLayla",
+          "kind": "verse",
+          "start": 153.92,
+          "estimated": false
+        },
+        {
+          "id": "4b58a100-e200-4437-8025-bffa9194afcd",
+          "text": "Begging darling please\nLayla\nDarling won't you ease my worried mind?",
+          "kind": "verse",
+          "start": 161.86,
+          "estimated": false
+        },
+        {
+          "id": "9349f4ea-9ea6-43d0-9942-6a9bddf8b832",
+          "text": "(Yeah-yeah-yeah-yeah)",
+          "kind": "verse",
+          "start": 171.09,
+          "estimated": false
+        },
+        {
+          "id": "f746a51f-65a0-47e6-9da0-be8b2d929d77",
+          "text": "Layla\nGot me on my knees\nLayla",
+          "kind": "verse",
+          "start": 212.76,
+          "estimated": false
+        },
+        {
+          "id": "d0975cc6-cb5f-43a5-9b07-9b99380ba8d0",
+          "text": "Begging darling please\nLayla\nDarling won't you ease my worried mind?",
+          "kind": "verse",
+          "start": 220.99,
+          "estimated": false
+        },
+        {
+          "id": "cb7952ba-85b1-436e-9f9d-038b8da02195",
+          "text": "Layla\nGot me on my knees\nLayla",
+          "kind": "verse",
+          "start": 232.91,
+          "estimated": false
+        },
+        {
+          "id": "9074f576-ad0c-4d74-8853-e852d99954fa",
+          "text": "Begging darling please\nLayla\nDarling won't you ease my worried mind?",
+          "kind": "verse",
+          "start": 240.9,
+          "estimated": false
+        },
+        {
+          "id": "8fe17be9-e162-4458-97bd-3c9c47e90786",
+          "text": "Thank you",
+          "kind": "verse",
+          "start": 261.63,
+          "estimated": false
+        }
+      ],
+      "lyricSource": {
+        "type": "lrclib",
+        "reference": "https://lrclib.net/api/get/36909300",
+        "recording": "[2021] The Lady In The Balcony: Lockdown Sessions"
+      },
+      "updatedAt": 1792335666757
+    }
+  ],
+  "setlists": [
+    {
+      "id": "523754b7-f918-44a1-8dcd-95fa83ee4613",
+      "name": "Set 1",
+      "entries": [
+        {
+          "id": "5e8cd8cd-731f-4801-a33f-dd106bc3fb7b",
+          "songId": "e03e40d6-5eb4-456b-818f-a0758b818fff"
+        },
+        {
+          "id": "4b7d0098-e0be-479a-8ef9-cc4ef13bdc87",
+          "songId": "73763150-8342-46b0-9165-a72f80c55995"
+        },
+        {
+          "id": "0248c779-75cd-4c00-bbbe-9b6679be99d7",
+          "songId": "1d4f5e14-2085-4152-89b4-a3fd0e7041e6"
+        },
+        {
+          "id": "08f04638-b432-484a-86de-22f2af63dd60",
+          "songId": "04cab85f-2ff9-4187-b527-797e10a9cea5"
+        },
+        {
+          "id": "1a16494d-3740-4326-b4c3-d7a4aa0dd8ba",
+          "songId": "c0123ac8-44f3-434f-913f-9515118f404a"
+        },
+        {
+          "id": "0c96fe7b-a56e-4089-a66b-ea315a7fe3f0",
+          "songId": "5ef1d632-afca-4e8e-8032-95a6f287898e"
+        },
+        {
+          "id": "f286809c-1d6a-4995-8f8a-0af3616f8bec",
+          "songId": "ac15cf23-92c0-43be-a014-fd802c4ab3e2"
+        },
+        {
+          "id": "01c3618e-ef57-41fb-94fc-f050dcd64350",
+          "songId": "928846f7-28e9-4e6c-866f-419fbc491ec6"
+        },
+        {
+          "id": "04490a39-b64b-4a68-881b-bd600ee65f19",
+          "songId": "90c97db5-6466-407c-97f4-9e5092d57ae4"
+        },
+        {
+          "id": "95af88b4-1441-4019-89af-58ca08c0bfc8",
+          "songId": "11c697b3-07c8-4b3b-9d0f-9ab9afc15e4c"
+        },
+        {
+          "id": "e6d477fb-4f9e-4963-b367-0de56d0ccf84",
+          "songId": "e1225ada-8066-42f3-9c50-4e9853f40633"
+        },
+        {
+          "id": "90a6c9c2-33a0-4673-ade2-9c8252ee0e4e",
+          "songId": "ba9ba445-d839-4dee-a9d1-4fc2859ad24e"
+        },
+        {
+          "id": "89c88d2a-6023-4ec5-bf64-a441a8ee2795",
+          "songId": "43acebd9-248d-420c-aff6-ab059ca1517f"
+        },
+        {
+          "id": "bdb3b422-4712-4688-9aa1-73854672e50e",
+          "songId": "e73f40ec-5871-4b55-ae37-776334b4f882"
+        },
+        {
+          "id": "e85284f9-cf10-43ce-b039-137da79bd275",
+          "songId": "11c697b3-07c8-4b3b-9d0f-9ab9afc15e4c"
+        }
+      ],
+      "updatedAt": 1792336873093
+    }
+  ],
+  "settings": {
+    "id": "preferences",
+    "fontSize": 44,
+    "spacing": 1.3,
+    "alignment": "center",
+    "theme": "charcoal",
+    "density": "context",
+    "showArtist": true,
+    "showZones": false,
+    "onboardingDone": true
+  }
+}

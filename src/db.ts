@@ -1,6 +1,6 @@
 import Dexie, { type EntityTable } from "dexie";
 import { defaults, type Settings, type Song, type Setlist } from "./model";
-import { demoSongs, demoSetlist } from "./demo";
+import { validateBackup } from "./backupFormat";
 
 export class CueDatabase extends Dexie {
   songs!: EntityTable<Song, "id">;
@@ -17,11 +17,21 @@ export class CueDatabase extends Dexie {
 }
 export const db = new CueDatabase();
 export async function initialize() {
+  if (await db.settings.get("preferences")) return;
+  // Load and validate the supplied starting library before opening the transaction.
+  // Its separate, precached chunk is also available on an offline first launch.
+  const { default: raw } = await import("./default-library.json");
+  const starter = validateBackup(raw);
   await db.transaction("rw", db.songs, db.setlists, db.settings, async () => {
     if (!(await db.settings.get("preferences"))) {
-      await db.songs.bulkPut(demoSongs());
-      await db.setlists.put(demoSetlist());
-      await db.settings.put(defaults);
+      // Recover missing preferences without adding defaults to an existing library.
+      if ((await db.songs.count()) || (await db.setlists.count())) {
+        await db.settings.put(defaults);
+        return;
+      }
+      await db.songs.bulkPut(starter.songs);
+      await db.setlists.bulkPut(starter.setlists);
+      await db.settings.put({ ...starter.settings, onboardingDone: false });
     }
   });
 }

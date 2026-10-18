@@ -6,7 +6,7 @@ Validation date: 18 October 2026. Windows, Node 24, Edge via Playwright CLI.
 
 - Strict TypeScript: passed.
 - ESLint with React hooks: passed without warnings.
-- Vitest: **52 tests passed**, covering live line derivation, repeat identity, nearest-line selection, recovery, navigation boundaries, the monotonic engine, cue handling, setlist reorder, backup validation, IndexedDB persistence/restore, LRC parsing, automatic passage preparation, source attribution and lyrics-provider reliability.
+- Vitest: **56 tests passed**, covering supplied-library validation/seeding, preservation of existing and emptied libraries, live line derivation, repeat identity, nearest-line selection, recovery, navigation boundaries, the monotonic engine, cue handling, setlist reorder, backup validation, IndexedDB persistence/restore, LRC parsing, automatic passage preparation, source attribution and lyrics-provider reliability.
 - Vite production build and generated PWA service worker: passed.
 
 ## Earlier release browser workflows (v1.0/v1.1)
@@ -58,6 +58,16 @@ Screenshots and test backups are in ignored `output/playwright/`. They are local
 - Rapid double-taps added one entry; deliberate repeats remained available. New entries survived reload.
 - Injected an IndexedDB save failure: the button showed a retryable error without claiming success; retry saved correctly.
 - Inspected screenshots at tablet portrait, narrow phone portrait and phone landscape. Browser workflow: `scripts/qa-feedback.txt`.
+
+## Supplied default library (v1.2.2)
+
+- Copied the supplied backup byte-for-byte to `src/default-library.json`; SHA-256 hashes matched. It validates as a CueLine v1 backup with 31 songs and Set 1 containing 15 entries, including the repeated song.
+- First launch imports its saved lyrics, timings, source attribution, IDs, set order and display preferences. Only the first-run guide flag is reset for new visitors.
+- Added storage tests for concurrent initialization, exact supplied content, existing libraries/preferences, deliberately emptied libraries and missing-preference recovery. All 56 tests pass.
+- Production browser: fresh library showed 31 songs; Set 1 opened Valerie followed by Addicted To Love, with working individual lyric navigation.
+- Installed the generated service worker, removed only the isolated QA database, disabled networking and launched again. The entire supplied library seeded successfully offline. Local song and display-setting edits survived another offline reload.
+- Default data is a separate 113 kB application chunk included in the service-worker precache. No metadata/lyrics API request is needed to use it.
+- Current repeatable browser check: `scripts/qa-default-library.txt`. Older scripts that expect original demos require their historical fixtures.
 
 ## Device checks still needed
 
