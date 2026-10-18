@@ -6,7 +6,7 @@ Validation date: 18 October 2026. Windows, Node 24, Edge via Playwright CLI.
 
 - Strict TypeScript: passed.
 - ESLint with React hooks: passed without warnings.
-- Vitest: **28 tests passed**, covering the monotonic engine, cue handling, setlist reorder, backup validation and IndexedDB persistence/restore.
+- Vitest: **46 tests passed**, covering the monotonic engine, cue handling, setlist reorder, backup validation, IndexedDB persistence/restore, LRC parsing, automatic passage preparation, source attribution and lyrics-provider reliability.
 - Vite production build and generated PWA service worker: passed.
 
 ## Real-browser workflows
@@ -27,6 +27,15 @@ Validation date: 18 October 2026. Windows, Node 24, Edge via Playwright CLI.
 - GitHub Actions independently passed dependency installation, lint, all 28 tests, production build and Pages deployment: [release run](https://github.com/sean-p-clohessy/cueline/actions/runs/39128252541).
 
 Screenshots and test backups are in ignored `output/playwright/`. They are local QA data and are not published with the app.
+
+## Cover-first update (v1.1)
+
+- Real browser: searched “Addicted to Love”, saw Robert Palmer, Tina Turner and other available artists, and added Robert Palmer with lyrics and saved timestamps in one action.
+- Repeated with “Money for Nothing” by Dire Straits. Both imported songs opened directly in Automatic Stage Mode; no lyric paste, splitting or editor setup was required.
+- Production PWA: reloaded offline, displayed imported cover lyrics, played/paused and recovered the performance paused after another offline reload.
+- Exported/restored a backup containing imported community lyrics, provenance and cues; the collision-safe merge succeeded.
+- Added an original by pasting five lines into one form while offline; passages were created automatically and opened ready for Manual mode.
+- No commercial lyrics or test backups are committed or shipped in the app shell. Unit fixtures contain original test text only.
 
 ## Device checks still needed
 

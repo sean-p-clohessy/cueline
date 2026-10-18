@@ -1,14 +1,20 @@
-// Metadata is independent of lyric sources. There is deliberately no lyric-fetching service.
+// Artist discovery is independent of the lyrics provider.
 export interface MetadataResult {
   id: string;
   title: string;
   artist: string;
   duration: number | null;
+  score?: number;
+  version?: string;
 }
 let lastRequest = 0;
 let inFlight = false;
 let retryAfter = 0;
 const cache = new Map<string, MetadataResult[]>();
+export function metadataQuery(value: string): string {
+  const quoted = (s: string) => `"${s.replace(/(["\\])/g, "\\$1")}"`;
+  return `recording:${quoted(value.trim())}`;
+}
 export async function searchMetadata(query: string): Promise<MetadataResult[]> {
   const key = query.trim().toLowerCase();
   if (cache.has(key)) return cache.get(key)!;
@@ -33,10 +39,10 @@ export async function searchMetadata(query: string): Promise<MetadataResult[]> {
   }
   try {
     const params = new URLSearchParams({
-      query: key,
+      query: metadataQuery(query),
       fmt: "json",
-      limit: "12",
-      client: "CueLine-1.0.0",
+      limit: "100",
+      client: "CueLine-1.1.0",
     });
     // Safari may send the application agent; Chromium owns and can omit this
     // header. The client parameter also identifies this browser-only app.
@@ -46,7 +52,7 @@ export async function searchMetadata(query: string): Promise<MetadataResult[]> {
         headers: {
           Accept: "application/json",
           "User-Agent":
-            "CueLine/1.0.0 (https://github.com/sean-p-clohessy/cueline)",
+            "CueLine/1.1.0 (https://github.com/sean-p-clohessy/cueline)",
         },
         signal: AbortSignal.timeout(12000),
       },
@@ -69,6 +75,8 @@ export async function searchMetadata(query: string): Promise<MetadataResult[]> {
         id: string;
         title: string;
         length?: number;
+        score?: number;
+        disambiguation?: string;
         "artist-credit"?: { name: string; joinphrase?: string }[];
       }[];
     };
@@ -80,6 +88,8 @@ export async function searchMetadata(query: string): Promise<MetadataResult[]> {
           ?.map((a) => a.name + (a.joinphrase ?? ""))
           .join("") ?? "",
       duration: r.length ? Math.round(r.length / 1000) : null,
+      score: r.score ?? 0,
+      version: r.disambiguation ?? "",
     }));
     cache.set(key, results);
     return results;

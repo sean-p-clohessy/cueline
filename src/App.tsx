@@ -20,14 +20,13 @@ import {
   X,
   Check,
   Globe,
-  ArrowDownToLine,
 } from "lucide-react";
 import { db, initialize, loadLibrary, deleteSong } from "./db";
 import {
   defaults,
-  emptySong,
   uid,
   time,
+  timingIssues,
   type Song,
   type Setlist,
   type Settings as Preferences,
@@ -37,7 +36,7 @@ import { Setlists } from "./Setlists";
 import { Stage, readSession, type Session } from "./Stage";
 import { Settings } from "./Settings";
 import { Empty, Modal } from "./ui";
-import { searchMetadata, type MetadataResult } from "./metadata";
+import { AddSong } from "./AddSong";
 
 type Area = "library" | "setlists" | "settings";
 interface LibraryData {
@@ -58,7 +57,8 @@ export default function App() {
   const [session, setSession] = useState<Session | null>(null);
   const [online, setOnline] = useState(navigator.onLine);
   const [guide, setGuide] = useState(false);
-  const [metadata, setMetadata] = useState(false);
+  const [addOpen, setAddOpen] = useState(false);
+  const [songAdded, setSongAdded] = useState<Song | null>(null);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("recent");
   const [toSet, setToSet] = useState<Song | null>(null);
@@ -142,7 +142,18 @@ export default function App() {
   };
   const openStage = (songs: string[], name: string) => {
     if (!songs.length) return;
-    const s: Session = { songs, name, index: 0, mode: "automatic" };
+    const first = data.songs.find((s) => s.id === songs[0]);
+    const automatic =
+      !!first?.passages.length &&
+      !timingIssues(first).length &&
+      (first.lyricSource.type === "original-demo" ||
+        first.passages.some((p) => !p.estimated));
+    const s: Session = {
+      songs,
+      name,
+      index: 0,
+      mode: automatic ? "automatic" : "manual",
+    };
     try {
       sessionStorage.removeItem("cueline-position");
       sessionStorage.setItem("cueline-session", JSON.stringify(s));
@@ -157,15 +168,12 @@ export default function App() {
     setEditing(null);
     history.replaceState(null, "", `#${next}`);
   };
-  const newSong = async (patch: Partial<Song> = {}) => {
-    const song = { ...emptySong(), ...patch };
-    try {
-      await saveSong(song);
-      setEditing(song);
-      setMetadata(false);
-    } catch {
-      setError("Could not create a song. Check your available storage.");
-    }
+  const addPreparedSong = async (song: Song) => {
+    await saveSong(song);
+    setSongAdded(song);
+    setEditing(null);
+    setArea("library");
+    setQuery("");
   };
   const closeGuide = () => {
     setGuide(false);
@@ -255,7 +263,7 @@ export default function App() {
             <BookOpen size={18} /> Quick guide <ArrowUpRight size={15} />
           </button>
           <div className="version">
-            CUELINE <span>v1.0</span>
+            CUELINE <span>v1.1</span>
           </div>
         </div>
       </aside>
@@ -316,10 +324,46 @@ export default function App() {
                   </h1>
                   <p>Keep the words close. Let the music take over.</p>
                 </div>
-                <button className="btn primary" onClick={() => void newSong()}>
+                <button
+                  className="btn primary"
+                  onClick={() => setAddOpen(true)}
+                >
                   <Plus size={20} /> Add song
                 </button>
               </div>
+              {songAdded && (
+                <div className="song-added" role="status">
+                  <Check size={23} />
+                  <div>
+                    <strong>
+                      {songAdded.title} · {songAdded.artist}
+                    </strong>
+                    <span>Added with lyrics · saved for offline use</span>
+                  </div>
+                  <button
+                    className="btn primary"
+                    onClick={() => openStage([songAdded.id], "Single song")}
+                  >
+                    <Play size={18} /> Open Stage
+                  </button>
+                  <button
+                    className="btn"
+                    onClick={() => {
+                      setAdded("");
+                      setToSet(songAdded);
+                    }}
+                  >
+                    <ListPlus size={18} /> Add to setlist
+                  </button>
+                  <button
+                    className="icon-btn"
+                    aria-label="Dismiss song added message"
+                    onClick={() => setSongAdded(null)}
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              )}
               <div className="library-hero">
                 <section className="gig-card">
                   <div className="gig-card-copy">
@@ -540,15 +584,15 @@ export default function App() {
                 >
                   {query
                     ? "Try another title or artist."
-                    : "Tap Add song to paste your lyrics and make them stage ready."}
+                    : "Tap Add song, search for a cover and pick your artist."}
                 </Empty>
               )}
               <div className="library-footer">
                 <span>
                   <ShieldCheck size={16} /> Local by design. Always yours.
                 </span>
-                <button className="text-btn" onClick={() => setMetadata(true)}>
-                  <Globe size={17} /> Find song details online{" "}
+                <button className="text-btn" onClick={() => setAddOpen(true)}>
+                  <Globe size={17} /> Find a cover song{" "}
                   <ArrowUpRight size={15} />
                 </button>
               </div>
@@ -608,8 +652,9 @@ export default function App() {
               <div>
                 <h3>Add your songs</h3>
                 <p>
-                  Paste lyrics with blank lines between passages. Estimate
-                  timings, or rehearse to record your own cues.
+                  Search for a cover, pick the artist and add it with lyrics. We
+                  prepare passages and available timings. You can add your own
+                  lyrics too.
                 </p>
               </div>
             </div>
@@ -646,16 +691,11 @@ export default function App() {
           </p>
         </Modal>
       )}
-      {metadata && (
-        <MetadataSearch
-          close={() => setMetadata(false)}
-          choose={(r) =>
-            void newSong({
-              title: r.title,
-              artist: r.artist,
-              duration: r.duration ?? 240,
-            })
-          }
+      {addOpen && (
+        <AddSong
+          close={() => setAddOpen(false)}
+          save={addPreparedSong}
+          existing={data.songs}
         />
       )}
       {toSet && (
@@ -703,100 +743,5 @@ function Brand() {
       </span>
       CueLine<span className="brand-period">.</span>
     </div>
-  );
-}
-function MetadataSearch({
-  close,
-  choose,
-}: {
-  close: () => void;
-  choose: (r: MetadataResult) => void;
-}) {
-  const [query, setQuery] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [results, setResults] = useState<MetadataResult[]>([]);
-  const [error, setError] = useState("");
-  const [searched, setSearched] = useState(false);
-  return (
-    <Modal title="Find song details" onClose={close}>
-      <p className="modal-copy">
-        Optional online search, powered by MusicBrainz. Only your search is
-        sent. Lyrics are always added by you.
-      </p>
-      <form
-        className="metadata-search"
-        onSubmit={async (e) => {
-          e.preventDefault();
-          if (!query.trim() || busy) return;
-          setBusy(true);
-          setError("");
-          try {
-            setResults(await searchMetadata(query));
-            setSearched(true);
-          } catch (e) {
-            setError(
-              e instanceof Error
-                ? e.message
-                : "Search unavailable. Add your song manually.",
-            );
-          } finally {
-            setBusy(false);
-          }
-        }}
-      >
-        <div className="search-box">
-          <Search size={19} />
-          <input
-            aria-label="MusicBrainz search"
-            placeholder="Song title and artist"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
-        <button className="btn primary" disabled={busy || !query.trim()}>
-          {busy ? "Searching…" : "Search"}
-        </button>
-      </form>
-      {error && (
-        <p className="notice" role="alert">
-          {error}
-        </p>
-      )}
-      <div className="picker-list">
-        {results.map((r) => (
-          <div className="picker-row" key={r.id}>
-            <div>
-              <strong>{r.title}</strong>
-              <small>
-                {r.artist}
-                {r.duration ? ` · ${time(r.duration)}` : ""}
-              </small>
-            </div>
-            <button
-              className="icon-btn"
-              aria-label={`Import details for ${r.title}`}
-              onClick={() => choose(r)}
-            >
-              <ArrowDownToLine size={21} />
-            </button>
-          </div>
-        ))}
-      </div>
-      {searched && !results.length && !error && (
-        <p className="helper">
-          No matches. Try a title and artist, or add the song manually.
-        </p>
-      )}
-      <p className="helper">
-        No lyrics are searched or downloaded.{" "}
-        <a
-          href="https://musicbrainz.org/doc/MusicBrainz_API"
-          target="_blank"
-          rel="noreferrer"
-        >
-          About MusicBrainz
-        </a>
-      </p>
-    </Modal>
   );
 }

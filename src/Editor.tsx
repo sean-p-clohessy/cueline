@@ -130,6 +130,20 @@ export function Editor({
           {error}
         </p>
       )}
+      {song.lyricSource.type === "lrclib" && (
+        <p className="helper source-attribution">
+          Community lyrics from{" "}
+          <a href="https://lrclib.net/" target="_blank" rel="noreferrer">
+            LRCLIB
+          </a>
+          {song.lyricSource.recording ? ` · ${song.lyricSource.recording}` : ""}
+          .{" "}
+          {song.passages.some((p) => p.estimated)
+            ? "Passages are ready; timings are estimates."
+            : "Cue timings follow the selected recording."}{" "}
+          Your live arrangement may differ.
+        </p>
+      )}
       <div className="editor-grid">
         <div className="editor-main">
           <section className="panel metadata-grid">

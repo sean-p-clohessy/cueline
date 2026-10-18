@@ -2928,3 +2928,251 @@ select {
     width: auto;
   }
 }
+
+/* Search-first cover setup: one decision per result, no editor required. */
+.add-song-tabs {
+  display: flex;
+  gap: 6px;
+  background: #11151c;
+  border: 1px solid var(--border);
+  padding: 5px;
+  border-radius: 12px;
+  margin: 0 0 24px;
+}
+.add-song-tabs button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #b9c2d1;
+}
+.add-song-tabs button.selected {
+  background: #383129;
+  color: #efc18a;
+}
+.cover-intro {
+  font-size: 19px;
+  margin: 0 0 20px;
+  color: #e0e5ed;
+}
+.cover-search {
+  display: flex;
+  gap: 12px;
+}
+.cover-search .search-box {
+  flex: 1;
+}
+.cover-search .search-box input {
+  min-height: 56px;
+}
+.cover-search > .btn {
+  min-width: 122px;
+}
+.cover-search-empty {
+  text-align: center;
+  padding: 42px 20px 34px;
+  color: var(--muted);
+}
+.cover-search-empty > svg {
+  color: var(--amber);
+  margin: 0 auto 18px;
+}
+.cover-search-empty h3 {
+  color: #dbe2ed;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.cover-search-empty p {
+  font-size: 16px;
+}
+.cover-result-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin: 25px 0 9px;
+}
+.cover-result-heading h3 {
+  font-size: 18px;
+}
+.cover-result-heading span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.cover-results {
+  max-height: 48dvh;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.cover-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  border-bottom: 1px solid var(--border);
+  padding: 18px 3px;
+}
+.cover-result-text {
+  min-width: 0;
+}
+.cover-result-text strong {
+  font-size: 20px;
+  display: block;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.cover-result-text > span {
+  display: block;
+  font-size: 16px;
+  color: #bbc4d3;
+  margin-top: 4px;
+}
+.cover-result-text > small {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+}
+.recording-choice {
+  font-size: 14px;
+  justify-content: flex-start;
+  padding: 4px 0;
+  color: #e5b77c;
+}
+.cover-result > .btn {
+  min-width: 132px;
+  flex-shrink: 0;
+}
+.cover-source-note {
+  font-size: 13px;
+  color: #aeb8c8;
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 22px;
+}
+.recording-picker {
+  padding: 20px;
+  margin-top: 20px;
+}
+.recording-picker h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.recording-picker label {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.own-lyrics-options {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 18px 0;
+}
+.own-lyrics-options > label {
+  flex: 1;
+}
+.own-lyrics-options input {
+  font-size: 16px;
+}
+.own-lyrics-options + .helper {
+  margin: 16px 0 20px;
+}
+.song-added {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #a6c8ae55;
+  background: #a6c8ae0b;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin: -10px 0 26px;
+}
+.song-added > svg {
+  color: var(--green);
+}
+.song-added > div {
+  flex: 1;
+  min-width: 180px;
+}
+.song-added strong {
+  font-size: 16px;
+  display: block;
+}
+.song-added span {
+  font-size: 14px;
+  color: #b3cdb9;
+  display: block;
+  margin-top: 4px;
+}
+.song-added > .btn {
+  font-size: 14px;
+}
+.source-attribution {
+  margin: -10px 0 24px;
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 700px) {
+  .cover-search {
+    flex-wrap: wrap;
+  }
+  .cover-search .search-box {
+    width: 100%;
+    flex: auto;
+  }
+  .cover-search > .btn {
+    width: 100%;
+  }
+  .cover-intro {
+    font-size: 17px;
+  }
+  .add-song-tabs button {
+    font-size: 14px;
+    padding: 12px 8px;
+    gap: 7px;
+  }
+  .cover-result {
+    gap: 12px;
+    padding: 18px 0;
+  }
+  .cover-result-text strong {
+    font-size: 18px;
+  }
+  .cover-result-text > span {
+    font-size: 15px;
+  }
+  .cover-result > .btn {
+    min-width: 104px;
+    padding: 12px 10px;
+    font-size: 14px;
+    gap: 5px;
+  }
+  .cover-results {
+    max-height: 42dvh;
+  }
+  .own-lyrics-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .song-added {
+    padding: 16px;
+    gap: 12px;
+  }
+  .song-added > .btn {
+    flex: 1;
+  }
+  .song-added .icon-btn {
+    margin-left: auto;
+  }
+}

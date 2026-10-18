@@ -35,17 +35,21 @@ Service workers require HTTPS, or localhost on the same device. An iPad accessin
 4. Add/import your songs in this installed app. Safari and installed apps may have separate storage; transfer a JSON backup if needed.
 5. Switch to Airplane Mode, reopen CueLine and try your whole set before a gig.
 
-The application shell, icons, songs, settings and setlists work without a network after initial installation. MusicBrainz search is the only optional online feature. Updates wait in Settings and never automatically reload Stage Mode.
+The application shell, icons, songs, settings and setlists work without a network after initial installation. Searching for new covers needs a connection; adding a result saves its words and cues locally. Updates wait in Settings and never automatically reload Stage Mode.
 
 ## Prepare your songs
 
-Use **Add song** to enter a title, artist, duration, intro, optional BPM, count-in (default 5 seconds) and notes. **Paste lyrics** splits blank-line-separated sections into passages. You can also add passages individually.
+**Add song → Find a cover → search the title → Add song beside your artist.** Lyrics, duration, readable passages and available cue timings are prepared and saved immediately. You return to the library with **Open Stage** and **Add to setlist** actions. There is no required editor, copy/paste, lyric splitting or timing form.
+
+Search results group recordings by artist. **Choose a recording** optionally lets you pick an album/version. Automatic preparation prefers a timed studio version when available. Community cue timings follow that recording; a live band's arrangement may differ, so try the song before performing. Synced covers open in Automatic mode. Lyrics-only imports are immediately usable in Manual mode, with clearly marked estimated timings available for later rehearsal.
+
+For originals or unavailable covers, choose **My own lyrics**: enter a title, paste the whole song, and add it. You can also import TXT or LRC. Plain text is divided into short passages automatically; LRC preserves timestamps. The existing editor remains available for optional changes to duration, intro, BPM, count-in (default 5 seconds), notes and individual passages.
 
 Choose Verse, Chorus, Bridge, Outro or Instrumental per passage. Instrumentals can use a label such as “Guitar solo · 8 bars”. Repeat a chorus with its repeat button; it becomes an independent, editable passage. Place the text cursor to split a passage, merge with the preceding passage, or use a handle to reorder. Keyboard dragging uses Space, arrow keys, Space.
 
 **Estimate timings** distributes cues evenly from the intro to the end. These are clearly marked estimates, not synchronisation. Edit a cue as `mm:ss`, `mm:ss.s` or a number of seconds; clear it to remove it. Cues use song-relative time, excluding the initial count-in. Automatic mode requires every cue to be in increasing passage order, at or after the intro and before the end of the song. Fix invalid cues or use Manual mode.
 
-All three included demo songs and all their lyrics were written for this application. They include different intros, repeated choruses and instrumentals. Their timings are illustrative estimates. Use only lyrics you wrote, own or have permission to use. CueLine does not fetch or scrape lyrics.
+All three included demo songs and all their lyrics were written for this application. They include different intros, repeated choruses and instrumentals. Their timings are illustrative estimates. Cover lyrics are fetched from the public LRCLIB API when you explicitly search/add a cover; CueLine does not scrape lyric websites or bundle commercial lyrics. LRCLIB is a community source, not a blanket licence to lyrics or performances. Only add material you are entitled to use. Source and recording attribution stay with the saved song and its backups.
 
 ## Setlists
 
@@ -90,7 +94,9 @@ Dexie manages a versioned IndexedDB database named `CueLine`. Version 1 contains
 
 Storage is specific to the browser, device and site origin. Clearing site data, using a private window, storage eviction, changing the hosting URL or removing the installed app can lose local data. Request persistent storage in Settings where supported and keep exported backups. There is no account sync and no recoverable server copy. GitHub Pages serves only the application files; it receives no library or lyrics upload.
 
-Optional metadata search sends only the entered query to MusicBrainz, never your library or lyrics. It is explicitly submitted, cached, throttled at 1.5 seconds minimum, coordinates its last request across tabs where storage is available, respects server backoff and times out gracefully. It requests an application User-Agent and adds a client identifier. Chromium can replace/drop the User-Agent; browser CORS rules and MusicBrainz availability can limit this optional feature. There is deliberately no proxy/backend. See [MusicBrainz's API policy](https://musicbrainz.org/doc/MusicBrainz_API). Review their commercial-use policy before commercial redistribution.
+Cover search sends the entered title to LRCLIB. Its results already include the lyrics, so choosing an available artist normally needs no second network request. When needed, a targeted request sends only the selected title/artist. These requests are sequential, spaced by at least 350 ms, identified with the documented `Lrclib-Client` header, cached, bounded by timeouts and respect `Retry-After`. A short server-overload response can be retried once after the specified delay; there is no background crawling or uploading of your library. See [LRCLIB's API documentation](https://lrclib.net/docs).
+
+MusicBrainz provides additional artist discovery when the primary source has no match or is unavailable. It is cached, throttled at 1.5 seconds minimum and uses focused title queries. See [MusicBrainz's API policy](https://musicbrainz.org/doc/MusicBrainz_API). Browser CORS rules, provider availability and catalogue coverage can limit online searches. Failed imports leave the library unchanged, rather than creating an empty song. There is no paid account, secret key, proxy or backend. Neither public API grants blanket rights to the underlying lyrics; review provider and rights requirements before commercial redistribution.
 
 ## Source map
 
@@ -105,7 +111,9 @@ Optional metadata search sends only the entered query to MusicBrainz, never your
 | `src/db.ts` | Dexie versioned schema and atomic library operations |
 | `src/backup.ts` | Validation, collision-safe import and downloads |
 | `src/Settings.tsx`, `src/ui.tsx` | Preferences, backup UI, native dialogs and drag handles |
-| `src/metadata.ts` | Optional metadata transport, independent of lyric sources |
+| `src/AddSong.tsx` | Search-first artist picker, ready-to-use cover import, simple own-lyrics form |
+| `src/lyrics.ts` | LRCLIB provider, LRC parsing, automatic passage preparation and recording selection |
+| `src/metadata.ts` | Additional artist discovery, independent of lyric sources |
 | `src/demo.ts` | Original demonstration content |
 | `scripts/qa-*.txt` | Repeatable browser verification functions for Playwright CLI |
 

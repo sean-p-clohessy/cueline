@@ -21,7 +21,11 @@ export interface Song {
   countdown: number;
   notes: string;
   passages: Passage[];
-  lyricSource: { type: "user" | "original-demo"; reference?: string };
+  lyricSource: {
+    type: "user" | "original-demo" | "lrclib";
+    reference?: string;
+    recording?: string;
+  };
   updatedAt: number;
 }
 export interface SetEntry {

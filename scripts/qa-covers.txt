@@ -1,0 +1,33 @@
+async(page)=>{
+  const welcome=page.getByRole('button',{name:/make some music/});if(await welcome.count())await welcome.click();
+  await page.getByRole('button',{name:'Add song',exact:true}).click();
+  await page.getByRole('textbox',{name:'Find a cover song',exact:true}).fill('Addicted to Love');
+  await page.getByRole('textbox',{name:'Find a cover song',exact:true}).press('Enter');
+  await page.getByRole('button',{name:/^Add addicted to love by robert palmer$/i}).waitFor({timeout:20000});
+  if(!(await page.locator('.cover-results').innerText()).includes('Tina Turner'))throw Error('Artist alternatives missing');
+  await page.screenshot({path:'output/playwright/covers-addicted-artists.png'});
+  await page.getByRole('button',{name:/^Add addicted to love by robert palmer$/i}).click();
+  await page.getByRole('heading',{name:'Add a song',exact:true}).waitFor({state:'hidden',timeout:30000});
+  if(await page.getByRole('heading',{name:'SONG EDITOR',exact:true}).count())throw Error('Adding a cover opened the editor');
+  await page.getByRole('button',{name:'Add song',exact:true}).click();
+  await page.getByRole('textbox',{name:'Find a cover song',exact:true}).fill('Money for Nothing');
+  await page.getByRole('textbox',{name:'Find a cover song',exact:true}).press('Enter');
+  await page.getByRole('button',{name:/^Add money for nothing by dire straits$/i}).waitFor({timeout:20000});
+  await page.screenshot({path:'output/playwright/covers-money-artists.png'});
+  await page.getByRole('button',{name:/^Add money for nothing by dire straits$/i}).click();
+  await page.getByRole('heading',{name:'Add a song',exact:true}).waitFor({state:'hidden',timeout:30000});
+  const summary=await page.evaluate(async()=>{
+    const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('CueLine');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+    const songs=await new Promise((resolve,reject)=>{const r=db.transaction('songs').objectStore('songs').getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});db.close();
+    return songs.filter(s=>['robert palmer','dire straits'].includes(s.artist.toLowerCase())).map(s=>({title:s.title,artist:s.artist,passages:s.passages.length,intro:s.intro,duration:s.duration,timed:s.passages.every(p=>p.start!==null&&!p.estimated),source:s.lyricSource.type}));
+  });
+  if(summary.length!==2||summary.some(s=>!s.passages||s.source!=='lrclib'||!s.timed))throw Error(JSON.stringify(summary));
+  await page.getByRole('button',{name:/^Stage money for nothing$/i}).click();
+  if((await page.locator('.mode-switch .selected').innerText())!=='Automatic')throw Error('Synced cover not immediately ready for Automatic mode');
+  await page.getByRole('button',{name:'Next passage',exact:true}).click();
+  if((await page.locator('.current-passage p').innerText()).length<5)throw Error('No imported lyrics in Stage Mode');
+  await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+  await page.reload();
+  await page.getByRole('button',{name:/^Stage money for nothing$/i}).waitFor();
+  console.log(JSON.stringify({passed:true,summary}));
+}

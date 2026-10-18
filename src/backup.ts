@@ -52,10 +52,13 @@ function validateSong(v: unknown): Song {
   }
   if (
     !record(v.lyricSource) ||
-    !["user", "original-demo"].includes(String(v.lyricSource.type)) ||
+    !["user", "original-demo", "lrclib"].includes(String(v.lyricSource.type)) ||
     !(
       v.lyricSource.reference === undefined ||
       str(v.lyricSource.reference, 2000)
+    ) ||
+    !(
+      v.lyricSource.recording === undefined || str(v.lyricSource.recording, 300)
     )
   )
     return fail("Invalid lyric source.");

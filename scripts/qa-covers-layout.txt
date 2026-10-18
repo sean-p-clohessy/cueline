@@ -1,0 +1,18 @@
+async(page)=>{
+ await page.getByRole('button',{name:'Add song',exact:true}).click();
+ await page.getByRole('textbox',{name:'Find a cover song',exact:true}).fill('Addicted to Love');
+ await page.getByRole('textbox',{name:'Find a cover song',exact:true}).press('Enter');
+ await page.getByRole('heading',{name:'Choose your artist',exact:true}).waitFor({timeout:20000});
+ const results=[];
+ for(const [width,height] of [[1024,768],[768,1024],[390,844],[320,740]]){
+  await page.setViewportSize({width,height});
+  const result=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,dialog:document.querySelector('dialog').scrollWidth,dialogClient:document.querySelector('dialog').clientWidth,small:[...document.querySelectorAll('dialog button')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&(r.width<47.9||r.height<47.9)}).map(el=>el.textContent)}));
+  if(result.scroll>width||result.dialog>result.dialogClient+1||result.small.length)throw Error(JSON.stringify(result));
+  results.push(result);await page.screenshot({path:`output/playwright/cover-picker-${width}x${height}.png`});
+ }
+ await page.getByRole('tab',{name:'Find a cover',exact:true}).focus();await page.keyboard.press('ArrowRight');
+ await page.getByRole('textbox',{name:'Your song lyrics',exact:true}).waitFor();
+ await page.keyboard.press('ArrowLeft');await page.getByRole('textbox',{name:'Find a cover song',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Close dialog',exact:true}).click();
+ console.log(JSON.stringify({passed:true,results}));
+}

@@ -1,0 +1,37 @@
+async(page)=>{
+ await page.getByText('Offline ready',{exact:true}).waitFor({timeout:15000});
+ await page.context().setOffline(true);
+ await page.reload();
+ await page.getByRole('button',{name:/^Stage addicted to love$/i}).waitFor();
+ await page.getByRole('button',{name:/^Stage money for nothing$/i}).click();
+ await page.getByRole('button',{name:'Next passage',exact:true}).click();
+ await page.getByRole('button',{name:'Play timeline',exact:true}).click();
+ await page.waitForTimeout(350);
+ await page.getByRole('button',{name:'Pause timeline',exact:true}).click();
+ await page.reload();
+ await page.getByRole('heading',{name:/^Money for Nothing$/i}).waitFor();
+ if(!(await page.locator('.live-state').innerText()).includes('Paused'))throw Error('Imported cover failed offline recovery');
+ if((await page.locator('.current-passage p').innerText()).length<5)throw Error('Imported lyrics missing offline');
+ await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+ await page.getByRole('button',{name:'Settings',exact:true}).click();
+ const downloadPromise=page.waitForEvent('download');
+ await page.getByRole('button',{name:'Export full backup',exact:true}).click();
+ const download=await downloadPromise;await download.saveAs('output/playwright/covers-backup.json');
+ await page.locator('input[type=file]').setInputFiles('output/playwright/covers-backup.json');
+ await page.getByRole('heading',{name:'Restore your music',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Add to my library',exact:true}).click();
+ await page.getByText('Import complete.',{exact:false}).waitFor();
+ await page.getByRole('button',{name:/^Song Library 10$/}).waitFor();
+ await page.getByRole('button',{name:/^Song Library/}).click();
+ await page.getByRole('button',{name:'Add song',exact:true}).click();
+ await page.getByRole('tab',{name:'My own lyrics',exact:true}).click();
+ await page.getByRole('textbox',{name:'Song title',exact:true}).fill('QA One Step Original');
+ await page.getByRole('textbox',{name:'Your song lyrics',exact:true}).fill('An original line one\nAn original line two\nAn original line three\nAn original line four\nAn original line five');
+ await page.getByRole('button',{name:'Add song',exact:true}).last().click();
+ await page.getByRole('heading',{name:'Add a song',exact:true}).waitFor({state:'hidden'});
+ await page.getByRole('button',{name:'Stage QA One Step Original',exact:true}).click();
+ if((await page.locator('.mode-switch .selected').innerText())!=='Manual')throw Error('Untimed paste should be ready for Manual mode');
+ await page.getByRole('button',{name:'Leave stage',exact:true}).click();
+ await page.context().setOffline(false);
+ console.log('PASS: imported cover offline stage, paused recovery, community-source backup restore and one-form original song.');
+}
